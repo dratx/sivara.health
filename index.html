@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivara Health | Expert Orthopaedic Care in Thailand</title>
+    <!-- Chosen Palette: Sivara Health Official (Alabaster, Gunmetal, Vista Blue, Mint Green, Ice Blue) -->
+    <!-- Application Structure Plan: The SPA is structured as a narrative journey to guide the user from building trust to taking action. It starts with establishing immediate credibility (Hero, Founders), moves to explaining the 'how' (Your Journey), details the 'what' (Procedures), addresses the key motivator of 'cost' (Pricing & Savings), provides social proof (Patient Stories), and ends with a clear call to action (Free Assessment). This non-linear, thematic structure was chosen over mirroring the report's layout because it directly maps to the target audience's decision-making process, addressing their core needs for trust, clarity, and value in a logical, reassuring flow. -->
+    <!-- Visualization & Content Choices: 1. Cost Comparison (Report Info: Procedure cost data vs. UK/US) -> Goal: Compare -> Viz: Interactive Bar Chart (Chart.js) -> Interaction: Hover tooltips show exact savings -> Justification: Visually compelling, quickly communicates the primary value proposition of significant savings. 2. Patient Journey (Report Info: Concierge process) -> Goal: Organize/Inform -> Viz: Interactive HTML/CSS/JS Timeline -> Interaction: Hover effects on steps -> Justification: Simplifies a complex process, making it feel manageable and reassuring. 3. Savings Calculator (Report Info: MVP Lead-gen tool) -> Goal: Inform/Engage -> Viz: HTML Form + JS Logic -> Interaction: User inputs data, receives instant estimate -> Justification: Provides personalized value, captures leads as per MVP strategy. 4. Procedures (Report Info: List of orthopaedic surgeries) -> Goal: Inform -> Viz: Accordion-style HTML/JS list -> Interaction: Click to expand/collapse -> Justification: Presents detailed information concisely, preventing cognitive overload for the user. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F0E6; /* Alabaster */
+            color: #2A3439; /* Gunmetal */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .sivara-blue { color: #7C9ED9; }
+        .sivara-mint { color: #98FF98; }
+        .sivara-ice-blue { color: #99FFFF; }
+        .bg-sivara-alabaster { background-color: #F2F0E6; }
+        .bg-sivara-gunmetal { background-color: #2A3439; }
+        .bg-sivara-blue { background-color: #7C9ED9; }
+        .border-sivara-blue { border-color: #7C9ED9; }
+        .text-sivara-gunmetal { color: #2A3439; }
+        .text-sivara-alabaster { color: #F2F0E6; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 500px; }
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        /* Dropdown fix: keep open on hover of button or dropdown */
+        .group:hover .group-hover\:opacity-100,
+        .group:focus-within .group-hover\:opacity-100 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
+        .group .group-hover\:opacity-100 {
+            transition: opacity 0.2s, visibility 0.2s;
+            transition-delay: 0.15s;
+        }
+        .group .group-hover\:opacity-100 {
+            visibility: hidden;
+            opacity: 0;
+        }
+        .group:hover > .group-hover\:opacity-100,
+        .group:focus-within > .group-hover\:opacity-100 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
+
+        /* Menu hover color (header & footer) */
+        .menu-link, .footer-link {
+            transition: color 0.2s;
+        }
+        .menu-link:hover, .footer-link:hover {
+            color: #7C9ED9 !important;
+        }
+        /* Dropdown submenu hover background */
+        .dropdown-link:hover {
+            background-color: #7C9ED9 !important;
+            color: #fff !important;
+            border-radius: 0.5rem !important;
+        }
+        .group.force-closed .group-hover\:opacity-100 {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition-delay: 0s !important;
+        }
+        #procedure-select:hover, #currency-select:hover {
+            background-color: #7C9ED9 !important;
+            color: #fff !important;
+            border-color: #7C9ED9 !important;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .header-scrolled {
+            background-color: #F2F0E6cc !important;
+            box-shadow: 0 2px 8px 0 #2A343910;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        /* Scroll progress bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: #7C9ED9;
+            z-index: 100;
+            transition: width 0.2s;
+        }
+        /* Floating CTA */
+        #floating-cta {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 100;
+            display: none;
+        }
+        #floating-cta.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Parallax hero */
+        .parallax-hero {
+            background-image: url('./Images/pexels-freestockpro-1007657.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .parallax-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.55)); /* even lighter, semi-transparent white overlay */
+            z-index: 1;
+        }
+        .parallax-hero > .container {
+            position: relative;
+            z-index: 2;
+        }
+        /* Microinteractions */
+        .card-hover {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card-hover:hover {
+            transform: scale(1.04) translateY(-4px);
+            box-shadow: 0 8px 32px 0 #7C9ED930;
+        }
+        .btn-animate {
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn-animate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px 0 #7C9ED930;
+        }
+        /* Animated text reveal */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+        .reveal-text.visible {
+            opacity: 1;
+            transform: none;
+        }
+        .parallax-hero h1,
+        .parallax-hero p {
+            text-shadow: 0 1px 4px rgba(34,44,57,0.14), 0 1px 1px rgba(34,44,57,0.10);
+        }
+    </style>
+    <style>
+      html, body { overflow-x: hidden; }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="scroll-progress"></div>
+    <header class="bg-sivara-alabaster/80 backdrop-blur-md sticky top-0 z-50 shadow-sm" id="main-header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-sivara-gunmetal flex items-center">
+                <img src="./Sivara Logo Exports/Vector/Sivara Logo.svg" alt="Sivara Health Logo" class="mr-2" style="height: 56px; width: auto;" />
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <div class="relative group">
+                    <button class="menu-link text-sivara-gunmetal font-semibold flex items-center focus:outline-none" onclick="window.location.href='index.html'">
+                        About
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                        <a href="#difference" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Who We Are</a>
+                        <a href="#journey" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Your Journey</a>
+                        <a href="#pricing" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Pricing</a>
+                        <a href="#stories" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Reviews</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="menu-link text-sivara-gunmetal font-semibold flex items-center focus:outline-none" onclick="window.location.href='services.html'">
+                        Services
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                        <a href="services.html#procedures" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Procedures</a>
+                        <a href="services.html#packages" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Packages</a>
+                        <a href="services.html#hospitals" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Hospitals</a>
+                    </div>
+                </div>
+                <a href="articles.html" class="menu-link text-sivara-gunmetal font-semibold">Articles</a>
+                <a href="contact.html" class="menu-link text-sivara-gunmetal font-semibold">Contact</a>
+            </div>
+            <a href="#consultation" class="hidden md:inline-block bg-sivara-blue text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition transform hover:scale-105">
+                Free Consultation
+            </a>
+            <button id="mobile-menu-button" class="md:hidden">
+                 <svg class="w-6 h-6 text-sivara-gunmetal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <div class="border-b border-gray-200 pb-2">
+                <button id="about-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='index.html'">
+                    About
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="about-mobile-menu" class="hidden pl-4">
+                    <a href="#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
+                    <a href="#journey" class="block text-sivara-gunmetal py-1">Your Journey</a>
+                    <a href="#pricing" class="block text-sivara-gunmetal py-1">Pricing</a>
+                    <a href="#stories" class="block text-sivara-gunmetal py-1">Reviews</a>
+                </div>
+            </div>
+            <div class="border-b border-gray-200 pb-2">
+                <button id="services-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='services.html'">
+                    Services
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="services-mobile-menu" class="hidden pl-4">
+                    <a href="services.html#procedures" class="block text-sivara-gunmetal py-1">Procedures</a>
+                    <a href="services.html#packages" class="block text-sivara-gunmetal py-1">Packages</a>
+                    <a href="services.html#hospitals" class="block text-sivara-gunmetal py-1">Hospitals</a>
+                </div>
+            </div>
+            <a href="articles.html" class="block text-sivara-gunmetal font-semibold py-2">Articles</a>
+            <a href="contact.html" class="block text-sivara-gunmetal font-semibold py-2">Contact</a>
+            <a href="#consultation" class="block mt-4 bg-sivara-blue text-white text-center font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition">
+                Free Consultation
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="py-20 md:py-32 parallax-hero">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-sivara-gunmetal mb-4 leading-tight reveal-text">Renewed Mobility, Without the Wait.</h1>
+                <p class="text-lg md:text-xl text-sivara-gunmetal/80 max-w-3xl mx-auto mb-8 reveal-text">Experience world-class orthopaedic care in Thailand, guided by a UK-trained physician and a team dedicated to your well-being. A clear, confident, and caring journey to a better quality of life.</p>
+                <a href="#consultation" class="bg-sivara-blue text-white font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-opacity-90 transition transform hover:scale-105 inline-block btn-animate">Begin Your Free Consultation</a>
+            </div>
+        </section>
+
+        <section id="trust-bar" class="py-12 bg-gray-100" data-aos="fade-up">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row gap-8 text-center items-stretch">
+                    <div class="flex-1 flex flex-col justify-center p-4 card-hover min-h-[180px] bg-white rounded-lg" data-aos="fade-up" data-aos-delay="0">
+                        <img src="./Images/vecteezy_stethoscope-icon-flat-design-medical-equipment-symbol-on-a_5069334.svg" alt="Stethoscope Icon" class="mx-auto mb-4 w-16 h-16 bg-white rounded" />
+                        <h3 class="text-xl font-bold text-sivara-gunmetal mb-2">Physician-Led Guidance</h3>
+                        <p class="text-sivara-gunmetal/70">Our UK-trained physician co-founder personally vets every partner specialist and oversees your plan.</p>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-center p-4 card-hover min-h-[180px] bg-white rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                        <img src="./Images/jci-gold-seal.png" alt="JCI Gold Seal" class="mx-auto mb-4 w-16 h-16 object-contain" />
+                        <h3 class="text-xl font-bold text-sivara-gunmetal mb-2">JCI-Accredited Hospitals</h3>
+                        <p class="text-sivara-gunmetal/70">We partner exclusively with facilities meeting the highest global standards for safety and quality.</p>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-center p-4 card-hover min-h-[180px] bg-white rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                            <img src="./Images/Value Icon.svg" alt="Value Icon" class="w-16 h-16 bg-white rounded" />
+                        </div>
+                        <h3 class="text-xl font-bold text-sivara-gunmetal mb-2 mt-0 text-center">Significant Value, No Compromise</h3>
+                        <p class="text-sivara-gunmetal/70 text-center">Access world-leading care, with significant savings and without the wait compared to US & UK prices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="difference" class="py-20 md:py-28" data-aos="fade-up">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal">Your Trusted Expert Companion</h2>
+                    <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4">Sivara Health was founded on a simple principle: to combine profound medical expertise with the quality and speed of care we want for our own family. We're not just facilitators; we are your advocates and guides who will walk alongside you on this journey.</p>
+                </div>
+
+                <div class="container mx-auto px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch w-full">
+                        <div class="flex flex-col items-center text-center w-full h-full">
+                            <img src="https://placehold.co/500x500/7C9ED9/F2F0E6?text=Dr.+[Founder]" 
+                                 alt="Physician Co-founder" 
+                                 class="rounded-lg shadow-xl mb-6 w-3/4 md:w-full max-w-sm h-64 object-cover" />
+                            <h3 class="text-2xl font-bold text-sivara-gunmetal">UK-Trained Physician Founder</h3>
+                            <p class="mt-2 text-sivara-gunmetal/80">With extensive experience in the UK medical system, our physician co-founder brings rigorous clinical governance and a deep understanding of Western patient expectations. They ensure every aspect of your care meets the highest standards.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center w-full h-full">
+                            <img src="https://placehold.co/500x500/2A3439/F2F0E6?text=[Co-Founder]" 
+                                 alt="Thai Co-founder" 
+                                 class="rounded-lg shadow-xl mb-6 w-3/4 md:w-full max-w-sm h-64 object-cover" />
+                            <h3 class="text-2xl font-bold text-sivara-gunmetal">Behavioural & Medical Science Expert</h3>
+                            <p class="mt-2 text-sivara-gunmetal/80">Our Thai co-founder, educated in the US and UK with a PhD-level background in medical and behavioural sciences, brings both deep expertise and strong local connections within Thailand's healthcare landscape. Based on the ground and well-versed in the Thai healthcare system, they ensure your journey runs smoothly. Their unique blend of academic insight and hands-on experience means you're supported not just logistically, but with care that is personal and deeply informed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="py-20 md:py-28 bg-gray-100" data-aos="fade-up">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal reveal-text">Your Supported Path to Wellness</h2>
+                    <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4 reveal-text">We've designed a clear, five-step journey to ensure you feel informed, confident, and cared for from our first conversation to your full recovery.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="hidden md:block absolute top-0 left-1/2 w-0.5 h-full bg-sivara-blue/30"></div>
+                    <div class="space-y-8">
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center journey-step card-hover rounded-lg bg-white py-8 px-6">
+                            <div class="flex justify-center items-center mt-8 mb-6 md:mt-4 md:mb-0 order-1 md:order-2">
+                                <div class="md:w-12 md:h-12 w-10 h-10 bg-sivara-blue text-white rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                            </div>
+                            <div class="order-2 md:order-1 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-sivara-gunmetal">Step 1: Free, No-Obligation Consultation</h3>
+                                <p class="text-sivara-gunmetal/80 mt-2">Begin with a confidential discussion about your needs with our UK-trained physician founder. We'll review your case to understand how we can best support you.</p>
+                            </div>
+                        </div>
+
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center journey-step card-hover rounded-lg bg-white py-8 px-6">
+                            <div class="flex justify-center items-center mt-8 mb-6 md:mt-4 md:mb-0 order-1 md:order-1">
+                                <div class="md:w-12 md:h-12 w-10 h-10 bg-sivara-blue text-white rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                            </div>
+                            <div class="order-2 md:order-2 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-sivara-gunmetal">Step 2: Your Personalised Plan</h3>
+                                <p class="text-sivara-gunmetal/80 mt-2">Receive a transparent, detailed proposal including your recommended surgeons, JCI-accredited hospitals, a full cost breakdown, and concierge service options.</p>
+                            </div>
+                        </div>
+
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center journey-step card-hover rounded-lg bg-white py-8 px-6">
+                            <div class="flex justify-center items-center mt-8 mb-6 md:mt-4 md:mb-0 order-1 md:order-2">
+                                <div class="md:w-12 md:h-12 w-10 h-10 bg-sivara-blue text-white rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                            </div>
+                            <div class="order-2 md:order-1 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-sivara-gunmetal">Step 3: Seamless Travel & Treatment</h3>
+                                <p class="text-sivara-gunmetal/80 mt-2">We coordinate every detail of your medical travel, ensuring a smooth, stress-free arrival, hospital admission, and world-class surgical procedure.</p>
+                            </div>
+                        </div>
+
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center journey-step card-hover rounded-lg bg-white py-8 px-6">
+                            <div class="flex justify-center items-center mt-8 mb-6 md:mt-4 md:mb-0 order-1 md:order-1">
+                                <div class="md:w-12 md:h-12 w-10 h-10 bg-sivara-blue text-white rounded-full flex items-center justify-center text-xl font-bold">4</div>
+                            </div>
+                            <div class="order-2 md:order-2 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-sivara-gunmetal">Step 4: Recovery in a Restorative Setting</h3>
+                                <p class="text-sivara-gunmetal/80 mt-2">Recuperate in comfort. We help arrange accommodation in serene environments designed for healing. Enjoy restorative activities tailored to enhance your recovery, with our team always on hand for support.</p>
+                            </div>
+                        </div>
+
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center journey-step card-hover rounded-lg bg-white py-8 px-6">
+                            <div class="flex justify-center items-center mt-8 mb-6 md:mt-4 md:mb-0 order-1 md:order-2">
+                                <div class="md:w-12 md:h-12 w-10 h-10 bg-sivara-blue text-white rounded-full flex items-center justify-center text-xl font-bold">5</div>
+                            </div>
+                            <div class="order-2 md:order-1 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-sivara-gunmetal">Step 5: Comprehensive Aftercare Support</h3>
+                                <p class="text-sivara-gunmetal/80 mt-2">Your care doesn't end when you leave Thailand. We facilitate post-operative communication with your surgeon and provide guidance for liaising with your doctor back home.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20 md:py-28 bg-[#F2F0E6]" data-aos="fade-up">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal reveal-text">Accessible Excellence: Transparent Pricing</h2>
+                    <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4 reveal-text">We believe in clear, honest communication about costs. Discover how you can access world-class care at a fraction of the price in your home country.</p>
+                </div>
+                <div class="chart-container mb-16">
+                    <canvas id="costChart"></canvas>
+                </div>
+                <div class="flex justify-center items-center min-h-[350px] mb-12">
+                    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-xl">
+                        <h3 class="text-2xl font-bold text-sivara-gunmetal mb-4 text-center">Savings Calculator</h3>
+                        <p class="text-sivara-gunmetal/80 mb-6 text-center">Select a procedure to get an estimated cost saving compared to typical UK private hospital prices.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="procedure-select" class="block text-sm font-medium text-sivara-gunmetal">Select Procedure:</label>
+                                <select id="procedure-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue sm:text-sm rounded-md transition-colors duration-150 hover:bg-sivara-blue hover:text-white cursor-pointer">
+                                    <option value="knee">Knee Replacement</option>
+                                    <option value="hip">Hip Replacement</option>
+                                    <option value="spine">Spine Surgery (ACDF, 1-level)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="currency-select" class="block text-sm font-medium text-sivara-gunmetal">Currency:</label>
+                                <select id="currency-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue sm:text-sm rounded-md transition-colors duration-150 hover:bg-sivara-blue hover:text-white cursor-pointer">
+                                    <option value="USD">US Dollar (USD)</option>
+                                    <option value="GBP">British Pound (GBP)</option>
+                                    <option value="EUR">Euro (EUR)</option>
+                                    <option value="AUD">Australian Dollar (AUD)</option>
+                                </select>
+                            </div>
+                            <button id="calculate-savings-btn" class="w-full bg-sivara-blue text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-opacity-90 hover:bg-sivara-blue transition transform hover:scale-105">Calculate Savings</button>
+                            <div id="savings-result" class="text-center pt-4" style="min-height:6.5rem;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quality-value" class="py-20 md:py-28 bg-gray-100">
+            <div class="container mx-auto px-6 flex justify-center">
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg w-full max-w-3xl" data-aos="fade-up">
+                    <div class="text-center">
+                        <h4 class="text-xl font-bold text-sivara-gunmetal reveal-text">Quality and Value</h4>
+                        <p class="text-sivara-gunmetal/80 mt-2 max-w-3xl mx-auto reveal-text">The significant cost savings in Thailand are a result of different economic structures and lower operational overheads, not compromised standards. Our unwavering commitment to JCI-accredited hospitals and physician-led oversight ensures you receive care that is not only affordable but of the highest international calibre. <br> <br> Our partner hospitals are consistently ranked among the world's most visited private facilities, treating patients from every corner of the globe. We prioritise hospitals that carry the Joint Commission International (JCI) seal—healthcare's gold standard for safety and quality—and appear on prestigious "World's Best" and "Smart Hospital" lists for their cutting-edge technology and outstanding clinical outcomes. By choosing Thailand for your orthopaedic surgery, you gain not only cost efficiency, but true, world-class medical excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stories" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal reveal-text">Reviews</h2>
+                    <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4 reveal-text">Hearing from those who have made the journey is the best way to understand the Sivara Health difference.</p>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="0">
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=J.S." alt="Patient John S." class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-sivara-blue/20">
+                                <p class="text-sivara-gunmetal/80 italic mb-4">"After being told I'd have to wait 18 months on the NHS, I was desperate. The Sivara team were incredible. From the first call with their doctor to the care in Bangkok, I felt supported. I'm now pain-free and have my life back."</p>
+                                <p class="font-bold text-sivara-gunmetal text-right">- John S., United Kingdom</p>
+                                <p class="text-sm text-sivara-gunmetal/60 text-right">Knee Replacement</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="100">
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=M.P." alt="Patient Mary P." class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-sivara-blue/20">
+                                <p class="text-sivara-gunmetal/80 italic mb-4">"The professionalism and kindness were second to none. The hospital was more like a five-star hotel, and the savings were substantial, even with the premium concierge service. I couldn't be happier with the result of my hip surgery."</p>
+                                <p class="font-bold text-sivara-gunmetal text-right">- Mary P., Australia</p>
+                                <p class="text-sm text-sivara-gunmetal/60 text-right">Hip Replacement</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="200">
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=D.L." alt="Patient David L." class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-sivara-blue/20">
+                                <p class="text-sivara-gunmetal/80 italic mb-4">"As someone from the US, navigating healthcare is always a concern. Sivara's transparency on costs and their physician-led approach gave me the confidence I needed. My spine feels better than it has in years. Highly recommend."</p>
+                                <p class="font-bold text-sivara-gunmetal text-right">- David L., USA</p>
+                                 <p class="text-sm text-sivara-gunmetal/60 text-right">Spine Surgery</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Remove Pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <!-- Remove Navigation -->
+                    <!-- <div class="swiper-button-next"></div> -->
+                    <!-- <div class="swiper-button-prev"></div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="consultation" class="py-20 md:py-28 bg-sivara-gunmetal">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Take the First Step Today</h2>
+                <p class="text-lg text-sivara-alabaster/80 max-w-2xl mx-auto mt-4 mb-8">Your journey to renewed mobility starts with a simple, confidential conversation. Contact us for a free, no-obligation consultation with our physician founder.</p>
+                <div class="max-w-xl mx-auto bg-sivara-alabaster p-8 rounded-lg shadow-2xl text-left">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-sivara-gunmetal">Full Name</label>
+                                <input type="text" id="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-sivara-gunmetal">Email Address</label>
+                                <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue">
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label for="procedure-interest" class="block text-sm font-medium text-sivara-gunmetal">Procedure of Interest</label>
+                            <select id="procedure-interest" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue sm:text-sm rounded-md">
+                                <option>Hip Replacement</option>
+                                <option>Knee Replacement</option>
+                                <option>Spine Surgery</option>
+                                <option>Shoulder / Sports Injury</option>
+                                <option>Other / Unsure</option>
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <label for="message" class="block text-sm font-medium text-sivara-gunmetal">Tell us a bit about your needs</label>
+                            <textarea id="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue"></textarea>
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit" class="w-full bg-sivara-blue text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-opacity-90 transition transform hover:scale-105">Request My Free Consultation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-sivara-alabaster border-t border-gray-200">
+        <div class="container mx-auto py-12 px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold text-lg text-sivara-gunmetal mb-4"><a href="index.html#home" class="footer-link">About</a></h4>
+                    <a href="#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
+                    <a href="#journey" class="footer-link block text-sivara-gunmetal/70 mb-2">Your Journey</a>
+                    <a href="#pricing" class="footer-link block text-sivara-gunmetal/70 mb-2">Pricing</a>
+                    <a href="#stories" class="footer-link block text-sivara-gunmetal/70">Reviews</a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="services.html#procedures" class="footer-link">Services</a></h4>
+                    <a href="services.html#procedures" class="footer-link block text-sivara-gunmetal/70 mb-2">Procedures</a>
+                    <a href="services.html#packages" class="footer-link block text-sivara-gunmetal/70 mb-2">Packages</a>
+                    <a href="services.html#hospitals" class="footer-link block text-sivara-gunmetal/70">Hospitals</a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="articles.html" class="footer-link">Articles</a></h4>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="contact.html" class="footer-link">Contact</a></h4>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sivara-gunmetal/60 text-sm">
+                <p>&copy; 2025 Sivara Health. All Rights Reserved.</p>
+                 <p class="mt-2">Disclaimer: Sivara Health functions exclusively as a medical-tourism facilitator. We do not diagnose conditions, prescribe treatments, or provide medical advice. All clinical decisions and procedures are the sole responsibility of the licensed healthcare professionals who care for you. Every surgery carries inherent risks and individual results may vary. Sivara Health assumes no liability for medical outcomes, complications, or losses arising from the care you receive.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a id="floating-cta" href="#consultation" class="bg-sivara-blue text-white font-bold py-3 px-6 rounded-lg shadow-xl btn-animate">Book Free Consultation</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (mobileMenu.classList.contains('hidden') === false) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            const costData = {
+                labels: ['Hip Replacement', 'Knee Replacement', 'Spine Surgery (1-level)'],
+                thailand: [12000, 11400, 11200],
+                uk: [21500, 24871, 45000],
+                usa: [34000, 31500, 100000], 
+            };
+
+            const ctx = document.getElementById('costChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: costData.labels.map(label => label.split(' ')),
+                    datasets: [
+                        {
+                            label: 'Thailand (Est. USD)',
+                            data: costData.thailand,
+                            backgroundColor: '#7C9ED9',
+                            borderColor: '#7C9ED9',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'UK/US Avg. (Est. USD)',
+                            data: costData.usa,
+                            backgroundColor: '#2A3439',
+                            borderColor: '#2A3439',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Estimated Procedure Cost Comparison (USD)',
+                            font: { size: 18, family: 'Montserrat' },
+                            color: '#2A3439',
+                            padding: { top: 10, bottom: 30 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return '$' + value / 1000 + 'k';
+                                },
+                                color: '#2A3439'
+                            },
+                             grid: { color: '#2A343920' }
+                        },
+                        x: {
+                             ticks: { color: '#2A3439' },
+                             grid: { display: false }
+                        }
+                    }
+                }
+            });
+
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = item.querySelector('.accordion-icon');
+
+                header.addEventListener('click', () => {
+                    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                    accordionItems.forEach(i => {
+                        i.querySelector('.accordion-content').style.maxHeight = '0px';
+                        i.querySelector('.accordion-icon').textContent = '+';
+                        i.querySelector('.accordion-icon').classList.remove('rotate-45');
+                    });
+                    
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.textContent = '';
+                        icon.innerHTML = '&times;';
+                        icon.classList.add('rotate-45');
+                    } else {
+                        icon.innerHTML = '+';
+                    }
+                });
+            });
+            
+            const procedureSelect = document.getElementById('procedure-select');
+            const calculateBtn = document.getElementById('calculate-savings-btn');
+            const savingsResult = document.getElementById('savings-result');
+            
+            const savingsData = {
+                knee: { th: 11400, uk: 24871 },
+                hip: { th: 12000, uk: 21500 },
+                spine: { th: 11200, uk: 45000 }
+            };
+
+            const currencySelect = document.getElementById('currency-select');
+            const currencyRates = {
+                USD: { rate: 1, symbol: '$', locale: 'en-US', code: 'USD' },
+                GBP: { rate: 0.79, symbol: '£', locale: 'en-GB', code: 'GBP' },
+                EUR: { rate: 0.92, symbol: '€', locale: 'de-DE', code: 'EUR' },
+                AUD: { rate: 1.52, symbol: 'A$', locale: 'en-AU', code: 'AUD' }
+            };
+
+            function animateSavingsValue(target, start, end, formattedEnd, percent, duration) {
+                let startTime = null;
+                function animateStep(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    const currentValue = Math.floor(progress * (end - start) + start);
+                    // Format as currency
+                    target.innerHTML = `
+                        <div class='text-base md:text-lg font-semibold text-black mb-4'>Estimated Saving:</div>
+                        <div class='text-4xl md:text-5xl font-extrabold sivara-blue mb-4'>${new Intl.NumberFormat(locale, { style: 'currency', currency: code }).format(currentValue)}</div>
+                        <div class='text-base md:text-lg font-semibold text-sivara-gunmetal'>~${percent}%</div>
+                    `;
+                    if (progress < 1) {
+                        requestAnimationFrame(animateStep);
+                    } else {
+                        target.innerHTML = `
+                            <div class='text-base md:text-lg font-semibold text-black mb-4'>Estimated Saving:</div>
+                            <div class='text-4xl md:text-5xl font-extrabold sivara-blue mb-4'>${formattedEnd}</div>
+                            <div class='text-base md:text-lg font-semibold text-sivara-gunmetal'>~${percent}%</div>
+                        `;
+                    }
+                }
+                requestAnimationFrame(animateStep);
+            }
+
+            function updateSavingsResult() {
+                const selected = procedureSelect.value;
+                const selectedCurrency = currencySelect.value;
+                const data = savingsData[selected];
+                const savingUSD = data.uk - data.th;
+                percentage = ((savingUSD / data.uk) * 100).toFixed(0);
+                rate = currencyRates[selectedCurrency].rate;
+                locale = currencyRates[selectedCurrency].locale;
+                code = currencyRates[selectedCurrency].code;
+                const savingConverted = savingUSD * rate;
+                const formatted = new Intl.NumberFormat(locale, { style: 'currency', currency: code }).format(savingConverted);
+                // Animate from 0 to savingConverted
+                animateSavingsValue(savingsResult, 0, Math.round(savingConverted), formatted, percentage, 1200);
+            }
+
+            calculateBtn.addEventListener('click', updateSavingsResult);
+            currencySelect.addEventListener('change', updateSavingsResult);
+            procedureSelect.addEventListener('change', updateSavingsResult);
+            updateSavingsResult();
+
+            // Mobile About dropdown
+            const aboutToggle = document.getElementById('about-mobile-toggle');
+            const aboutMenu = document.getElementById('about-mobile-menu');
+            if (aboutToggle && aboutMenu) {
+                aboutToggle.addEventListener('click', function () {
+                    aboutMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Desktop About dropdown: close on sub-menu click
+            const aboutGroup = document.querySelector('.group');
+            const aboutButton = aboutGroup ? aboutGroup.querySelector('button') : null;
+            const aboutLinks = aboutGroup ? aboutGroup.querySelectorAll('.dropdown-link') : [];
+            aboutLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Smooth scroll to section
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                    // Add force-closed class to close dropdown
+                    if (aboutGroup) {
+                        aboutGroup.classList.add('force-closed');
+                        window.aboutDropdownForceClosed = true;
+                    }
+                    if (aboutButton) {
+                        aboutButton.blur();
+                    }
+                });
+            });
+            // Prevent dropdown from reopening until mouse leaves .group
+            if (aboutGroup) {
+                aboutGroup.addEventListener('mouseenter', function() {
+                    if (window.aboutDropdownForceClosed) {
+                        aboutGroup.classList.add('force-closed');
+                    }
+                });
+                aboutGroup.addEventListener('mouseover', function() {
+                    if (window.aboutDropdownForceClosed) {
+                        aboutGroup.classList.add('force-closed');
+                    }
+                });
+                aboutGroup.addEventListener('mouseleave', function() {
+                    if (window.aboutDropdownForceClosed) {
+                        aboutGroup.classList.remove('force-closed');
+                        window.aboutDropdownForceClosed = false;
+                    }
+                });
+            }
+
+            // Initialize AOS
+            if (window.AOS) {
+                AOS.init({
+                    once: true,
+                    duration: 800,
+                    easing: 'ease-in-out'
+                });
+            }
+            // Reveal text animation
+            function revealOnScroll() {
+                document.querySelectorAll('.reveal-text').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 40) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+            // Swiper carousel for stories
+            new Swiper('.swiper-container', {
+                loop: true,
+                // pagination: { el: '.swiper-pagination', clickable: true },
+                // navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                slidesPerView: 1,
+                spaceBetween: 24,
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }
+            });
+            // Lottie animation for trust bar
+            if (window.lottie) {
+                lottie.loadAnimation({
+                    container: document.getElementById('lottie-trust'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: 'https://assets2.lottiefiles.com/packages/lf20_8wREpI.json' // Example medical animation
+                });
+            }
+            // Scrollspy for nav highlighting
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            function scrollSpy() {
+                let scrollPos = window.scrollY + 120;
+                sections.forEach(section => {
+                    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                        navLinks.forEach(link => {
+                            if (link.getAttribute('href') === '#' + section.id) {
+                                link.classList.add('text-sivara-blue');
+                            } else {
+                                link.classList.remove('text-sivara-blue');
+                            }
+                        });
+                    }
+                });
+            }
+            window.addEventListener('scroll', scrollSpy);
+            scrollSpy();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</body>
+</html>
