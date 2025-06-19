@@ -49,30 +49,29 @@
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
-        /* Dropdown fix: keep open on hover of button or dropdown */
-        .group:hover .group-hover\:opacity-100,
-        .group:focus-within .group-hover\:opacity-100 {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transition-delay: 0s;
-        }
-        .group .group-hover\:opacity-100 {
-            transition: opacity 0.2s, visibility 0.2s;
-            transition-delay: 0.15s;
-        }
-        .group .group-hover\:opacity-100 {
-            visibility: hidden;
-            opacity: 0;
+        /* --- Corrected Dropdown Visibility --- */
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.2s ease-in-out;
         }
         .group.open > .group-hover\:opacity-100 {
             opacity: 1 !important;
             visibility: visible !important;
             transition-delay: 0s;
         }
+        /* Bridge gap between button and dropdown */
+        .group:hover .invisible.opacity-0 {
+            visibility: visible;
+            opacity: 1;
+        }
 
         /* Menu hover color (header & footer) */
         .menu-link, .footer-link {
             transition: color 0.2s;
+        }
+        .menu-link, .dropdown-link {
+            color: #2A3439;
         }
         .menu-link:hover, .footer-link:hover {
             color: #7C9ED9 !important;
@@ -179,16 +178,10 @@
             background-color: #eaf1fa;
             cursor: pointer;
         }
-        .dropdown-menu {
-            transition: opacity 0.2s, visibility 0.2s;
-            transition-delay: 0.15s;
-            visibility: hidden;
-            opacity: 0;
-        }
-        .group.open > .dropdown-menu {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transition-delay: 0s;
+        .accordion-header:hover .text-sivara-gunmetal,
+        .accordion-header:hover .accordion-icon {
+            color: #7C9ED9 !important;
+            transition: color 0.2s;
         }
         /* Accordion icon centering and rotation for FAQ */
         .accordion-icon {
@@ -222,42 +215,194 @@
             background-color: #eaf1fa;
             border-radius: 1rem;
         }
+        /* --- nav-on-dark: ensure this is last for specificity --- */
+        .nav-on-dark .menu-link,
+        .nav-on-dark .dropdown-link {
+            color: #F2F0E6 !important;
+        }
+        .nav-on-dark .dropdown-menu {
+            background-color: #2A3439 !important;
+            color: #F2F0E6 !important;
+        }
+        header {
+            backdrop-filter: blur(8px);
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        header.nav-on-dark {
+            background-color: #2A3439 !important;
+        }
+
+        /* Mobile menu styling */
+        @media (max-width: 767px) {
+            header.menu-open {
+                background-color: #F2F0E6;
+            }
+        }
+        
+        #mobile-menu {
+            background-color: #F2F0E6;
+        }
+        
+        #mobile-menu .border-b {
+            border-color: #e5e7eb;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #mobile-menu a {
+            padding: 0.75rem 0;
+            display: block;
+            color: #2A3439;
+        }
+
+        #about-mobile-menu,
+        #services-mobile-menu {
+            background-color: #F2F0E6;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+        }
+
+        #about-mobile-menu a,
+        #services-mobile-menu a {
+            padding: 0.75rem 0;
+            color: #2A3439;
+            transition: color 0.2s;
+        }
+
+        #about-mobile-menu a:hover,
+        #services-mobile-menu a:hover {
+            color: #7C9ED9;
+        }
+
+        /* Reviews navigation arrows */
+        .review-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .review-nav-button svg {
+            color: #F2F0E6;
+            transition: transform 0.2s ease;
+        }
+
+        .review-nav-button:hover svg {
+            transform: scale(1.1);
+        }
+
+        .review-nav-prev {
+            left: 0;
+        }
+
+        .review-nav-next {
+            right: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .review-nav-button {
+                display: none;
+            }
+        }
+
+        /* Prevent horizontal scrolling */
+        .swiper-container {
+            overflow: hidden;
+            width: 100%;
+            padding: 0 2rem;  /* Add padding to prevent arrows from being cut off */
+        }
+
+        @media (min-width: 1024px) {
+            .swiper-container {
+                padding: 0;  /* Remove padding on desktop where arrows are hidden */
+            }
+        }
+
+        /* Ensure container doesn't cause overflow */
+        .container {
+            overflow-x: hidden;
+        }
+
+        /* --- Dropdown Visibility Fix --- */
+        nav.container {
+            overflow: visible;
+        }
+
+        /* Ensure minimum spacing between elements */
+        @media (max-width: 1024px) {
+            nav .hidden.md\:flex {
+                margin-right: 2rem !important;
+            }
+            nav a.text-2xl {
+                margin-right: 2rem !important;
+            }
+        }
+
+        /* Dropdown submenu hover background */
+    </style>
+    <!-- High-specificity nav-on-dark override -->
+    <style>
+      header.nav-on-dark .menu-link,
+      header.nav-on-dark .dropdown-link {
+        color: #F2F0E6 !important;
+      }
+      header.nav-on-dark .dropdown-menu {
+        background-color: #2A3439 !important;
+        color: #F2F0E6 !important;
+      }
     </style>
 </head>
 <body class="antialiased">
     <div id="scroll-progress"></div>
-    <header class="bg-sivara-alabaster/80 backdrop-blur-md sticky top-0 z-50 shadow-sm" id="main-header">
+    <header class="sticky top-0 z-50 shadow-sm" id="main-header">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-sivara-gunmetal flex items-center">
+            <a href="#home" class="text-2xl font-bold flex items-center mr-8">
                 <img src="./Sivara Logo Exports/Vector/Sivara Logo.svg" alt="Sivara Health Logo" class="mr-2" style="height: 56px; width: auto;" />
             </a>
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-8 mr-8">
                 <div class="relative group">
-                    <button class="menu-link text-sivara-gunmetal font-semibold flex items-center focus:outline-none" onclick="window.location.href='index.html'">
+                    <button class="menu-link font-semibold flex items-center focus:outline-none" onclick="window.location.href='index.html'">
                         About
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
-                        <a href="#difference" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Who We Are</a>
-                        <a href="#journey" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Your Journey</a>
-                        <a href="#pricing" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Pricing</a>
-                        <a href="#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">FAQs</a>
-                        <a href="#stories" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Reviews</a>
+                    <div class="absolute left-0 top-full w-48">
+                        <div class="invisible opacity-0 w-full h-2 bg-transparent"></div>
+                        <div class="dropdown-menu w-full bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
+                            <a href="#difference" class="dropdown-link block px-4 py-2">Who We Are</a>
+                            <a href="#journey" class="dropdown-link block px-4 py-2">Your Journey</a>
+                            <a href="#pricing" class="dropdown-link block px-4 py-2">Pricing</a>
+                            <a href="#quality-value" class="dropdown-link block px-4 py-2">FAQs</a>
+                            <a href="#stories" class="dropdown-link block px-4 py-2">Reviews</a>
+                        </div>
                     </div>
                 </div>
                 <div class="relative group">
-                    <button class="menu-link text-sivara-gunmetal font-semibold flex items-center focus:outline-none" onclick="window.location.href='services.html'">
+                    <button class="menu-link font-semibold flex items-center focus:outline-none" onclick="window.location.href='services.html'">
                         Services
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
-                        <a href="services.html#procedures" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Procedures</a>
-                        <a href="services.html#packages" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Packages</a>
-                        <a href="services.html#hospitals" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Hospitals</a>
+                    <div class="absolute left-0 top-full w-48">
+                        <div class="invisible opacity-0 w-full h-2 bg-transparent"></div>
+                        <div class="dropdown-menu w-full bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
+                            <a href="services.html#procedures" class="dropdown-link block px-4 py-2">Procedures</a>
+                            <a href="services.html#packages" class="dropdown-link block px-4 py-2">Packages</a>
+                            <a href="services.html#hospitals" class="dropdown-link block px-4 py-2">Hospitals</a>
+                        </div>
                     </div>
                 </div>
-                <a href="articles.html" class="menu-link text-sivara-gunmetal font-semibold">Articles</a>
-                <a href="contact.html" class="menu-link text-sivara-gunmetal font-semibold">Contact</a>
+                <a href="impact.html" class="menu-link font-semibold">Impact</a>
+                <a href="articles.html" class="menu-link font-semibold">Articles</a>
+                <a href="contact.html" class="menu-link font-semibold">Contact</a>
             </div>
             <a href="#consultation" class="hidden md:inline-block bg-sivara-blue text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition transform hover:scale-105">
                 Free Consultation
@@ -268,31 +413,38 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
             <div class="border-b border-gray-200 pb-2">
-                <button id="about-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='index.html'">
+                <button id="about-mobile-toggle" class="w-full text-left font-semibold flex items-center justify-between py-2">
                     About
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="about-mobile-menu" class="hidden pl-4">
-                    <a href="#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
-                    <a href="#journey" class="block text-sivara-gunmetal py-1">Your Journey</a>
-                    <a href="#pricing" class="block text-sivara-gunmetal py-1">Pricing</a>
-                    <a href="#quality-value" class="block text-sivara-gunmetal py-1">FAQs</a>
-                    <a href="#stories" class="block text-sivara-gunmetal py-1">Reviews</a>
+                    <a href="#difference" class="block py-1">Who We Are</a>
+                    <a href="#journey" class="block py-1">Your Journey</a>
+                    <a href="#pricing" class="block py-1">Pricing</a>
+                    <a href="#quality-value" class="block py-1">FAQs</a>
+                    <a href="#stories" class="block py-1">Reviews</a>
                 </div>
             </div>
             <div class="border-b border-gray-200 pb-2">
-                <button id="services-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='services.html'">
+                <button id="services-mobile-toggle" class="w-full text-left font-semibold flex items-center justify-between py-2">
                     Services
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="services-mobile-menu" class="hidden pl-4">
-                    <a href="services.html#procedures" class="block text-sivara-gunmetal py-1">Procedures</a>
-                    <a href="services.html#packages" class="block text-sivara-gunmetal py-1">Packages</a>
-                    <a href="services.html#hospitals" class="block text-sivara-gunmetal py-1">Hospitals</a>
+                    <a href="services.html#procedures" class="block py-1">Procedures</a>
+                    <a href="services.html#packages" class="block py-1">Packages</a>
+                    <a href="services.html#hospitals" class="block py-1">Hospitals</a>
                 </div>
             </div>
-            <a href="articles.html" class="block text-sivara-gunmetal font-semibold py-2">Articles</a>
-            <a href="contact.html" class="block text-sivara-gunmetal font-semibold py-2">Contact</a>
+            <div class="border-b border-gray-200 pb-2">
+                <a href="impact.html" class="block font-semibold py-2">Impact</a>
+            </div>
+            <div class="border-b border-gray-200 pb-2">
+                <a href="articles.html" class="block font-semibold py-2">Articles</a>
+            </div>
+            <div class="border-b border-gray-200 pb-2">
+                <a href="contact.html" class="block font-semibold py-2">Contact</a>
+            </div>
             <a href="#consultation" class="block mt-4 bg-sivara-blue text-white text-center font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition">
                 Free Consultation
             </a>
@@ -553,7 +705,19 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="0">
                             <div class="bg-white p-8 rounded-lg shadow-lg">
-                                <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=J.S." alt="Patient John S." class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-sivara-blue/20">
+                                <div class="relative flex items-center justify-center mb-4">
+                                    <button class="review-nav-button review-nav-prev swiper-button-prev">
+                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=J.S." alt="Patient John S." class="w-24 h-24 rounded-full border-4 border-sivara-blue/20">
+                                    <button class="review-nav-button review-nav-next swiper-button-next">
+                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
                                 <p class="text-sivara-gunmetal/80 italic mb-4">"After being told I'd have to wait 18 months on the NHS, I was desperate. The Sivara team were incredible. From the first call with their doctor to the care in Bangkok, I felt supported. I'm now pain-free and have my life back."</p>
                                 <p class="font-bold text-sivara-gunmetal text-right">- John S., United Kingdom</p>
                                 <p class="text-sm text-sivara-gunmetal/60 text-right">Knee Replacement</p>
@@ -561,7 +725,19 @@
                         </div>
                         <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="100">
                             <div class="bg-white p-8 rounded-lg shadow-lg">
-                                <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=M.P." alt="Patient Mary P." class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-sivara-blue/20">
+                                <div class="relative flex items-center justify-center mb-4">
+                                    <button class="review-nav-button review-nav-prev swiper-button-prev">
+                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=M.P." alt="Patient Mary P." class="w-24 h-24 rounded-full border-4 border-sivara-blue/20">
+                                    <button class="review-nav-button review-nav-next swiper-button-next">
+                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
                                 <p class="text-sivara-gunmetal/80 italic mb-4">"The professionalism and kindness were second to none. The hospital was more like a five-star hotel, and the savings were substantial, even with the premium concierge service. I couldn't be happier with the result of my hip surgery."</p>
                                 <p class="font-bold text-sivara-gunmetal text-right">- Mary P., Australia</p>
                                 <p class="text-sm text-sivara-gunmetal/60 text-right">Hip Replacement</p>
@@ -569,18 +745,25 @@
                         </div>
                         <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="200">
                             <div class="bg-white p-8 rounded-lg shadow-lg">
-                                <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=D.L." alt="Patient David L." class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-sivara-blue/20">
+                                <div class="relative flex items-center justify-center mb-4">
+                                    <button class="review-nav-button review-nav-prev swiper-button-prev">
+                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=D.L." alt="Patient David L." class="w-24 h-24 rounded-full border-4 border-sivara-blue/20">
+                                    <button class="review-nav-button review-nav-next swiper-button-next">
+                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
                                 <p class="text-sivara-gunmetal/80 italic mb-4">"As someone from the US, navigating healthcare is always a concern. Sivara's transparency on costs and their physician-led approach gave me the confidence I needed. My spine feels better than it has in years. Highly recommend."</p>
                                 <p class="font-bold text-sivara-gunmetal text-right">- David L., USA</p>
-                                 <p class="text-sm text-sivara-gunmetal/60 text-right">Spine Surgery</p>
+                                <p class="text-sm text-sivara-gunmetal/60 text-right">Spine Surgery</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Remove Pagination -->
-                    <!-- <div class="swiper-pagination"></div> -->
-                    <!-- Remove Navigation -->
-                    <!-- <div class="swiper-button-next"></div> -->
-                    <!-- <div class="swiper-button-prev"></div> -->
                 </div>
             </div>
         </section>
@@ -626,9 +809,9 @@
 
     <footer class="bg-sivara-alabaster border-t border-gray-200">
         <div class="container mx-auto py-12 px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
                 <div>
-                    <h4 class="font-bold text-lg text-sivara-gunmetal mb-4"><a href="index.html#home" class="footer-link">About</a></h4>
+                    <h4 class="font-bold text-lg text-sivara-gunmetal mb-4"><a href="#home" class="footer-link">About</a></h4>
                     <a href="#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
                     <a href="#journey" class="footer-link block text-sivara-gunmetal/70 mb-2">Your Journey</a>
                     <a href="#pricing" class="footer-link block text-sivara-gunmetal/70 mb-2">Pricing</a>
@@ -640,6 +823,9 @@
                     <a href="services.html#procedures" class="footer-link block text-sivara-gunmetal/70 mb-2">Procedures</a>
                     <a href="services.html#packages" class="footer-link block text-sivara-gunmetal/70 mb-2">Packages</a>
                     <a href="services.html#hospitals" class="footer-link block text-sivara-gunmetal/70">Hospitals</a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="impact.html" class="footer-link">Impact</a></h4>
                 </div>
                 <div>
                     <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="articles.html" class="footer-link">Articles</a></h4>
@@ -661,10 +847,33 @@
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            const aboutMobileToggle = document.getElementById('about-mobile-toggle');
+            const aboutMobileMenu = document.getElementById('about-mobile-menu');
+            const servicesMobileToggle = document.getElementById('services-mobile-toggle');
+            const servicesMobileMenu = document.getElementById('services-mobile-menu');
             
             mobileMenuButton.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
+                document.querySelector('header').classList.toggle('menu-open');
             });
+
+            if (aboutMobileToggle && aboutMobileMenu) {
+                aboutMobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    aboutMobileMenu.classList.toggle('hidden');
+                    const arrow = this.querySelector('svg');
+                    arrow.style.transform = aboutMobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                });
+            }
+
+            if (servicesMobileToggle && servicesMobileMenu) {
+                servicesMobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    servicesMobileMenu.classList.toggle('hidden');
+                    const arrow = this.querySelector('svg');
+                    arrow.style.transform = servicesMobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                });
+            }
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -760,20 +969,14 @@
 
                 header.addEventListener('click', () => {
                     const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-
                     accordionItems.forEach(i => {
                         i.querySelector('.accordion-content').style.maxHeight = '0px';
-                        i.querySelector('.accordion-icon').textContent = '+';
                         i.querySelector('.accordion-icon').classList.remove('open');
                     });
                     
                     if (!isOpen) {
                         content.style.maxHeight = content.scrollHeight + 'px';
-                        icon.textContent = '+';
                         icon.classList.add('open');
-                    } else {
-                        icon.textContent = '+';
-                        icon.classList.remove('open');
                     }
                 });
             });
@@ -841,60 +1044,6 @@
             procedureSelect.addEventListener('change', updateSavingsResult);
             updateSavingsResult();
 
-            // Mobile About dropdown
-            const aboutToggle = document.getElementById('about-mobile-toggle');
-            const aboutMenu = document.getElementById('about-mobile-menu');
-            if (aboutToggle && aboutMenu) {
-                aboutToggle.addEventListener('click', function () {
-                    aboutMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Desktop About dropdown: close on sub-menu click
-            const aboutGroup = document.querySelector('.group');
-            const aboutButton = aboutGroup ? aboutGroup.querySelector('button') : null;
-            const aboutLinks = aboutGroup ? aboutGroup.querySelectorAll('.dropdown-link') : [];
-            aboutLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Smooth scroll to section
-                    const href = this.getAttribute('href');
-                    if (href && href.startsWith('#')) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            target.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }
-                    // Add force-closed class to close dropdown
-                    if (aboutGroup) {
-                        aboutGroup.classList.add('force-closed');
-                        window.aboutDropdownForceClosed = true;
-                    }
-                    if (aboutButton) {
-                        aboutButton.blur();
-                    }
-                });
-            });
-            // Prevent dropdown from reopening until mouse leaves .group
-            if (aboutGroup) {
-                aboutGroup.addEventListener('mouseenter', function() {
-                    if (window.aboutDropdownForceClosed) {
-                        aboutGroup.classList.add('force-closed');
-                    }
-                });
-                aboutGroup.addEventListener('mouseover', function() {
-                    if (window.aboutDropdownForceClosed) {
-                        aboutGroup.classList.add('force-closed');
-                    }
-                });
-                aboutGroup.addEventListener('mouseleave', function() {
-                    if (window.aboutDropdownForceClosed) {
-                        aboutGroup.classList.remove('force-closed');
-                        window.aboutDropdownForceClosed = false;
-                    }
-                });
-            }
-
             // Initialize AOS
             if (window.AOS) {
                 AOS.init({
@@ -917,13 +1066,20 @@
             // Swiper carousel for stories
             new Swiper('.swiper-container', {
                 loop: true,
-                // pagination: { el: '.swiper-pagination', clickable: true },
-                // navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
                 slidesPerView: 1,
                 spaceBetween: 24,
                 breakpoints: {
                     768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 }
+                    1024: { 
+                        slidesPerView: 3,
+                        navigation: {
+                            enabled: false
+                        }
+                    }
                 }
             });
             // Lottie animation for trust bar
@@ -975,5 +1131,28 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script>
+    const header = document.getElementById('main-header');
+    const darkSection = document.getElementById('consultation');
+    function checkNavOnDark() {
+        if (!header || !darkSection) {
+            console.log('Header or dark section not found');
+            return;
+        }
+        const headerRect = header.getBoundingClientRect();
+        const sectionRect = darkSection.getBoundingClientRect();
+        if (headerRect.bottom > sectionRect.top && headerRect.top < sectionRect.bottom) {
+            header.classList.add('nav-on-dark');
+            console.log('nav-on-dark ON');
+        } else {
+            header.classList.remove('nav-on-dark');
+            console.log('nav-on-dark OFF');
+        }
+    }
+    window.addEventListener('scroll', checkNavOnDark);
+    window.addEventListener('resize', checkNavOnDark);
+    checkNavOnDark();
+    </script>
 </body>
 </html>
+

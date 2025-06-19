@@ -149,15 +149,101 @@
             box-shadow: 0 8px 32px 0 #7C9ED930;
             z-index: 2;
         }
+
+        /* Mobile menu styling */
+        @media (max-width: 767px) {
+            header.menu-open {
+                background-color: #F2F0E6;
+            }
+        }
+        
+        #mobile-menu {
+            background-color: #F2F0E6;
+        }
+        
+        #mobile-menu .border-b {
+            border-color: #e5e7eb;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #mobile-menu a {
+            padding: 0.75rem 0;
+            display: block;
+            color: #2A3439;
+        }
+
+        #about-mobile-menu,
+        #services-mobile-menu {
+            background-color: #F2F0E6;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+        }
+
+        #about-mobile-menu a,
+        #services-mobile-menu a {
+            padding: 0.75rem 0;
+            color: #2A3439;
+            transition: color 0.2s;
+        }
+
+        #about-mobile-menu a:hover,
+        #services-mobile-menu a:hover {
+            color: #7C9ED9;
+        }
+
+        /* Ensure header stays above all content */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: transparent;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: background-color 0.3s ease;
+        }
+
+        /* Add padding to main to account for fixed header */
+        main {
+            padding-top: 84px; /* Adjust this value to match your header height */
+        }
+
+        /* Prevent horizontal scrolling while keeping fixed header */
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        nav.container {
+            overflow: visible;
+        }
+
+        /* Ensure minimum spacing between elements */
+        @media (max-width: 1024px) {
+            nav .hidden.md\:flex {
+                margin-right: 2rem !important;
+            }
+            nav a.text-2xl {
+                margin-right: 2rem !important;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
-    <header class="bg-sivara-alabaster/80 backdrop-blur-md sticky top-0 z-50 shadow-sm" id="main-header">
+    <header id="main-header">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html#home" class="text-2xl font-bold text-sivara-gunmetal flex items-center">
+            <a href="index.html" class="text-2xl font-bold flex items-center mr-8">
                 <img src="./Sivara Logo Exports/Vector/Sivara Logo.svg" alt="Sivara Health Logo" class="mr-2" style="height: 56px; width: auto;" />
             </a>
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-8 mr-8">
                 <div class="relative group">
                     <button class="menu-link text-sivara-gunmetal font-semibold flex items-center focus:outline-none" onclick="window.location.href='index.html'">
                         About
@@ -182,6 +268,7 @@
                         <a href="services.html#hospitals" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Hospitals</a>
                     </div>
                 </div>
+                <a href="impact.html" class="menu-link text-sivara-gunmetal font-semibold">Impact</a>
                 <a href="articles.html" class="menu-link text-sivara-gunmetal font-semibold">Articles</a>
                 <a href="contact.html" class="menu-link text-sivara-blue font-semibold">Contact</a>
             </div>
@@ -194,9 +281,9 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
             <div class="border-b border-gray-200 pb-2">
-                <button id="about-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='index.html'">
+                <button id="about-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2">
                     About
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="about-mobile-menu" class="hidden pl-4">
                     <a href="index.html#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
@@ -207,9 +294,9 @@
                 </div>
             </div>
             <div class="border-b border-gray-200 pb-2">
-                <button id="services-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='services.html'">
+                <button id="services-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2">
                     Services
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="services-mobile-menu" class="hidden pl-4">
                     <a href="services.html#procedures" class="block text-sivara-gunmetal py-1">Procedures</a>
@@ -217,8 +304,15 @@
                     <a href="services.html#hospitals" class="block text-sivara-gunmetal py-1">Hospitals</a>
                 </div>
             </div>
-            <a href="articles.html" class="block text-sivara-gunmetal font-semibold py-2">Articles</a>
-            <a href="contact.html" class="block text-sivara-blue font-semibold py-2">Contact</a>
+            <div class="border-b border-gray-200 pb-2">
+                <a href="impact.html" class="block text-sivara-gunmetal font-semibold py-2">Impact</a>
+            </div>
+            <div class="border-b border-gray-200 pb-2">
+                <a href="articles.html" class="block text-sivara-gunmetal font-semibold py-2">Articles</a>
+            </div>
+            <div class="border-b border-gray-200 pb-2">
+                <a href="contact.html" class="block text-sivara-blue font-semibold py-2">Contact</a>
+            </div>
             <a href="index.html#consultation" class="block mt-4 bg-sivara-blue text-white text-center font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition">
                 Free Consultation
             </a>
@@ -418,7 +512,7 @@
 
     <footer class="bg-sivara-alabaster border-t border-gray-200">
         <div class="container mx-auto py-12 px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
                 <div>
                     <h4 class="font-bold text-lg text-sivara-gunmetal mb-4"><a href="index.html#home" class="footer-link">About</a></h4>
                     <a href="index.html#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
@@ -432,6 +526,9 @@
                     <a href="services.html#procedures" class="footer-link block text-sivara-gunmetal/70 mb-2">Procedures</a>
                     <a href="services.html#packages" class="footer-link block text-sivara-gunmetal/70 mb-2">Packages</a>
                     <a href="services.html#hospitals" class="footer-link block text-sivara-gunmetal/70">Hospitals</a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="impact.html" class="footer-link">Impact</a></h4>
                 </div>
                 <div>
                     <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="articles.html" class="footer-link">Articles</a></h4>
@@ -460,20 +557,25 @@
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', function() {
                     mobileMenu.classList.toggle('hidden');
+                    document.querySelector('header').classList.toggle('menu-open');
                 });
             }
 
             if (aboutMobileToggle && aboutMobileMenu) {
                 aboutMobileToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
+                    e.preventDefault();
                     aboutMobileMenu.classList.toggle('hidden');
+                    const arrow = this.querySelector('svg');
+                    arrow.style.transform = aboutMobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
                 });
             }
 
             if (servicesMobileToggle && servicesMobileMenu) {
                 servicesMobileToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
+                    e.preventDefault();
                     servicesMobileMenu.classList.toggle('hidden');
+                    const arrow = this.querySelector('svg');
+                    arrow.style.transform = servicesMobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
                 });
             }
 
