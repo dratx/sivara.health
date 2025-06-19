@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sivara Health</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F0E6; /* Alabaster */
+            color: #2A3439; /* Gunmetal */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .sivara-blue { color: #7C9ED9; }
+        .sivara-mint { color: #98FF98; }
+        .sivara-ice-blue { color: #99FFFF; }
+        .bg-sivara-alabaster { background-color: #F2F0E6; }
+        .bg-sivara-gunmetal { background-color: #2A3439; }
+        .bg-sivara-blue { background-color: #7C9ED9; }
+        .border-sivara-blue { border-color: #7C9ED9; }
+        .text-sivara-gunmetal { color: #2A3439; }
+        .text-sivara-alabaster { color: #F2F0E6; }
+        
+        /* Dropdown fix: keep open on hover of button or dropdown */
+        .group:hover .group-hover\:opacity-100,
+        .group:focus-within .group-hover\:opacity-100 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
+        .group .group-hover\:opacity-100 {
+            transition: opacity 0.2s, visibility 0.2s;
+            transition-delay: 0.15s;
+        }
+        .group .group-hover\:opacity-100 {
+            visibility: hidden;
+            opacity: 0;
+        }
+        .group:hover > .group-hover\:opacity-100,
+        .group:focus-within > .group-hover\:opacity-100 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
+
+        /* Menu hover color (header & footer) */
+        .menu-link, .footer-link {
+            transition: color 0.2s;
+        }
+        .menu-link:hover, .footer-link:hover {
+            color: #7C9ED9 !important;
+        }
+        /* Dropdown submenu hover background */
+        .dropdown-link:hover {
+            background-color: #7C9ED9 !important;
+            color: #fff !important;
+            border-radius: 0.5rem !important;
+        }
+        .group.force-closed .group-hover\:opacity-100 {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition-delay: 0s !important;
+        }
+        
+        /* Form styles */
+        .form-input {
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus {
+            border-color: #7C9ED9;
+            box-shadow: 0 0 0 3px rgba(124, 158, 217, 0.1);
+            outline: none;
+        }
+        .form-input:hover {
+            border-color: #7C9ED9;
+        }
+        
+        /* Button animations */
+        .btn-animate {
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn-animate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px 0 #7C9ED930;
+        }
+        
+        /* Success message */
+        .success-message {
+            background-color: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+        
+        /* Contact info cards */
+        .contact-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px 0 rgba(124, 158, 217, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px 0 rgba(124, 158, 217, 0.15);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-sivara-alabaster/80 backdrop-blur-md sticky top-0 z-50 shadow-sm" id="main-header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html#home" class="text-2xl font-bold text-sivara-gunmetal flex items-center">
+                <img src="./Sivara Logo Exports/Vector/Sivara Logo.svg" alt="Sivara Health Logo" class="mr-2" style="height: 56px; width: auto;" />
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <div class="relative group">
+                    <button class="menu-link text-sivara-gunmetal font-semibold flex items-center focus:outline-none" onclick="window.location.href='index.html'">
+                        About
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                        <a href="index.html#difference" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Who We Are</a>
+                        <a href="index.html#journey" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Your Journey</a>
+                        <a href="index.html#pricing" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Pricing</a>
+                        <a href="index.html#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Why Thailand</a>
+                        <a href="index.html#stories" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Reviews</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="menu-link text-sivara-gunmetal font-semibold flex items-center focus:outline-none" onclick="window.location.href='services.html'">
+                        Services
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                        <a href="services.html#procedures" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Procedures</a>
+                        <a href="services.html#packages" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Packages</a>
+                        <a href="services.html#hospitals" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Hospitals</a>
+                    </div>
+                </div>
+                <a href="articles.html" class="menu-link text-sivara-gunmetal font-semibold">Articles</a>
+                <a href="contact.html" class="menu-link text-sivara-blue font-semibold">Contact</a>
+            </div>
+            <a href="index.html#consultation" class="hidden md:inline-block bg-sivara-blue text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition transform hover:scale-105">
+                Free Consultation
+            </a>
+            <button id="mobile-menu-button" class="md:hidden">
+                 <svg class="w-6 h-6 text-sivara-gunmetal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <div class="border-b border-gray-200 pb-2">
+                <button id="about-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='index.html'">
+                    About
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="about-mobile-menu" class="hidden pl-4">
+                    <a href="index.html#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
+                    <a href="index.html#journey" class="block text-sivara-gunmetal py-1">Your Journey</a>
+                    <a href="index.html#pricing" class="block text-sivara-gunmetal py-1">Pricing</a>
+                    <a href="index.html#quality-value" class="block text-sivara-gunmetal py-1">Why Thailand</a>
+                    <a href="index.html#stories" class="block text-sivara-gunmetal py-1">Reviews</a>
+                </div>
+            </div>
+            <div class="border-b border-gray-200 pb-2">
+                <button id="services-mobile-toggle" class="w-full text-left text-sivara-gunmetal font-semibold flex items-center justify-between py-2" onclick="window.location.href='services.html'">
+                    Services
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="services-mobile-menu" class="hidden pl-4">
+                    <a href="services.html#procedures" class="block text-sivara-gunmetal py-1">Procedures</a>
+                    <a href="services.html#packages" class="block text-sivara-gunmetal py-1">Packages</a>
+                    <a href="services.html#hospitals" class="block text-sivara-gunmetal py-1">Hospitals</a>
+                </div>
+            </div>
+            <a href="articles.html" class="block text-sivara-gunmetal font-semibold py-2">Articles</a>
+            <a href="contact.html" class="block text-sivara-blue font-semibold py-2">Contact</a>
+            <a href="index.html#consultation" class="block mt-4 bg-sivara-blue text-white text-center font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition">
+                Free Consultation
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 bg-gradient-to-br from-sivara-alabaster to-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-sivara-gunmetal mb-4">Get in Touch</h1>
+                <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto">Ready to start your journey to better health? Contact our team for a free consultation and personalized treatment plan.</p>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="contact-card p-8 text-center">
+                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Email Us</h3>
+                        <p class="text-sivara-gunmetal/70 mb-4">Get in touch via email for detailed inquiries</p>
+                        <a href="mailto:ashley@sivara.health" class="text-sivara-blue hover:text-sivara-gunmetal transition">ashley@sivara.health</a><br>
+                        <a href="mailto:ern@sivara.health" class="text-sivara-blue hover:text-sivara-gunmetal transition">ern@sivara.health</a>
+                    </div>
+                    
+                    <div class="contact-card p-8 text-center">
+                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Response Time</h3>
+                        <p class="text-sivara-gunmetal/70 mb-4">We typically respond within</p>
+                        <p class="text-sivara-blue font-semibold">24 hours</p>
+                    </div>
+                    
+                    <div class="contact-card p-8 text-center">
+                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Location</h3>
+                        <p class="text-sivara-gunmetal/70 mb-4">Serving patients worldwide with care in</p>
+                        <p class="text-sivara-blue font-semibold">Thailand</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="pb-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold text-sivara-gunmetal mb-4">Send us a Message</h2>
+                            <p class="text-sivara-gunmetal/70">Fill out the form below and we'll get back to you as soon as possible.</p>
+                        </div>
+
+                        <!-- Success Message (hidden by default) -->
+                        <div id="success-message" class="hidden success-message border rounded-lg p-4 mb-6">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="font-semibold">Thank you!</span> Your message has been sent successfully. We'll be in touch soon.
+                            </div>
+                        </div>
+
+                        <form name="contact" 
+                              method="POST" 
+                              netlify 
+                              netlify-honeypot="bot-field"
+                              data-netlify-recaptcha="true"
+                              class="space-y-6"
+                              id="contact-form">
+                            
+                            <!-- Hidden fields for Netlify -->
+                            <input type="hidden" name="form-name" value="contact">
+                            <div hidden>
+                                <input name="bot-field">
+                            </div>
+
+                            <!-- Name Field -->
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-sivara-gunmetal mb-2">Full Name *</label>
+                                <input type="text" 
+                                       id="name" 
+                                       name="name" 
+                                       required 
+                                       class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sivara-blue/20"
+                                       placeholder="Enter your full name">
+                            </div>
+
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-sivara-gunmetal mb-2">Email Address *</label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       required 
+                                       class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sivara-blue/20"
+                                       placeholder="Enter your email address">
+                            </div>
+
+                            <!-- Subject Field -->
+                            <div>
+                                <label for="subject" class="block text-sm font-semibold text-sivara-gunmetal mb-2">Subject</label>
+                                <select id="subject" 
+                                        name="subject" 
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sivara-blue/20">
+                                    <option value="">Select a subject</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Free Consultation">Free Consultation Request</option>
+                                    <option value="Procedure Information">Procedure Information</option>
+                                    <option value="Pricing & Packages">Pricing & Packages</option>
+                                    <option value="Medical Records">Medical Records</option>
+                                    <option value="Travel Arrangements">Travel Arrangements</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Message Field -->
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-sivara-gunmetal mb-2">Message *</label>
+                                <textarea id="message" 
+                                          name="message" 
+                                          required 
+                                          rows="6" 
+                                          class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sivara-blue/20 resize-vertical"
+                                          placeholder="Please describe your inquiry, including any specific procedures you're interested in, your timeline, and any questions you may have..."></textarea>
+                            </div>
+
+                            <!-- reCAPTCHA -->
+                            <div class="flex justify-center">
+                                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center">
+                                <button type="submit" 
+                                        class="bg-sivara-blue text-white font-bold py-4 px-8 rounded-lg shadow-md hover:bg-opacity-90 transition btn-animate w-full md:w-auto">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Information -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-sivara-gunmetal mb-8">Why Choose Sivara Health?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div>
+                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Expert Care</h3>
+                        <p class="text-sivara-gunmetal/70">UK-trained physicians and world-class medical facilities</p>
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Significant Savings</h3>
+                        <p class="text-sivara-gunmetal/70">Up to 70% savings compared to UK/US prices</p>
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Personal Support</h3>
+                        <p class="text-sivara-gunmetal/70">Dedicated care coordinators throughout your journey</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-sivara-alabaster border-t border-gray-200">
+        <div class="container mx-auto py-12 px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold text-lg text-sivara-gunmetal mb-4"><a href="index.html#home" class="footer-link">About</a></h4>
+                    <a href="index.html#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
+                    <a href="index.html#journey" class="footer-link block text-sivara-gunmetal/70 mb-2">Your Journey</a>
+                    <a href="index.html#pricing" class="footer-link block text-sivara-gunmetal/70 mb-2">Pricing</a>
+                    <a href="index.html#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">Why Thailand</a>
+                    <a href="index.html#stories" class="footer-link block text-sivara-gunmetal/70">Reviews</a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="services.html#procedures" class="footer-link">Services</a></h4>
+                    <a href="services.html#procedures" class="footer-link block text-sivara-gunmetal/70 mb-2">Procedures</a>
+                    <a href="services.html#packages" class="footer-link block text-sivara-gunmetal/70 mb-2">Packages</a>
+                    <a href="services.html#hospitals" class="footer-link block text-sivara-gunmetal/70">Hospitals</a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="articles.html" class="footer-link">Articles</a></h4>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sivara-gunmetal mb-4"><a href="contact.html" class="footer-link">Contact</a></h4>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sivara-gunmetal/60 text-sm">
+                <p>&copy; 2025 Sivara Health. All Rights Reserved.</p>
+                 <p class="mt-2">Disclaimer: Sivara Health functions exclusively as a medical-tourism facilitator. We do not diagnose conditions, prescribe treatments, or provide medical advice. All clinical decisions and procedures are the sole responsibility of the licensed healthcare professionals who care for you. Every surgery carries inherent risks and individual results may vary. Sivara Health assumes no liability for medical outcomes, complications, or losses arising from the care you receive.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const aboutMobileToggle = document.getElementById('about-mobile-toggle');
+            const aboutMobileMenu = document.getElementById('about-mobile-menu');
+            const servicesMobileToggle = document.getElementById('services-mobile-toggle');
+            const servicesMobileMenu = document.getElementById('services-mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (aboutMobileToggle && aboutMobileMenu) {
+                aboutMobileToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    aboutMobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (servicesMobileToggle && servicesMobileMenu) {
+                servicesMobileToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    servicesMobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Form submission handling
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // Let Netlify handle the form submission
+                    // Show success message after a delay (simulating form processing)
+                    setTimeout(function() {
+                        document.getElementById('success-message').classList.remove('hidden');
+                        form.reset();
+                        // Scroll to success message
+                        document.getElementById('success-message').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
