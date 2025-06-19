@@ -43,8 +43,7 @@
             visibility: hidden;
             opacity: 0;
         }
-        .group:hover > .group-hover\:opacity-100,
-        .group:focus-within > .group-hover\:opacity-100 {
+        .group.open > .group-hover\:opacity-100 {
             opacity: 1 !important;
             visibility: visible !important;
             transition-delay: 0s;
@@ -116,6 +115,17 @@
             color: #7C9ED9;
             font-size: 0.875rem;
         }
+        .dropdown-menu {
+            transition: opacity 0.2s, visibility 0.2s;
+            transition-delay: 0.15s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .group.open > .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -134,7 +144,7 @@
                         <a href="index.html#difference" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Who We Are</a>
                         <a href="index.html#journey" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Your Journey</a>
                         <a href="index.html#pricing" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Pricing</a>
-                        <a href="index.html#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Why Thailand</a>
+                        <a href="index.html#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">FAQs</a>
                         <a href="index.html#stories" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Reviews</a>
                     </div>
                 </div>
@@ -169,7 +179,7 @@
                     <a href="index.html#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
                     <a href="index.html#journey" class="block text-sivara-gunmetal py-1">Your Journey</a>
                     <a href="index.html#pricing" class="block text-sivara-gunmetal py-1">Pricing</a>
-                    <a href="index.html#quality-value" class="block text-sivara-gunmetal py-1">Why Thailand</a>
+                    <a href="index.html#quality-value" class="block text-sivara-gunmetal py-1">FAQs</a>
                     <a href="index.html#stories" class="block text-sivara-gunmetal py-1">Reviews</a>
                 </div>
             </div>
@@ -234,7 +244,7 @@
                     <a href="index.html#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
                     <a href="index.html#journey" class="footer-link block text-sivara-gunmetal/70 mb-2">Your Journey</a>
                     <a href="index.html#pricing" class="footer-link block text-sivara-gunmetal/70 mb-2">Pricing</a>
-                    <a href="index.html#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">Why Thailand</a>
+                    <a href="index.html#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">FAQs</a>
                     <a href="index.html#stories" class="footer-link block text-sivara-gunmetal/70">Reviews</a>
                 </div>
                 <div>
@@ -358,6 +368,22 @@
             
             return card;
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Desktop nav dropdown: only one open at a time, JS controlled
+            const navGroups = document.querySelectorAll('nav .group');
+            navGroups.forEach(group => {
+                group.addEventListener('mouseenter', function() {
+                    navGroups.forEach(other => {
+                        other.classList.remove('open');
+                    });
+                    group.classList.add('open');
+                });
+                group.addEventListener('mouseleave', function() {
+                    group.classList.remove('open');
+                });
+            });
+        });
     </script>
 </body>
 </html>

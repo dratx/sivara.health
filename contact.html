@@ -43,8 +43,7 @@
             visibility: hidden;
             opacity: 0;
         }
-        .group:hover > .group-hover\:opacity-100,
-        .group:focus-within > .group-hover\:opacity-100 {
+        .group.open > .group-hover\:opacity-100 {
             opacity: 1 !important;
             visibility: visible !important;
             transition-delay: 0s;
@@ -109,6 +108,47 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 32px 0 rgba(124, 158, 217, 0.15);
         }
+
+        .dropdown-menu {
+            transition: opacity 0.2s, visibility 0.2s;
+            transition-delay: 0.15s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .group.open > .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
+
+        .parallax-hero-contact {
+            background-image: url('./Images/pexels-pixabay-460376.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .parallax-hero-contact::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.55));
+            z-index: 1;
+        }
+        .parallax-hero-contact > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Add or update card-hover for interactive cards */
+        .card-hover {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card-hover:hover {
+            transform: scale(1.04) translateY(-4px);
+            box-shadow: 0 8px 32px 0 #7C9ED930;
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -123,11 +163,11 @@
                         About
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
                         <a href="index.html#difference" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Who We Are</a>
                         <a href="index.html#journey" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Your Journey</a>
                         <a href="index.html#pricing" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Pricing</a>
-                        <a href="index.html#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Why Thailand</a>
+                        <a href="index.html#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">FAQs</a>
                         <a href="index.html#stories" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Reviews</a>
                     </div>
                 </div>
@@ -136,7 +176,7 @@
                         Services
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
                         <a href="services.html#procedures" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Procedures</a>
                         <a href="services.html#packages" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Packages</a>
                         <a href="services.html#hospitals" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Hospitals</a>
@@ -162,7 +202,7 @@
                     <a href="index.html#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
                     <a href="index.html#journey" class="block text-sivara-gunmetal py-1">Your Journey</a>
                     <a href="index.html#pricing" class="block text-sivara-gunmetal py-1">Pricing</a>
-                    <a href="index.html#quality-value" class="block text-sivara-gunmetal py-1">Why Thailand</a>
+                    <a href="index.html#quality-value" class="block text-sivara-gunmetal py-1">FAQs</a>
                     <a href="index.html#stories" class="block text-sivara-gunmetal py-1">Reviews</a>
                 </div>
             </div>
@@ -186,11 +226,11 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="py-20 bg-gradient-to-br from-sivara-alabaster to-gray-100">
+        <!-- Hero Section with Parallax Image (matches About page style) -->
+        <section class="py-20 md:py-32 parallax-hero-contact">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-sivara-gunmetal mb-4">Get in Touch</h1>
-                <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto">Ready to start your journey to better health? Contact our team for a free consultation and personalized treatment plan.</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-sivara-gunmetal mb-4 leading-tight reveal-text">Get in Touch</h1>
+                <p class="text-lg md:text-xl text-sivara-gunmetal/80 max-w-3xl mx-auto mb-8 reveal-text">Ready to start your journey to better health? Contact our team for a free consultation and personalized treatment plan.</p>
             </div>
         </section>
 
@@ -199,8 +239,8 @@
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     <div class="contact-card p-8 text-center">
-                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue" fill="none" stroke="#7C9ED9" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
@@ -211,8 +251,8 @@
                     </div>
                     
                     <div class="contact-card p-8 text-center">
-                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue" fill="none" stroke="#7C9ED9" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
@@ -222,8 +262,8 @@
                     </div>
                     
                     <div class="contact-card p-8 text-center">
-                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue" fill="none" stroke="#7C9ED9" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
@@ -343,28 +383,29 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-sivara-gunmetal mb-8">Why Choose Sivara Health?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    <div>
-                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    <div class="bg-white rounded-2xl shadow-lg card-hover p-8 flex flex-col items-center justify-center transition-transform duration-200">
+                        <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue" fill="none" stroke="#7C9ED9" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Expert Care</h3>
-                        <p class="text-sivara-gunmetal/70">UK-trained physicians and world-class medical facilities</p>
+                        <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Concierge Care</h3>
+                        <p class="text-sivara-gunmetal/70">Physician oversight from discovery to recovery and world-class facilities</p>
                     </div>
-                    <div>
-                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                    <div class="bg-white rounded-2xl shadow-lg card-hover p-8 flex flex-col items-center justify-center transition-transform duration-200">
+                        <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue" fill="none" stroke="#7C9ED9" viewBox="0 0 24 24">
+                                <text x="12" y="16" text-anchor="middle" font-size="18" font-family="Arial" fill="#7C9ED9">$</text>
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Significant Savings</h3>
                         <p class="text-sivara-gunmetal/70">Up to 70% savings compared to UK/US prices</p>
                     </div>
-                    <div>
-                        <div class="w-16 h-16 bg-sivara-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-sivara-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    <div class="bg-white rounded-2xl shadow-lg card-hover p-8 flex flex-col items-center justify-center transition-transform duration-200">
+                        <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue" fill="none" stroke="#7C9ED9" viewBox="0 0 32 32">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 28s-10-8.5-10-15.5C6 7.42 8.42 5 11.5 5c1.74 0 3.41 0.81 4.5 2.08C17.09 5.81 18.76 5 20.5 5 23.58 5 26 7.42 26 12.5 26 19.5 16 28 16 28z"/>
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold text-sivara-gunmetal mb-2">Personal Support</h3>
@@ -383,7 +424,7 @@
                     <a href="index.html#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
                     <a href="index.html#journey" class="footer-link block text-sivara-gunmetal/70 mb-2">Your Journey</a>
                     <a href="index.html#pricing" class="footer-link block text-sivara-gunmetal/70 mb-2">Pricing</a>
-                    <a href="index.html#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">Why Thailand</a>
+                    <a href="index.html#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">FAQs</a>
                     <a href="index.html#stories" class="footer-link block text-sivara-gunmetal/70">Reviews</a>
                 </div>
                 <div>
@@ -453,6 +494,22 @@
                     }, 1000);
                 });
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Desktop nav dropdown: only one open at a time, JS controlled
+            const navGroups = document.querySelectorAll('nav .group');
+            navGroups.forEach(group => {
+                group.addEventListener('mouseenter', function() {
+                    navGroups.forEach(other => {
+                        other.classList.remove('open');
+                    });
+                    group.classList.add('open');
+                });
+                group.addEventListener('mouseleave', function() {
+                    group.classList.remove('open');
+                });
+            });
         });
     </script>
 </body>

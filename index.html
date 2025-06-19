@@ -64,8 +64,7 @@
             visibility: hidden;
             opacity: 0;
         }
-        .group:hover > .group-hover\:opacity-100,
-        .group:focus-within > .group-hover\:opacity-100 {
+        .group.open > .group-hover\:opacity-100 {
             opacity: 1 !important;
             visibility: visible !important;
             transition-delay: 0s;
@@ -175,6 +174,54 @@
         .parallax-hero p {
             text-shadow: 0 1px 4px rgba(34,44,57,0.14), 0 1px 1px rgba(34,44,57,0.10);
         }
+        /* Add hover state for FAQ accordion headers */
+        .accordion-header:hover {
+            background-color: #eaf1fa;
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            transition: opacity 0.2s, visibility 0.2s;
+            transition-delay: 0.15s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .group.open > .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
+        /* Accordion icon centering and rotation for FAQ */
+        .accordion-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5em;
+            height: 1.5em;
+            font-size: 1.5em;
+            line-height: 1;
+            transition: color 0.2s, transform 0.3s;
+        }
+        .accordion-icon.open {
+            transform: rotate(45deg);
+        }
+        /* FAQ accordion item rounding and border fix */
+        #quality-value .accordion-item {
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+        #quality-value .accordion-header {
+            border-radius: 1rem;
+            transition: background 0.2s;
+        }
+        #quality-value .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+        #quality-value .accordion-item:hover .accordion-header {
+            background-color: #eaf1fa;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -190,11 +237,11 @@
                         About
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
                         <a href="#difference" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Who We Are</a>
                         <a href="#journey" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Your Journey</a>
                         <a href="#pricing" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Pricing</a>
-                        <a href="#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Why Thailand</a>
+                        <a href="#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">FAQs</a>
                         <a href="#stories" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Reviews</a>
                     </div>
                 </div>
@@ -203,7 +250,7 @@
                         Services
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
                         <a href="services.html#procedures" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Procedures</a>
                         <a href="services.html#packages" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Packages</a>
                         <a href="services.html#hospitals" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Hospitals</a>
@@ -229,7 +276,7 @@
                     <a href="#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
                     <a href="#journey" class="block text-sivara-gunmetal py-1">Your Journey</a>
                     <a href="#pricing" class="block text-sivara-gunmetal py-1">Pricing</a>
-                    <a href="#quality-value" class="block text-sivara-gunmetal py-1">Why Thailand</a>
+                    <a href="#quality-value" class="block text-sivara-gunmetal py-1">FAQs</a>
                     <a href="#stories" class="block text-sivara-gunmetal py-1">Reviews</a>
                 </div>
             </div>
@@ -420,9 +467,77 @@
         <section id="quality-value" class="py-20 md:py-28 bg-gray-100">
             <div class="container mx-auto px-6 flex justify-center">
                 <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg w-full max-w-3xl" data-aos="fade-up">
-                    <div class="text-center">
-                        <h4 class="text-xl font-bold text-sivara-gunmetal reveal-text">Quality and Value</h4>
-                        <p class="text-sivara-gunmetal/80 mt-2 max-w-3xl mx-auto reveal-text">The significant cost savings in Thailand are a result of different economic structures and lower operational overheads, not compromised standards. Our unwavering commitment to JCI-accredited hospitals and physician-led oversight ensures you receive care that is not only affordable but of the highest international calibre. <br> <br> Our partner hospitals are consistently ranked among the world's most visited private facilities, treating patients from every corner of the globe. We prioritise hospitals that carry the Joint Commission International (JCI) seal—healthcare's gold standard for safety and quality—and appear on prestigious "World's Best" and "Smart Hospital" lists for their cutting-edge technology and outstanding clinical outcomes. By choosing Thailand for your orthopaedic surgery, you gain not only cost efficiency, but true, world-class medical excellence.</p>
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal">Your Questions, Answered</h2>
+                        <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4">Understanding the quality, value, and process of receiving care in Thailand is key to making a confident decision. Here are answers to some common questions.</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto space-y-4">
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">What is the quality of healthcare in Thailand?</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    The quality of care in Thailand's leading private hospitals is world-class and meets the most rigorous international standards. We ensure this by focusing on:<br>
+                                    <ul class="list-disc list-inside mt-2">
+                                        <li><b>JCI Accreditation:</b> We exclusively partner with hospitals accredited by the Joint Commission International (JCI), which is recognised globally as the gold standard for patient safety and quality of care.</li>
+                                        <li><b>Leading Hospitals:</b> Our partner facilities are consistently ranked among the world's best and most visited private hospitals, treating patients from every corner of the globe.</li>
+                                        <li><b>Expert Specialists:</b> Surgeons in these hospitals are often internationally trained and are leaders in their fields, utilising cutting-edge technology to achieve outstanding clinical outcomes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">Why is it such good value for money?</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    The excellent value is a direct result of Thailand's economic structure, not a compromise on quality. The significant cost savings are due to lower operational and infrastructure overheads compared to countries like the UK or US. This efficiency allows our partner hospitals to invest in state-of-the-art technology and world-class facilities while offering procedures at a more accessible price point. You receive care of the highest international calibre without the exorbitant cost.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">Why should I have my procedure in Thailand?</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    Choosing Thailand with Sivara Health offers a unique combination of benefits that are difficult to find elsewhere. You gain:<br>
+                                    <ul class="list-disc list-inside mt-2">
+                                        <li><b>World-Class Quality:</b> Access to JCI-accredited hospitals and elite surgeons who deliver exceptional medical outcomes.</li>
+                                        <li><b>Exceptional Value:</b> Receive the highest standard of care while benefiting from significant cost savings, allowing you to focus on your recovery without financial strain.</li>
+                                        <li><b>Immediate Access:</b> Avoid long waiting lists common in other countries and get the timely treatment you need to restore your quality of life.</li>
+                                        <li><b>A Restorative Environment:</b> Recuperate in a country renowned for its warm hospitality, providing a serene and comfortable setting for your recovery period.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">How does Sivara Health ensure I'm in safe hands?</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    Your safety and confidence are our highest priorities. Unlike a booking platform, Sivara Health is physician-led. Our UK-trained physician co-founder personally reviews your case and vets every specialist we partner with. We act as your dedicated advocate, ensuring you are matched with the right expert at a world-class, accredited facility, and feel supported and informed throughout your entire journey.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">What about aftercare when I return home?</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    Your care continues long after your procedure. We bridge the distance by facilitating clear post-operative communication and follow-up consultations with your surgeon in Thailand. We also provide you with all necessary medical documentation and guidance for liaising with your local doctor or physiotherapist back home, ensuring a smooth, supported, and seamless recovery.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -517,7 +632,7 @@
                     <a href="#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
                     <a href="#journey" class="footer-link block text-sivara-gunmetal/70 mb-2">Your Journey</a>
                     <a href="#pricing" class="footer-link block text-sivara-gunmetal/70 mb-2">Pricing</a>
-                    <a href="#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">Why Thailand</a>
+                    <a href="#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">FAQs</a>
                     <a href="#stories" class="footer-link block text-sivara-gunmetal/70">Reviews</a>
                 </div>
                 <div>
@@ -649,16 +764,16 @@
                     accordionItems.forEach(i => {
                         i.querySelector('.accordion-content').style.maxHeight = '0px';
                         i.querySelector('.accordion-icon').textContent = '+';
-                        i.querySelector('.accordion-icon').classList.remove('rotate-45');
+                        i.querySelector('.accordion-icon').classList.remove('open');
                     });
                     
                     if (!isOpen) {
                         content.style.maxHeight = content.scrollHeight + 'px';
-                        icon.textContent = '';
-                        icon.innerHTML = '&times;';
-                        icon.classList.add('rotate-45');
+                        icon.textContent = '+';
+                        icon.classList.add('open');
                     } else {
-                        icon.innerHTML = '+';
+                        icon.textContent = '+';
+                        icon.classList.remove('open');
                     }
                 });
             });
@@ -840,6 +955,20 @@
             }
             window.addEventListener('scroll', scrollSpy);
             scrollSpy();
+
+            // Desktop nav dropdown: only one open at a time, JS controlled
+            const navGroups = document.querySelectorAll('nav .group');
+            navGroups.forEach(group => {
+                group.addEventListener('mouseenter', function() {
+                    navGroups.forEach(other => {
+                        other.classList.remove('open');
+                    });
+                    group.classList.add('open');
+                });
+                group.addEventListener('mouseleave', function() {
+                    group.classList.remove('open');
+                });
+            });
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

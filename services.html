@@ -24,9 +24,19 @@
         @media (min-width: 768px) { .chart-container { height: 500px; } }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
         .group:hover .group-hover\:opacity-100, .group:focus-within .group-hover\:opacity-100 { opacity: 1 !important; visibility: visible !important; transition-delay: 0s; }
-        .group .group-hover\:opacity-100 { transition: opacity 0.2s, visibility 0.2s; transition-delay: 0.15s; }
-        .group .group-hover\:opacity-100 { visibility: hidden; opacity: 0; }
-        .group:hover > .group-hover\:opacity-100, .group:focus-within > .group-hover\:opacity-100 { opacity: 1 !important; visibility: visible !important; transition-delay: 0s; }
+        .group .group-hover\:opacity-100 {
+            transition: opacity 0.2s, visibility 0.2s;
+            transition-delay: 0.15s;
+        }
+        .group .group-hover\:opacity-100 {
+            visibility: hidden;
+            opacity: 0;
+        }
+        .group.open > .group-hover\:opacity-100 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
         .menu-link, .footer-link { transition: color 0.2s; }
         .menu-link:hover, .footer-link:hover { color: #7C9ED9 !important; }
         .dropdown-link:hover {
@@ -44,6 +54,49 @@
             background-color: #eaf1fa;
             cursor: pointer;
         }
+        .dropdown-menu {
+            transition: opacity 0.2s, visibility 0.2s;
+            transition-delay: 0.15s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .group.open > .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-delay: 0s;
+        }
+        /* Accordion icon centering and rotation for procedures */
+        .accordion-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5em;
+            height: 1.5em;
+            font-size: 1.5em;
+            line-height: 1;
+            transition: color 0.2s, transform 0.3s;
+        }
+        .accordion-icon.open {
+            transform: rotate(45deg);
+        }
+        /* Procedures accordion item rounding and border fix */
+        #procedures .accordion-item {
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+        #procedures .accordion-header {
+            border-radius: 1rem;
+            transition: background 0.2s;
+        }
+        #procedures .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+        #procedures .accordion-item:hover .accordion-header {
+            background-color: #eaf1fa;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -58,11 +111,11 @@
                         About
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
                         <a href="index.html#difference" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Who We Are</a>
                         <a href="index.html#journey" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Your Journey</a>
                         <a href="index.html#pricing" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Pricing</a>
-                        <a href="index.html#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Why Thailand</a>
+                        <a href="index.html#quality-value" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">FAQs</a>
                         <a href="index.html#stories" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Reviews</a>
                     </div>
                 </div>
@@ -71,7 +124,7 @@
                         Services
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible opacity-0 invisible z-50">
+                    <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible z-50">
                         <a href="services.html#procedures" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Procedures</a>
                         <a href="services.html#packages" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Packages</a>
                         <a href="services.html#hospitals" class="dropdown-link block px-4 py-2 text-sivara-gunmetal">Hospitals</a>
@@ -97,7 +150,7 @@
                     <a href="index.html#difference" class="block text-sivara-gunmetal py-1">Who We Are</a>
                     <a href="index.html#journey" class="block text-sivara-gunmetal py-1">Your Journey</a>
                     <a href="index.html#pricing" class="block text-sivara-gunmetal py-1">Pricing</a>
-                    <a href="index.html#quality-value" class="block text-sivara-gunmetal py-1">Why Thailand</a>
+                    <a href="index.html#quality-value" class="block text-sivara-gunmetal py-1">FAQs</a>
                     <a href="index.html#stories" class="block text-sivara-gunmetal py-1">Reviews</a>
                 </div>
             </div>
@@ -234,7 +287,7 @@
                     <a href="index.html#difference" class="footer-link block text-sivara-gunmetal/70 mb-2">Who We Are</a>
                     <a href="index.html#journey" class="footer-link block text-sivara-gunmetal/70 mb-2">Your Journey</a>
                     <a href="index.html#pricing" class="footer-link block text-sivara-gunmetal/70 mb-2">Pricing</a>
-                    <a href="index.html#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">Why Thailand</a>
+                    <a href="index.html#quality-value" class="footer-link block text-sivara-gunmetal/70 mb-2">FAQs</a>
                     <a href="index.html#stories" class="footer-link block text-sivara-gunmetal/70">Reviews</a>
                 </div>
                 <div>
@@ -270,6 +323,50 @@
                 }
             });
         });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Desktop nav dropdown: only one open at a time, JS controlled
+      const navGroups = document.querySelectorAll('nav .group');
+      navGroups.forEach(group => {
+        group.addEventListener('mouseenter', function() {
+          navGroups.forEach(other => {
+            other.classList.remove('open');
+          });
+          group.classList.add('open');
+        });
+        group.addEventListener('mouseleave', function() {
+          group.classList.remove('open');
+        });
+      });
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Accordion logic for Specialised Orthopaedic Procedures
+      const accordionItems = document.querySelectorAll('#procedures .accordion-item');
+      accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        const icon = item.querySelector('.accordion-icon');
+        header.addEventListener('click', () => {
+          const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+          accordionItems.forEach(i => {
+            i.querySelector('.accordion-content').style.maxHeight = '0px';
+            i.querySelector('.accordion-icon').textContent = '+';
+            i.querySelector('.accordion-icon').classList.remove('open');
+          });
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.textContent = '+';
+            icon.classList.add('open');
+          } else {
+            icon.textContent = '+';
+            icon.classList.remove('open');
+          }
+        });
+      });
+    });
     </script>
 </body>
 </html> 
