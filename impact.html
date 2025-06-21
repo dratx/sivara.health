@@ -100,6 +100,30 @@
                 margin-right: 2rem !important;
             }
         }
+
+        /* Parallax Hero for Impact page */
+        .parallax-hero-impact {
+            background-image: url('./Images/pexels-arnie-chou-304906-1877306 (1).jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .parallax-hero-impact::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(242, 240, 230, 0.8), rgba(242, 240, 230, 0.7));
+            z-index: 1;
+        }
+        .parallax-hero-impact > .container {
+            position: relative;
+            z-index: 2;
+        }
+        .parallax-hero-impact h1,
+        .parallax-hero-impact p {
+            text-shadow: 0 1px 4px rgba(34,44,57,0.14), 0 1px 1px rgba(34,44,57,0.10);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -177,7 +201,7 @@
     </header>
 
     <main>
-        <section class="py-20 md:py-32 bg-gray-100">
+        <section class="parallax-hero-impact py-20 md:py-32">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-sivara-gunmetal mb-4">Healing Beyond Borders: Your Journey Creates Lasting Change</h1>
                 <p class="text-lg md:text-xl text-sivara-gunmetal/80 max-w-3xl mx-auto">When you choose Sivara Health for your orthopaedic care, you're not just investing in your own recovery—you're helping build a healthier, more equitable Thailand. Every procedure we facilitate contributes directly to expanding healthcare access for underserved communities across the country.</p>
@@ -251,7 +275,7 @@
             </div>
             <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sivara-gunmetal/60 text-sm">
                 <p>&copy; 2025 Sivara Health. All Rights Reserved.</p>
-                <p class="mt-2">Disclaimer: Sivara Health functions exclusively as a medical-tourism facilitator. We do not diagnose conditions, prescribe treatments, or provide medical advice. All clinical decisions and procedures are the sole responsibility of the licensed healthcare professionals who care for you. Every surgery carries inherent risks and individual results may vary. Sivara Health assumes no liability for medical outcomes, complications, or losses arising from the care you receive.</p>
+                 <p class="mt-2">Disclaimer: Sivara Health functions exclusively as a medical-tourism facilitator. We do not diagnose conditions, prescribe treatments, or provide medical advice. All clinical decisions and procedures are the sole responsibility of the licensed healthcare professionals who care for you. Every surgery carries inherent risks and individual results may vary. Sivara Health assumes no liability for medical outcomes, complications, or losses arising from the care you receive.</p>
             </div>
         </div>
     </footer>

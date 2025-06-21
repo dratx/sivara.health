@@ -122,15 +122,27 @@
             background-color: #eaf1fa;
             border-radius: 1rem;
         }
-        .nav-on-dark .menu-link,
-        .nav-on-dark .dropdown-link {
+        .nav-on-dark .menu-link {
             color: #F2F0E6 !important;
         }
         .nav-on-dark .dropdown-menu {
             background-color: #2A3439 !important;
             color: #F2F0E6 !important;
+            border-color: #4a5568 !important; /* A slightly lighter border for dark mode */
         }
         
+        /* Ensure dropdown links have correct colors on dark background */
+        .nav-on-dark .dropdown-link {
+            background-color: #2A3439 !important;
+            color: #F2F0E6 !important;
+        }
+        
+        /* Keep the hover effect for dropdown links on dark background */
+        .nav-on-dark .dropdown-link:hover {
+            background-color: #7C9ED9 !important;
+            color: #ffffff !important;
+        }
+
         /* Prevent horizontal scrolling */
         html, body {
             max-width: 100vw;
@@ -253,6 +265,39 @@
                 margin-right: 2rem !important;
             }
         }
+
+        /* Card hover effects for hospital cards */
+        .card-hover {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card-hover:hover {
+            transform: scale(1.04) translateY(-4px);
+            box-shadow: 0 8px 32px 0 #7C9ED930;
+        }
+
+        /* Parallax Hero for Services page */
+        .parallax-hero-services {
+            background-image: url('./Images/pexels-te-lensfix-380994-1374377.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .parallax-hero-services::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.55));
+            z-index: 1;
+        }
+        .parallax-hero-services > .container {
+            position: relative;
+            z-index: 2;
+        }
+        .parallax-hero-services h1,
+        .parallax-hero-services p {
+            text-shadow: 0 1px 4px rgba(34,44,57,0.14), 0 1px 1px rgba(34,44,57,0.10);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -326,10 +371,10 @@
                 <a href="impact.html" class="block text-sivara-gunmetal font-semibold py-2">Impact</a>
             </div>
             <div class="border-b border-gray-200 pb-2">
-                <a href="articles.html" class="block text-sivara-gunmetal font-semibold py-2">Articles</a>
+            <a href="articles.html" class="block text-sivara-gunmetal font-semibold py-2">Articles</a>
             </div>
             <div class="border-b border-gray-200 pb-2">
-                <a href="contact.html" class="block text-sivara-gunmetal font-semibold py-2">Contact</a>
+            <a href="contact.html" class="block text-sivara-gunmetal font-semibold py-2">Contact</a>
             </div>
             <a href="index.html#consultation" class="block mt-4 bg-sivara-blue text-white text-center font-bold py-2 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition">
                 Free Consultation
@@ -337,6 +382,12 @@
         </div>
     </header>
     <main>
+        <section class="parallax-hero-services py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-sivara-gunmetal mb-4">Our Services</h1>
+                <p class="text-lg md:text-xl text-sivara-gunmetal/80 max-w-3xl mx-auto">From specialised procedures to comprehensive care packages, we provide transparent, all-inclusive support for your orthopaedic journey.</p>
+            </div>
+        </section>
         <section id="procedures" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -425,17 +476,17 @@
                     <p class="text-lg text-gray-100/80 max-w-2xl mx-auto mt-4">We partner with leading hospitals in Thailand's top destinations for international care.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-8">
-                        <img src="https://placehold.co/300x200/7C9ED9/F2F0E6?text=Bangkok" alt="Bangkok Hospital" class="mb-4 w-full h-48 object-cover rounded-md" />
-                        <h3 class="text-xl font-bold text-sivara-gunmetal">Bangkok</h3>
-                    </div>
-                    <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-8">
-                        <img src="https://placehold.co/300x200/7C9ED9/F2F0E6?text=Chiang+Mai" alt="Chiang Mai Hospital" class="mb-4 w-full h-48 object-cover rounded-md" />
-                        <h3 class="text-xl font-bold text-sivara-gunmetal">Chiang Mai</h3>
-                    </div>
-                    <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-8">
-                        <img src="https://placehold.co/300x200/7C9ED9/F2F0E6?text=Phuket" alt="Phuket Hospital" class="mb-4 w-full h-48 object-cover rounded-md" />
-                        <h3 class="text-xl font-bold text-sivara-gunmetal">Phuket</h3>
+                    <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-8 card-hover">
+                            <img src="./Images/bumrungrad-bumrungrad-international-hospital111.jpg" alt="Bangkok Hospital" class="mb-4 w-full h-48 object-cover rounded-md" />
+                            <h3 class="text-xl font-bold text-sivara-gunmetal">Bangkok</h3>
+                        </div>
+                    <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-8 card-hover">
+                            <img src="./Images/Bangkok-Hospital-Chiang-Mai-1536x1024-1.webp" alt="Chiang Mai Hospital" class="mb-4 w-full h-48 object-cover rounded-md" />
+                            <h3 class="text-xl font-bold text-sivara-gunmetal">Chiang Mai</h3>
+                        </div>
+                    <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-8 card-hover">
+                            <img src="./Images/Bangkok hospital Phuket.jpg" alt="Phuket Hospital" class="mb-4 w-full h-48 object-cover rounded-md" />
+                            <h3 class="text-xl font-bold text-sivara-gunmetal">Phuket</h3>
                     </div>
                 </div>
             </div>
@@ -532,20 +583,20 @@
         });
 
         // Desktop nav dropdown: only one open at a time
-        const navGroups = document.querySelectorAll('nav .group');
-        navGroups.forEach(group => {
+      const navGroups = document.querySelectorAll('nav .group');
+      navGroups.forEach(group => {
             const button = group.querySelector('button');
             const menu = group.querySelector('.dropdown-menu');
             
             // Handle mouse interactions
-            group.addEventListener('mouseenter', function() {
+        group.addEventListener('mouseenter', function() {
                 navGroups.forEach(other => other.classList.remove('open'));
-                group.classList.add('open');
-            });
+          group.classList.add('open');
+        });
             
-            group.addEventListener('mouseleave', function() {
-                group.classList.remove('open');
-            });
+        group.addEventListener('mouseleave', function() {
+          group.classList.remove('open');
+        });
             
             // Handle focus interactions
             if (button && menu) {
@@ -591,29 +642,29 @@
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Accordion logic for Specialised Orthopaedic Procedures
-        const accordionItems = document.querySelectorAll('#procedures .accordion-item');
-        accordionItems.forEach(item => {
-            const header = item.querySelector('.accordion-header');
-            const content = item.querySelector('.accordion-content');
-            const icon = item.querySelector('.accordion-icon');
-            header.addEventListener('click', () => {
-                const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-                accordionItems.forEach(i => {
-                    i.querySelector('.accordion-content').style.maxHeight = '0px';
-                    i.querySelector('.accordion-icon').textContent = '+';
-                    i.querySelector('.accordion-icon').classList.remove('open');
-                });
-                if (!isOpen) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    icon.textContent = '+';
-                    icon.classList.add('open');
-                } else {
-                    icon.textContent = '+';
-                    icon.classList.remove('open');
-                }
-            });
+      // Accordion logic for Specialised Orthopaedic Procedures
+      const accordionItems = document.querySelectorAll('#procedures .accordion-item');
+      accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        const icon = item.querySelector('.accordion-icon');
+        header.addEventListener('click', () => {
+          const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+          accordionItems.forEach(i => {
+            i.querySelector('.accordion-content').style.maxHeight = '0px';
+            i.querySelector('.accordion-icon').textContent = '+';
+            i.querySelector('.accordion-icon').classList.remove('open');
+          });
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.textContent = '+';
+            icon.classList.add('open');
+          } else {
+            icon.textContent = '+';
+            icon.classList.remove('open');
+          }
         });
+      });
     });
     </script>
 </body>
