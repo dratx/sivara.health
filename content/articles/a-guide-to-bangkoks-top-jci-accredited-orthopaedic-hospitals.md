@@ -45,8 +45,8 @@ One of Bangkok's newer hospitals, MedPark opened in 2020 and has quickly establi
 
 #### **How Sivara Health Helps You Access These Hospitals**
 
-Navigating these world-class options can be daunting. Sivara Health’s physician-led concierge service helps you make the right choice for your specific needs. We start with a **[free virtual triage with a UK-licensed doctor](https://sivara.health/#consultation)** to understand your case. We then help you connect with the right specialist at the right hospital, ensuring your entire journey is built on a foundation of trust and expert medical oversight. Our **[step-by-step process](https://sivara.health/#journey)** handles everything from appointments to travel, allowing you to focus on your health.
+Navigating these world-class options can be daunting. Sivara Health's physician-led concierge service helps you make the right choice for your specific needs. We start with a **[free virtual triage with a UK-licensed doctor](https://sivara.health/#consultation)** to understand your case. We then help you connect with the right specialist at the right hospital, ensuring your entire journey is built on a foundation of trust and expert medical oversight. Our **[step-by-step process](https://sivara.health/#journey)** handles everything from appointments to travel, allowing you to focus on your health.
 
-\*Ready to discuss which world-class Bangkok hospital is the right fit for you? **[Book your free, no-obligation virtual triage with our UK-licensed doctor today.](https://sivara.health/#consultation)**
+Ready to discuss which world-class Bangkok hospital is the right fit for you? **[Book your free, no-obligation virtual triage with our UK-licensed doctor today.](https://sivara.health/#consultation)**
 
 Disclaimer: All surgical procedures carry inherent risks. The information provided is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional.
