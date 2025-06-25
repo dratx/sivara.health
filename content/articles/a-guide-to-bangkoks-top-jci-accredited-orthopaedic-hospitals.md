@@ -1,6 +1,6 @@
 ---
 title: A Guide to Bangkok's Top JCI-Accredited Orthopaedic Hospitals
-date: 2025-06-21T14:00:00.000Z
+date: 2025-05-16T14:00:00.000Z
 summary: Bangkok is a global leader in medical tourism, offering world-class
   orthopaedic care at internationally renowned, JCI-accredited hospitals. This
   guide explores four of the city's top facilities to help you understand your
