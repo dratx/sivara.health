@@ -36,7 +36,7 @@ A long-standing and trusted provider of private healthcare in Northern Thailand,
 
 Choosing between these excellent hospitals and managing the logistics can be challenging from afar. This is where Sivara Health's **Trusted Expert Companion** model makes a crucial difference. Our physician-led service, founded on a philosophy of trust and empathy, acts as your guide.
 
-Your journey begins with a **[free, no-obligation consultation with a UK-licensed](https://sivara.health/#consultation)**, who helps assess your needs. From there, we manage the entire [step-by-step process](https://sivara.health/#journey), from securing appointments with the right surgeon to arranging your travel and accommodation, allowing you to embrace the peace of Chiang Mai while we handle the details.
+Your journey begins with a **[free, no-obligation consultation with a UK-licensed](https://sivara.health/#consultation)**, who helps assess your needs. From there, we manage the entire **[step-by-step process](https://sivara.health/#journey)**, from securing appointments with the right surgeon to arranging your travel and accommodation, allowing you to embrace the peace of Chiang Mai while we handle the details.
 
 Take the first step towards world-class care in a serene setting. **[Book your free virtual triage to discuss your options in Chiang Mai today.](https://sivara.health/#consultation)**
 
