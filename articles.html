@@ -130,14 +130,16 @@
         /* Line clamp utilities for text truncation */
         .line-clamp-2 {
             display: -webkit-box;
-            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;  /* For current browser support */
+            line-clamp: 2;          /* The standard property to fix the warning */
             overflow: hidden;
         }
         .line-clamp-3 {
             display: -webkit-box;
-            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;  /* For current browser support */
+            line-clamp: 3;          /* The standard property to fix the warning */
             overflow: hidden;
             text-overflow: ellipsis;
             max-height: 4.5em;
@@ -482,24 +484,26 @@
         }
     }
 
-        function createArticleCard(article) {
-            const card = document.createElement('a');
-            card.href = `article.html?slug=${article.slug}`;
-            card.className = 'article-card card-hover block';
-            
+            function createArticleCard(article) {
+            // This function creates a link <a> element as the card
+            const cardLink = document.createElement('a');
+            cardLink.href = `article.html?slug=${article.slug}`;
+            cardLink.className = 'article-card card-hover block group';
+
             const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
             });
-            
-            card.innerHTML = `
-                <img src="${article.hero}" alt="${article.title}" onerror="this.src='https://via.placeholder.com/400x200/7C9ED9/FFFFFF?text=Sivara+Health'">
+
+            // The card's content is placed inside the link element
+            cardLink.innerHTML = `
+                <img src="${article.hero}" alt="${article.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/7C9ED9/FFFFFF?text=Sivara+Health';">
                 <div class="p-6">
                     <div class="article-meta mb-2">${formattedDate}</div>
-                    <h3 class="text-xl font-semibold text-sivara-gunmetal mb-3">${article.title}</h3>
-                    <p class="text-sivara-gunmetal/70 mb-4 line-clamp-3">${article.summary}</p>
-                    <div class="inline-flex items-center text-sivara-blue font-semibold">
+                    <h3 class="text-xl font-semibold text-sivara-gunmetal mb-3 group-hover:text-sivara-blue transition-colors">${article.title}</h3>
+
+                    <div class="inline-flex items-center text-sivara-blue font-semibold mt-4">
                         Read More
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -507,8 +511,8 @@
                     </div>
                 </div>
             `;
-            
-            return card;
+
+            return cardLink;
         }
 
         document.addEventListener('DOMContentLoaded', function () {
