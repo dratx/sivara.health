@@ -1,6 +1,6 @@
 ---
 title: A Patient's Guide to Top Orthopaedic Hospitals in Chiang Mai
-date: 2025-06-23T14:00:00.000Z
+date: 2025-05-23T14:00:00.000Z
 summary: Chiang Mai, the serene cultural capital of Northern Thailand, is
   increasingly recognised not only for its beauty but also for its high-quality,
   affordable medical care.
