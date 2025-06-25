@@ -28,17 +28,15 @@ A flagship hospital in Southern Thailand, **Bangkok Hospital Phuket** has been d
 Also a key part of the BDMS network, **Bangkok Hospital Siriroj** is another leading JCI-accredited facility with a long history of providing quality care to locals, expatriates, and medical tourists.
 
 * **Why it's a top choice:** Its integration into the Bangkok Hospital network has enhanced its capabilities while maintaining its strong community reputation for personalised care.
-* **Orthopaedic Specialisms:** The hospital’s orthopaedic centre provides comprehensive care for the most common patient needs. For those with degenerative joint conditions like **Osteoarthritis**, a procedure like a **Knee Replacement** is managed with a personalised and efficient service, which is ideal for patients travelling for care.
+* **Orthopaedic Specialisms:** The hospital's orthopaedic centre provides comprehensive care for the most common patient needs. For those with degenerative joint conditions like **Osteoarthritis**, a procedure like a **Knee Replacement** is managed with a personalised and efficient service, which is ideal for patients travelling for care.
 * **Technology & Surgeons:** The hospital leverages the BDMS network's investment in technology and best practices. Its orthopaedic surgeons are highly qualified and work within a system designed for clinical excellence and delivering positive **patient recovery outcomes.**
 
 #### **Sivara Health: Your Expert Partner for Surgery in Phuket**
 
-Choosing Phuket means you can recover in a world-class holiday destination. However, ensuring your medical journey is safe and seamless requires expert coordination. This is where Sivara Health’s "Trusted Expert Companion" model makes all the difference.
+Choosing Phuket means you can recover in a world-class holiday destination. However, ensuring your medical journey is safe and seamless requires expert coordination. This is where Sivara Health's **Trusted Expert Companion** model makes all the difference.
 
-Our service, founded by a UK-trained physician and a Thai expert in behavioural sciences, was designed to provide this exact combination of medical assurance and empathetic support. We manage the entire **[step-by-step process](https://sivara.health/#journey)** for you—from the initial **[free consultation with our UK-licensed doctor](https://sivara.health/#consultation)** to coordinating with your chosen Phuket hospital and managing your travel logistics. We handle the details so you can focus on your successful surgery and rehabilitation in paradise.
+Our service, founded by a UK-trained physician and a Thai expert in behavioural sciences, was designed to provide this exact combination of medical assurance and empathetic support. We manage the entire **[step-by-step process](https://sivara.health/#journey)** for you, from the initial **[free consultation with our UK-licensed doctor](https://sivara.health/#consultation)** to coordinating with your chosen Phuket hospital and managing your travel logistics. We handle the details so you can focus on your successful surgery and rehabilitation in paradise.
 
 Ready to explore your options for top-tier orthopaedic care in Phuket? **[Book your free, no-obligation consultation with our UK-licensed doctor today.](https://sivara.health/#consultation)**
-
-
 
 Disclaimer: All surgical procedures carry inherent risks. The information provided is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional.
