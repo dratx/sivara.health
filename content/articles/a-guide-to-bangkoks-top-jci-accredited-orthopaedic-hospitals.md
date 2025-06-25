@@ -18,8 +18,8 @@ This guide provides an overview of three of Bangkok's leading hospitals for orth
 Often regarded as a global benchmark for medical tourism, Bumrungrad International is a technologically advanced hospital renowned for its comprehensive care and consistent patient satisfaction reviews.
 
 * **Why it's a top choice:** As one of the first hospitals in Asia to become JCI-accredited back in 2002, Bumrungrad has decades of experience delivering world-class care to international patients.
-* **Orthopaedic Specialisms:** The hospital’s Orthopedic Center is a comprehensive unit, meaning a **Procedure** like a **Total Knee Replacement** is managed by a highly specialised team from diagnosis through to **post-operative rehabilitation**. For patients suffering from complex back pain, its dedicated Spine Institute is a regional leader.
-* **Technology & Surgeons:** Bumrungrad’s team includes numerous US and European-trained surgeons. They were pioneers in bringing advanced **Technology** to their **Bangkok** (**Location**) facility, including **robotic-assisted surgery for enhanced precision**. This commitment ensures patients receive some of the most advanced orthopaedic care available globally.
+* **Orthopaedic Specialisms:** The hospital's Orthopedic Center is a comprehensive unit, meaning a **Procedure** like a **Total Knee Replacement** is managed by a highly specialised team from diagnosis through to **post-operative rehabilitation**. For patients suffering from complex back pain, its dedicated Spine Institute is a regional leader.
+* **Technology & Surgeons:** Bumrungrad's team includes numerous US and European-trained surgeons. They were pioneers in bringing advanced **Technology** to their **Bangkok** (**Location**) facility, including **robotic-assisted surgery for enhanced precision**. This commitment ensures patients receive some of the most advanced orthopaedic care available globally.
 
 #### **2. Vejthani Hospital**
 
