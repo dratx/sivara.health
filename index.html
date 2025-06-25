@@ -775,20 +775,24 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Take the First Step Today</h2>
                 <p class="text-lg text-sivara-alabaster/80 max-w-2xl mx-auto mt-4 mb-8">Your journey to renewed mobility starts with a simple, confidential conversation. Contact us for a free, no-obligation consultation with our physician founder.</p>
                 <div class="max-w-xl mx-auto bg-sivara-alabaster p-8 rounded-lg shadow-2xl text-left">
-                    <form>
+                    <form name="consultation" method="POST" netlify netlify-honeypot="bot-field" id="consultation-form">
+                        <input type="hidden" name="form-name" value="consultation">
+                        <div hidden>
+                            <input name="bot-field">
+                        </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-sivara-gunmetal">Full Name</label>
-                                <input type="text" id="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue">
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue">
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-medium text-sivara-gunmetal">Email Address</label>
-                                <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue">
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue">
                             </div>
                         </div>
                         <div class="mt-4">
                             <label for="procedure-interest" class="block text-sm font-medium text-sivara-gunmetal">Procedure of Interest</label>
-                            <select id="procedure-interest" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue sm:text-sm rounded-md">
+                            <select id="procedure-interest" name="procedure" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue sm:text-sm rounded-md">
                                 <option>Hip Replacement</option>
                                 <option>Knee Replacement</option>
                                 <option>Spine Surgery</option>
@@ -798,7 +802,7 @@
                         </div>
                         <div class="mt-4">
                             <label for="message" class="block text-sm font-medium text-sivara-gunmetal">Tell us a bit about your needs</label>
-                            <textarea id="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue"></textarea>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue"></textarea>
                         </div>
                         <div class="mt-6">
                             <button type="submit" class="w-full bg-sivara-blue text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-opacity-90 transition transform hover:scale-105">Request My Free Consultation</button>
