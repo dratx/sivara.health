@@ -381,7 +381,7 @@
                         </div>
 
                         <!-- Success Message (hidden by default) -->
-                        <div id="success-message" class="hidden success-message border rounded-lg p-4 mb-6">
+                        <div id="success-message" class="success-message border rounded-lg p-4 mb-6" style="display:none;">
                             <div class="flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
@@ -396,7 +396,8 @@
                               netlify-honeypot="bot-field"
                               data-netlify-recaptcha="true"
                               class="space-y-6"
-                              id="contact-form">
+                              id="contact-form"
+                              action="/contact.html?success=1">
                             
                             <!-- Hidden fields for Netlify -->
                             <input type="hidden" name="form-name" value="contact">
@@ -574,22 +575,10 @@
                 });
             }
 
-            // Form submission handling
-            const form = document.getElementById('contact-form');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    // Let Netlify handle the form submission
-                    // Show success message after a delay (simulating form processing)
-                    setTimeout(function() {
-                        document.getElementById('success-message').classList.remove('hidden');
-                        form.reset();
-                        // Scroll to success message
-                        document.getElementById('success-message').scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
-                        });
-                    }, 1000);
-                });
+            // Show Netlify success message if redirected with ?success=1
+            if (window.location.search.indexOf('success=1') !== -1) {
+                var msg = document.getElementById('success-message');
+                if (msg) msg.style.display = 'block';
             }
         });
 
