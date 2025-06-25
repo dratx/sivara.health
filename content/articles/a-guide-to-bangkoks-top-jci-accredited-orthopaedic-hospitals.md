@@ -5,7 +5,7 @@ summary: Bangkok is a global leader in medical tourism, offering world-class
   orthopaedic care at internationally renowned, JCI-accredited hospitals. This
   guide explores four of the city's top facilities to help you understand your
   options for high-quality treatment.
-hero: /uploads/bkk-bumrungrad-bumrungrad-international-hospital111.jpg
+hero: /uploads/bkk-medpark-hospital.jpeg
 ---
 When considering orthopaedic surgery in Thailand, Bangkok stands out as a global hub for medical excellence. The city is home to several world-renowned hospitals, many of which are **[JCI-accredited](https://www.jointcommissioninternational.org/)** —the gold standard for patient safety and quality of care. These facilities offer advanced technology and highly specialised surgeons at a fraction of the cost you might find in the UK, US, or Australia. **[See our detailed cost comparison here](https://sivara.health/#pricing)**.
 
