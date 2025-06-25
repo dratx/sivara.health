@@ -1,11 +1,11 @@
 ---
 title: A Guide to Bangkok's Top JCI-Accredited Orthopaedic Hospitals
-date: 2025-06-24T13:14:00.000Z
+date: 2025-05-16T14:00:00.000Z
 summary: Bangkok is a global leader in medical tourism, offering world-class
   orthopaedic care at internationally renowned, JCI-accredited hospitals. This
   guide explores four of the city's top facilities to help you understand your
   options for high-quality treatment.
-hero: /static/uploads/bkk-medpark-hospital.jpeg
+hero: /uploads/bkk-medpark-hospital.jpeg
 ---
 When considering orthopaedic surgery in Thailand, Bangkok stands out as a global hub for medical excellence. The city is home to several world-renowned hospitals, many of which are **[JCI-accredited](https://www.jointcommissioninternational.org/)**, the gold standard for patient safety and quality of care. These facilities offer advanced technology and highly specialised surgeons at a fraction of the cost you might find in the UK, US, or Australia. **[See our detailed cost comparison here](https://sivara.health/#pricing)**.
 
@@ -13,7 +13,7 @@ This guide provides an overview of three of Bangkok's leading hospitals for orth
 
 #### **1. Bumrungrad International Hospital**
 
-![Bumrungrad International Hospital](/static/uploads/bkk-bumrungrad-bumrungrad-international-hospital111.jpg "Bumrungrad International Hospital")
+![Bumrungrad International Hospital](/uploads/bkk-bumrungrad-bumrungrad-international-hospital111.jpg "Bumrungrad International Hospital")
 
 Often regarded as a global benchmark for medical tourism, Bumrungrad International is a technologically advanced hospital renowned for its comprehensive care and consistent patient satisfaction reviews.
 
@@ -23,7 +23,7 @@ Often regarded as a global benchmark for medical tourism, Bumrungrad Internation
 
 #### **2. Vejthani Hospital**
 
-![Vejthani Hospital Bangkok](/static/uploads/bkk-vejthani-hospital.jpg "Vejthani Hospital Bangkok")
+![Vejthani Hospital Bangkok](/uploads/bkk-vejthani-hospital.jpg "Vejthani Hospital Bangkok")
 
 Vejthani Hospital is widely known in the medical community as the "King of Bones" due to its exceptional focus and expertise in orthopaedics, receiving consistently high praise from patients seeking specialised care.
 
@@ -33,7 +33,7 @@ Vejthani Hospital is widely known in the medical community as the "King of Bones
 
 #### **3. Bangkok Hospital (Headquarters)**
 
-![Bangkok Hospital (Headquarters)](/static/uploads/bkk-bangkok-hospital.jpg "Bangkok Hospital (Headquarters)")
+![Bangkok Hospital (Headquarters)](/uploads/bkk-bangkok-hospital.jpg "Bangkok Hospital (Headquarters)")
 
 The flagship of the Bangkok Dusit Medical Services (BDMS) group, Bangkok Hospital is another titan of private healthcare in Thailand, offering cutting-edge treatments and a holistic, patient-centric approach.
 
@@ -43,7 +43,7 @@ The flagship of the Bangkok Dusit Medical Services (BDMS) group, Bangkok Hospita
 
 #### **4. MedPark Hospital**
 
-![Bangkok Hospital (Headquarters)](/static/uploads/bkk-medpark-hospital.jpeg "Bangkok Hospital (Headquarters)")
+![Bangkok Hospital (Headquarters)](/uploads/bkk-medpark-hospital.jpeg "Bangkok Hospital (Headquarters)")
 
 One of Bangkok's newer hospitals, MedPark opened in 2020 and has quickly established itself as a top-tier medical centre, founded by a team of leading medical specialists.
 
