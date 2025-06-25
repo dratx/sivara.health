@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/uploads"
-public_folder: "/static/uploads"
+media_folder: "uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "articles"
@@ -17,4 +17,3 @@ collections:
       - { name: summary, label: Summary, widget: text }
       - { name: hero, label: "Hero Image", widget: image }
       - { name: body, label: Body, widget: markdown }
-
