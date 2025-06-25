@@ -467,8 +467,9 @@
     }
 
         function createArticleCard(article) {
-            const card = document.createElement('div');
-            card.className = 'article-card card-hover';
+            const card = document.createElement('a');
+            card.href = `article.html?slug=${article.slug}`;
+            card.className = 'article-card card-hover block';
             
             const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -482,12 +483,12 @@
                     <div class="article-meta mb-2">${formattedDate}</div>
                     <h3 class="text-xl font-semibold text-sivara-gunmetal mb-3">${article.title}</h3>
                     <p class="text-sivara-gunmetal/70 mb-4">${article.summary}</p>
-                    <a href="article.html?slug=${article.slug}" class="inline-flex items-center text-sivara-blue font-semibold hover:text-sivara-gunmetal transition">
+                    <div class="inline-flex items-center text-sivara-blue font-semibold">
                         Read More
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
-                    </a>
+                    </div>
                 </div>
             `;
             

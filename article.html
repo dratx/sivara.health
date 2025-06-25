@@ -394,7 +394,6 @@
 
         async function loadArticle() {
             const slug = getUrlParameter('slug');
-            
             if (!slug) {
                 showError404();
                 return;
@@ -403,18 +402,39 @@
             const loadingEl = document.getElementById('loading');
             const errorEl = document.getElementById('error-404');
             const contentEl = document.getElementById('article-content');
+            const repoOwner = 'dratx';
+            const repoName = 'sivara.health';
+            const articlePath = `content/articles/${slug}.md`;
 
             try {
-                // For now, we'll simulate the GitHub API call
-                // In production, this would fetch from: https://api.github.com/repos/dratx/sivara.health/contents/content/articles/${slug}.md
+                const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${articlePath}`);
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        showError404();
+                        return;
+                    }
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+                const fileData = await response.json();
                 
-                // Simulate loading delay
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                
-                // For demonstration, we'll show a 404 since no articles exist yet
-                // When articles exist, they would be fetched and displayed here
-                showError404();
-                
+                // Decode content and parse frontmatter/body
+                const content = atob(fileData.content);
+                const frontmatterMatch = content.match(/---([\s\S]*?)---/);
+                const bodyMatch = content.match(/---[\s\S]*?---([\s\S]*)/);
+
+                if (!frontmatterMatch || !bodyMatch) throw new Error("Invalid article format.");
+
+                const frontmatterText = frontmatterMatch[1];
+                const article = {};
+                frontmatterText.trim().split('\n').forEach(line => {
+                    const [key, ...valueParts] = line.split(':');
+                    const value = valueParts.join(':').trim().replace(/^"(.*)"$/, '$1');
+                    article[key.trim()] = value;
+                });
+
+                article.body = bodyMatch[1].trim();
+                displayArticle(article);
+
             } catch (error) {
                 console.error('Error loading article:', error);
                 showError404();
