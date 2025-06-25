@@ -404,44 +404,67 @@
         });
 
         async function loadArticles() {
-            const loadingEl = document.getElementById('loading');
-            const noArticlesEl = document.getElementById('no-articles');
-            const articlesGridEl = document.getElementById('articles-grid');
+        const loadingEl = document.getElementById('loading');
+        const noArticlesEl = document.getElementById('no-articles');
+        const articlesGridEl = document.getElementById('articles-grid');
+        const repoOwner = 'dratx';
+        const repoName = 'sivara.health';
+        const articlesPath = 'content/articles';
 
-            try {
-                // For now, we'll simulate the GitHub API call
-                // In production, this would fetch from: https://api.github.com/repos/dratx/sivara.health/contents/content/articles
-                
-                // Simulate loading delay
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                
-                // For demonstration, we'll show the "no articles" state
-                // When articles exist, they would be fetched and displayed here
-                const articles = []; // This would be populated from the API
-                
-                loadingEl.classList.add('hidden');
-                
-                if (articles.length === 0) {
-                    noArticlesEl.classList.remove('hidden');
-                } else {
-                    articlesGridEl.classList.remove('hidden');
-                    displayArticles(articles);
-                }
-            } catch (error) {
-                console.error('Error loading articles:', error);
-                loadingEl.classList.add('hidden');
-                noArticlesEl.classList.remove('hidden');
-            }
-        }
+        try {
+            const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${articlesPath}`);
+            if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+            const files = await response.json();
 
-        function displayArticles(articles) {
-            const articlesGridEl = document.getElementById('articles-grid');
+            // Filter for markdown files and fetch full content for each
+            const articlePromises = files
+                .filter(file => file.name.endsWith('.md'))
+                .map(async (file) => {
+                    const contentResponse = await fetch(file.url);
+                    if (!contentResponse.ok) return null;
+                    const fileData = await contentResponse.json();
+                    
+                    // Decode content from base64 and parse frontmatter
+                    const content = atob(fileData.content);
+                    const frontmatterMatch = content.match(/---([\s\S]*?)---/);
+                    if (!frontmatterMatch) return null;
+
+                    const frontmatterText = frontmatterMatch[1];
+                    const article = {};
+                    frontmatterText.trim().split('\n').forEach(line => {
+                        const [key, ...valueParts] = line.split(':');
+                        const value = valueParts.join(':').trim().replace(/^"(.*)"$/, '$1');
+                        article[key.trim()] = value;
+                    });
+                    
+                    // Create a slug from the filename
+                    article.slug = file.name.replace('.md', '');
+                    return article;
+                });
             
-            articles.forEach(article => {
-                const articleCard = createArticleCard(article);
-                articlesGridEl.appendChild(articleCard);
-            });
+            const articles = (await Promise.all(articlePromises))
+                .filter(Boolean) // Remove any nulls from failed fetches
+                .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by most recent date
+
+            loadingEl.classList.add('hidden');
+            
+            if (articles.length === 0) {
+                noArticlesEl.classList.remove('hidden');
+            } else {
+                articlesGridEl.classList.remove('hidden');
+                articlesGridEl.innerHTML = ''; // Clear existing
+                articles.forEach(article => {
+                    const articleCard = createArticleCard(article);
+                    articlesGridEl.appendChild(articleCard);
+                });
+            }
+        } catch (error) {
+            console.error('Error loading articles:', error);
+            loadingEl.classList.add('hidden');
+            noArticlesEl.classList.remove('hidden');
+            noArticlesEl.querySelector('p').textContent = 'Could not load articles. Please try again later.';
         }
+    }
 
         function createArticleCard(article) {
             const card = document.createElement('div');
