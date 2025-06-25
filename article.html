@@ -290,7 +290,6 @@
                         <div class="mb-6">
                             <div class="text-sivara-blue text-sm mb-2" id="article-date"></div>
                             <h1 class="text-4xl md:text-5xl font-bold text-sivara-gunmetal mb-4" id="article-heading"></h1>
-                            <p class="text-xl text-sivara-gunmetal/80" id="article-summary"></p>
                         </div>
                         <img id="article-hero" class="hero-image" alt="" />
                     </div>
@@ -468,7 +467,6 @@
             
             document.getElementById('article-date').textContent = formattedDate;
             document.getElementById('article-heading').textContent = article.title;
-            document.getElementById('article-summary').textContent = article.summary;
             
             const heroImg = document.getElementById('article-hero');
             heroImg.src = article.hero;
