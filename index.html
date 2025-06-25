@@ -775,7 +775,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Take the First Step Today</h2>
                 <p class="text-lg text-sivara-alabaster/80 max-w-2xl mx-auto mt-4 mb-8">Your journey to renewed mobility starts with a simple, confidential conversation. Contact us for a free, no-obligation consultation with our physician founder.</p>
                 <div class="max-w-xl mx-auto bg-sivara-alabaster p-8 rounded-lg shadow-2xl text-left">
-                    <form name="consultation" method="POST" netlify netlify-honeypot="bot-field" id="consultation-form">
+                    <form name="consultation" method="POST" netlify netlify-honeypot="bot-field" id="consultation-form" data-netlify-recaptcha="true">
                         <input type="hidden" name="form-name" value="consultation">
                         <div hidden>
                             <input name="bot-field">
@@ -803,6 +803,10 @@
                         <div class="mt-4">
                             <label for="message" class="block text-sm font-medium text-sivara-gunmetal">Tell us a bit about your needs</label>
                             <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sivara-blue focus:border-sivara-blue"></textarea>
+                        </div>
+                        <!-- reCAPTCHA Widget -->
+                        <div class="my-4">
+                            <div class="g-recaptcha" data-sitekey="6LcXaW0rAAAAAB0B2Axy1ILaX5T5JJ4YnGz7eOto"></div>
                         </div>
                         <div class="mt-6">
                             <button type="submit" class="w-full bg-sivara-blue text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-opacity-90 transition transform hover:scale-105">Request My Free Consultation</button>
@@ -1159,6 +1163,7 @@
     window.addEventListener('resize', checkNavOnDark);
     checkNavOnDark();
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
 
