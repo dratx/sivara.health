@@ -132,6 +132,30 @@
         .parallax-hero-impact p {
             text-shadow: 0 1px 4px rgba(34,44,57,0.14), 0 1px 1px rgba(34,44,57,0.10);
         }
+
+        /* Impact accordions: match procedures style */
+        #impact-accordions .accordion-item {
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+        #impact-accordions .accordion-header {
+            border-radius: 1rem;
+            transition: background 0.2s;
+        }
+        #impact-accordions .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+        #impact-accordions .accordion-item:hover .accordion-header {
+            background-color: #eaf1fa;
+            border-radius: 1rem;
+        }
+        #impact-accordions .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -217,16 +241,36 @@
         </section>
 
         <section class="py-16 md:py-20">
-             <div class="container mx-auto px-6">
-                <div class="max-w-3xl mx-auto text-center bg-white p-8 md:p-12 rounded-lg shadow-lg">
-                     <p class="text-lg text-sivara-gunmetal/90">At Sivara Health, we believe that exceptional healthcare should create ripples of positive change. That's why we've built social impact into the very foundation of our business model. Through our commitment to dedicate a meaningful percentage of our revenue to Thai healthcare charities and community health initiatives, your personal journey to wellness becomes part of a larger movement toward health equity.</p>
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-105">
+                        <div class="mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-sivara-gunmetal mb-2">Ripples of Positive Change</h3>
+                        <p class="text-sivara-gunmetal/80">We believe exceptional healthcare should extend beyond the individual. Our mission is to ensure every patient's journey contributes to a healthier, more equitable Thailand.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-105">
+                        <div class="mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-sivara-gunmetal mb-2">Impact by Design</h3>
+                        <p class="text-sivara-gunmetal/80">Social impact isn't an afterthought; it's our foundation. We commit a meaningful percentage of our revenue directly to trusted Thai healthcare charities and community health initiatives.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-105">
+                        <div class="mb-4">
+                            <svg class="w-10 h-10 text-sivara-blue mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-sivara-gunmetal mb-2">Your Journey, A Larger Purpose</h3>
+                        <p class="text-sivara-gunmetal/80">By choosing Sivara Health, your path to personal wellness becomes part of a larger movement, directly helping to expand healthcare access for underserved local communities.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="py-16 md:py-20 bg-gray-100">
             <div class="container mx-auto px-6">
-                <div class="max-w-3xl mx-auto">
+                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
                     <h2 class="text-3xl font-bold text-sivara-gunmetal text-center mb-8">Understanding Our Responsibility</h2>
                     <div class="space-y-6 text-lg text-sivara-gunmetal/80 leading-relaxed">
                         <p>Healthcare is not a luxury—it's a fundamental human right. Yet across Thailand, millions of people face barriers to accessing quality medical care that many of us take for granted. Rural communities often lack specialized orthopaedic services. Families struggle with the financial burden of necessary surgeries. Children grow up with treatable conditions that could be resolved with proper intervention.</p>
@@ -242,12 +286,51 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto">
                     <h2 class="text-3xl font-bold text-sivara-gunmetal text-center mb-8">Our Commitment: Healthcare Equity Through Shared Prosperity</h2>
-                    <div class="space-y-6 text-lg text-sivara-gunmetal/80 leading-relaxed">
-                       <p>Our mission extends far beyond facilitating individual medical procedures. We envision a Thailand where geographic location, economic status, or social circumstances never determine access to quality healthcare. This vision drives our commitment to dedicate fifteen percent of our annual revenue to carefully selected Thai healthcare charities and community health initiatives.</p>
-                       <p>This isn't corporate social responsibility as an afterthought—it's social impact as a core business principle. Every consultation we provide, every procedure we facilitate, and every patient we serve contributes directly to expanding healthcare access for those who need it most. We've designed our business model to ensure that success for Sivara Health automatically translates to increased support for Thai healthcare equity initiatives.</p>
-                       <p>Our approach focuses on sustainable, long-term change rather than temporary relief. We partner with established Thai organizations that have deep community roots and proven track records of effective healthcare delivery. These partnerships allow us to support initiatives ranging from mobile medical clinics serving remote villages to scholarship programs training the next generation of Thai healthcare professionals.</p>
-                       <p>The mathematics of impact are straightforward: as more international patients choose Sivara Health, more resources flow directly to Thai healthcare charities. Your decision to work with us creates a multiplier effect, where your individual healthcare investment generates ongoing benefits for entire communities. This model ensures that the growth of medical tourism in Thailand contributes meaningfully to addressing healthcare inequality rather than simply serving those who already have access to quality care.</p>
-                       <p>We believe this approach represents the future of ethical medical tourism—where international healthcare demand becomes a force for positive social change in destination countries. By choosing Sivara Health, you're not just accessing exceptional medical care; you're participating in a model that demonstrates how business success and social impact can be inextricably linked.</p>
+                    <div id="impact-accordions" class="space-y-4">
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">Our Vision & Core Commitment</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    Our mission extends far beyond facilitating individual medical procedures. We envision a Thailand where geographic location, economic status, or social circumstances never determine access to quality healthcare. This vision drives our commitment to dedicate fifteen percent of our annual revenue to carefully selected Thai healthcare charities and community health initiatives.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">An Integrated Impact Model</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    This isn't corporate social responsibility as an afterthought—it's social impact as a core business principle. Every consultation we provide and every procedure we facilitate contributes directly to expanding healthcare access for those who need it most. We've designed our business model to ensure that success for Sivara Health automatically translates to increased support for Thai healthcare equity initiatives.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">Strategic Partnerships for Lasting Change</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    Our approach focuses on sustainable, long-term change rather than temporary relief. We partner with established Thai organizations that have deep community roots and proven track records of effective healthcare delivery. These partnerships allow us to support tangible initiatives ranging from mobile medical clinics serving remote villages to scholarship programs that help train the next generation of Thai healthcare professionals.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">Your Journey's Multiplier Effect</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    Your decision to work with us creates a powerful multiplier effect. As more international patients choose Sivara Health, more resources flow directly to Thai healthcare charities, generating ongoing benefits for entire communities. This model ensures that the growth of medical tourism contributes meaningfully to addressing healthcare inequality. By choosing Sivara Health, you're not just accessing exceptional medical care; you're participating in the future of ethical medical tourism, where business success and social impact are inextricably linked.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -320,6 +403,31 @@
             });
             group.addEventListener('mouseleave', function() {
                 group.classList.remove('open');
+            });
+        });
+
+        // Accordion logic for the impact page accordions (same as procedures on services page)
+        const impactAccordionItems = document.querySelectorAll('#impact-accordions .accordion-item');
+        impactAccordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.accordion-icon');
+            // Ensure all accordions are collapsed by default
+            content.style.maxHeight = '0px';
+            icon.classList.remove('open');
+            icon.textContent = '+';
+            header.addEventListener('click', () => {
+                const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+                impactAccordionItems.forEach(i => {
+                    i.querySelector('.accordion-content').style.maxHeight = '0px';
+                    i.querySelector('.accordion-icon').classList.remove('open');
+                    i.querySelector('.accordion-icon').textContent = '+';
+                });
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('open');
+                    icon.textContent = '×';
+                }
             });
         });
     });

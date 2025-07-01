@@ -306,6 +306,25 @@
         .parallax-hero-services p {
             text-shadow: 0 1px 4px rgba(34,44,57,0.14), 0 1px 1px rgba(34,44,57,0.10);
         }
+
+        /* Packages accordion item rounding and border fix (match FAQ on index.html) */
+        #packages .accordion-item {
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+        #packages .accordion-header {
+            border-radius: 1rem;
+            transition: background 0.2s;
+        }
+        #packages .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+        #packages .accordion-item:hover .accordion-header {
+            background-color: #eaf1fa;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -409,7 +428,11 @@
                             <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
                         </button>
                         <div class="accordion-content">
-                            <p class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">Total hip replacement (arthroplasty) is a highly successful procedure to relieve pain and restore function for patients with advanced hip arthritis. We connect you with surgeons specializing in the latest minimally-invasive techniques for faster recovery.</p>
+                            <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                Total hip replacement is one of the most successful procedures in modern medicine, designed to relieve pain and restore mobility in those with severe hip joint damage.<br><br>
+                                <b>Who is it for?</b> This procedure is life-changing for patients whose daily lives are limited by hip pain and stiffness, commonly caused by osteoarthritis, rheumatoid arthritis, or previous injury.<br><br>
+                                <b>How does it work?</b> The surgeon removes the damaged "ball and socket" of the hip joint and replaces them with durable, high-quality artificial components (implants). Our partner surgeons in Thailand are experts in modern techniques, including minimally-invasive approaches that can lead to less muscle disruption and a potentially faster recovery. The result is a new, smoothly functioning joint, allowing you to walk, climb stairs, and live with dramatically reduced pain.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item border border-gray-200 rounded-lg">
@@ -418,7 +441,11 @@
                             <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
                         </button>
                         <div class="accordion-content">
-                            <p class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">For those suffering from severe knee pain due to osteoarthritis or injury, knee replacement can be life-changing. Our partner hospitals utilize advanced robotic-assisted technology for precision and optimal outcomes.</p>
+                            <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                A total knee replacement resurfaces the knee joint, which has been damaged by arthritis or injury, to alleviate pain and restore function and stability.<br><br>
+                                <b>Who is it for?</b> This is a proven solution for patients with chronic knee pain, instability, and loss of motion that no longer responds to conservative treatments like medication or physiotherapy.<br><br>
+                                <b>How does it work?</b> The goal is not to replace the entire knee, but to resurface the damaged parts. The surgeon removes worn-out cartilage and bone from the end of the thigh bone and top of the shin bone, replacing them with high-quality metal and medical-grade plastic implants. Our partner hospitals are at the forefront of utilising advanced robotic-assisted technology for this procedure. This allows the surgeon to create a precise 3D model of your unique anatomy for a more accurate implant fit, which can lead to a more natural feel and a smoother post-operative recovery.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item border border-gray-200 rounded-lg">
@@ -427,7 +454,13 @@
                             <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
                         </button>
                         <div class="accordion-content">
-                            <p class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">We facilitate a range of spine procedures, including discectomy and spinal fusion, performed by highly experienced neurosurgeons and orthopaedic spine specialists to address conditions like herniated discs and spinal stenosis.</p>
+                            <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                We provide access to elite neurosurgeons and orthopaedic spine specialists for procedures designed to relieve pain and restore function caused by spinal conditions.<br><br>
+                                <b>Who is it for?</b> Patients suffering from chronic, often debilitating, pain from conditions like herniated discs (causing sciatica) or spinal stenosis (a narrowing of the spinal canal that presses on nerves).<br><br>
+                                <b>How does it work?</b> The specific procedure depends on your condition. For example:<br>
+                                &bull; <b>A Discectomy</b> involves the surgeon carefully removing the portion of a herniated disc that is pressing on a nerve, relieving pain, numbness, or weakness.<br>
+                                &bull; <b>A Spinal Fusion</b> is designed to eliminate painful motion by permanently joining two or more vertebrae, creating a single, solid bone. These are highly specialised procedures, and our role is to connect you with the right expert at a world-class, JCI-accredited facility to ensure the highest standard of care.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item border border-gray-200 rounded-lg">
@@ -436,41 +469,78 @@
                             <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
                         </button>
                         <div class="accordion-content">
-                            <p class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">From rotator cuff repair and shoulder replacement to ACL reconstruction, we connect active individuals with top surgeons to help them return to the activities they love.</p>
+                            <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                Our network includes top surgeons who specialise in repairing joint and soft tissue damage, helping active individuals recover from injury and get back to the sports and activities they love.<br><br>
+                                <b>Who is it for?</b> This includes patients with common but painful conditions such as a torn rotator cuff in the shoulder, joint instability, or a ruptured Anterior Cruciate Ligament (ACL) in the knee.<br><br>
+                                <b>How does it work?</b> Many of these repairs are performed using arthroscopy, a minimally invasive "keyhole" technique. The surgeon uses a tiny camera and specialised instruments through small incisions to repair the damage. This approach often leads to less pain, reduced scarring, and a faster return to function compared to traditional open surgery. Whether you need a shoulder replacement or an ACL reconstruction, our partners provide expert care designed to restore your strength and stability.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border border-gray-200 rounded-lg">
+                        <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                            <span class="text-xl font-semibold text-sivara-gunmetal">Hand, Foot, & Other Specialised Procedures</span>
+                            <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                Our network of elite orthopaedic specialists covers the full spectrum of musculoskeletal care, including complex conditions affecting the hands, wrists, feet, and ankles.<br><br>
+                                <b>Who is it for?</b> This is for patients experiencing pain, deformity, numbness, or loss of function from specific conditions such as advanced arthritis in smaller joints, severe bunions, or nerve compression syndromes like carpal tunnel.<br><br>
+                                <b>How does it work?</b> Our partners perform a wide array of specialised surgeries with precision and care. For example, Carpal Tunnel Release alleviates pressure on the nerve in the wrist to relieve hand numbness and pain, while Bunion Correction realigns the joint at the base of the big toe to restore foot comfort and function. Whether you require an ankle fusion, elbow surgery, or another specific procedure, our extensive network ensures access to the right expert.<br><br>
+                                If your condition isn't listed here, we encourage you to reach out. Our physician-led team can assess your needs during a free consultation and connect you with the appropriate sub-specialist in Thailand.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div id="packages" class="w-full bg-gray-100 py-16 scroll-mt-28">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal">Our Comprehensive Service Packages</h2>
-                    <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4">Transparent, all-inclusive support for your orthopaedic journey—choose the level of service that fits your needs.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
-                    <h3 class="text-2xl font-bold text-sivara-gunmetal mb-4">What's Included?</h3>
-                    <p class="text-sivara-gunmetal/80 mb-6">Our facilitation service is comprehensive. We offer two tiers to suit your needs.</p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-bold text-sivara-gunmetal">Concierge-Lite (Standard)</h4>
-                            <ul class="list-disc list-inside text-sivara-gunmetal/80 mt-2">
-                                <li>Physician-led clinical review</li>
-                                <li>Surgeon & hospital matching</li>
-                                <li>Transparent, all-inclusive quote</li>
-                                <li>Appointment & surgery scheduling</li>
-                                <li>Pre-travel guidance</li>
-                            </ul>
+        <div id="packages" class="py-20 md:py-28 bg-gray-100">
+            <div class="container mx-auto px-6 flex justify-center">
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg w-full max-w-3xl" data-aos="fade-up">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal">Personalised Support for Your Journey</h2>
+                        <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4">We understand that every patient's needs are unique. That's why we offer two distinct levels of service, both built on our foundation of physician-led guidance and meticulous planning. Choose the package that provides you with the perfect balance of expert coordination and comprehensive care.</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto space-y-4">
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">Essential Support Package</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    <p class="mb-4">Ideal for the independent traveller who wants world-class medical coordination combined with the freedom to manage their own travel arrangements.</p>
+                                    <p class="font-semibold mb-2">Includes:</p>
+                                    <ul class="list-disc list-inside mb-2">
+                                        <li>Physician-led Triage & Clinical Point of Contact: Your journey begins with a review by our UK-licensed doctor, who remains a clinical touchpoint for you.</li>
+                                        <li>Specialist Surgeon & JCI-Hospital Matching: We connect you with the right expert and facility for your specific needs.</li>
+                                        <li>Transparent, All-Inclusive Surgical Quote: A clear, itemised quote with no hidden fees.</li>
+                                        <li>All Medical Appointment & Surgery Scheduling: We handle all the logistics with the hospital.</li>
+                                        <li>Curated Hotel & Flight Recommendations: Expert advice on the best places to stay and how to get here.</li>
+                                        <li>Expert Local Guides (Dining & Culture): Recommendations for trusted local food and excursion experiences.</li>
+                                        <li>Comprehensive Pre- & Post-Travel Guidance: We ensure you are fully prepared for your journey and aftercare.</li>
+                                        <li>On-the-Ground Support & Coordination: Access to our in-country team for support when you need it.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="border-t border-gray-200 pt-4">
-                            <h4 class="font-bold text-sivara-gunmetal">Concierge-Plus (Premium)</h4>
-                            <ul class="list-disc list-inside text-sivara-gunmetal/80 mt-2">
-                                <li>All 'Lite' services, plus:</li>
-                                <li>Door-to-door travel arrangements</li>
-                                <li>Hotel & accommodation booking</li>
-                                <li>Local SIM & ground support</li>
-                                <li>Companion & family support services</li>
-                            </ul>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">The Complete Concierge Package</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    <p class="mb-4">Our most comprehensive offering, designed for patients and their families who want every detail of the journey managed with seamless, door-to-door care.</p>
+                                    <p class="font-semibold mb-2">Includes:</p>
+                                    <ul class="list-disc list-inside mb-2">
+                                        <li>Everything in the Essential Support Package, PLUS:</li>
+                                        <li>End-to-End Travel & Flight Booking: We handle all your flight arrangements according to your preferences.</li>
+                                        <li>Premium Hotel & Recovery Suite Booking: We book and manage your stay at a hotel vetted for post-operative comfort.</li>
+                                        <li>Dedicated On-the-Ground Concierge Service: From providing a local SIM card to personal assistance, your dedicated concierge is there to support you.</li>
+                                        <li>Full Support for Companions & Family Members: We ensure any travelling companions are fully supported, providing peace of mind for everyone.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -649,30 +719,46 @@
     });
     </script>
     <script>
+    // Accordion logic for Specialised Orthopaedic Procedures
     document.addEventListener('DOMContentLoaded', function () {
-      // Accordion logic for Specialised Orthopaedic Procedures
-      const accordionItems = document.querySelectorAll('#procedures .accordion-item');
-      accordionItems.forEach(item => {
+      const procedureAccordionItems = document.querySelectorAll('#procedures .accordion-item');
+      procedureAccordionItems.forEach(item => {
         const header = item.querySelector('.accordion-header');
         const content = item.querySelector('.accordion-content');
         const icon = item.querySelector('.accordion-icon');
         header.addEventListener('click', () => {
           const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-          accordionItems.forEach(i => {
+          procedureAccordionItems.forEach(i => {
             i.querySelector('.accordion-content').style.maxHeight = '0px';
-            i.querySelector('.accordion-icon').textContent = '+';
             i.querySelector('.accordion-icon').classList.remove('open');
           });
           if (!isOpen) {
             content.style.maxHeight = content.scrollHeight + 'px';
-            icon.textContent = '+';
             icon.classList.add('open');
-          } else {
-            icon.textContent = '+';
-            icon.classList.remove('open');
           }
         });
       });
+    });
+    // Accordion logic for the packages section (same as FAQ on index.html)
+    document.addEventListener('DOMContentLoaded', function () {
+        const packageAccordionItems = document.querySelectorAll('#packages .accordion-item');
+        packageAccordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.accordion-icon');
+
+            header.addEventListener('click', () => {
+                const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+                packageAccordionItems.forEach(i => {
+                    i.querySelector('.accordion-content').style.maxHeight = '0px';
+                    i.querySelector('.accordion-icon').classList.remove('open');
+                });
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('open');
+                }
+            });
+        });
     });
     </script>
 </body>

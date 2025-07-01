@@ -146,11 +146,12 @@
         }
         /* Microinteractions */
         .card-hover {
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), box-shadow 0.2s;
         }
         .card-hover:hover {
-            transform: scale(1.04) translateY(-4px);
+            transform: scale(1.05);
             box-shadow: 0 8px 32px 0 #7C9ED930;
+            z-index: 2;
         }
         .btn-animate {
             transition: transform 0.15s, box-shadow 0.15s;
@@ -700,6 +701,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="accordion-item border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full text-left p-4 md:p-6 bg-white flex justify-between items-center">
+                                <span class="text-lg md:text-xl font-semibold text-sivara-gunmetal">What is the difference between your package price and booking directly with a hospital?</span>
+                                <span class="accordion-icon text-sivara-blue text-2xl font-thin transform transition-transform">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 md:p-6 text-sivara-gunmetal/80 bg-white/50">
+                                    While booking directly is an option, our package price includes a comprehensive, physician-led concierge service designed to ensure your safety and a seamless journey. This covers your initial virtual triage with our UK doctor, vetting of surgeons, end-to-end travel and logistics management, 24/7 in-country support, and lifelong aftercare coordination. Our modest fee for this premium service is included in your transparent quote, which still represents a significant saving of 50-70% compared to typical costs in the UK or US. You get a fully managed, expertly guided experience without sacrificing value.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -708,7 +720,7 @@
         <section id="stories" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal reveal-text">Reviews</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal reveal-text">Hospital Reviews</h2>
                     <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4 reveal-text">Hearing from those who have made the journey is the best way to understand the Sivara Health difference.</p>
                 </div>
                 <div class="swiper-container">
