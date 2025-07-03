@@ -5,6 +5,7 @@ summary: Chiang Mai, the serene cultural capital of Northern Thailand, is
   increasingly recognised not only for its beauty but also for its high-quality,
   affordable medical care.
 hero: /uploads/cnx-bangkok-hospital-chiang-mai-1536x1024-1.jpg
+category: Guide
 ---
 ### **A Patient's Guide to Top Orthopaedic Hospitals in Chiang Mai**
 
