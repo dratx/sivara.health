@@ -41,7 +41,7 @@ collections:
               - name: "images"
                 label: "Carousel Images"
                 widget: "list"
-                summary: "{{fields.image}}"
+                summary: "{{fields.alt}}"
                 fields:
                   - { name: src, label: "Image", widget: "image" }
                   - { name: alt, label: "Alt Text", widget: "string" }
