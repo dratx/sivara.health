@@ -338,6 +338,7 @@
                     <div class="loading-spinner"></div>
                     <p class="mt-4 text-sivara-gunmetal/70">Loading articles...</p>
                 </div>
+                
                 <div id="no-articles" class="hidden text-center py-12">
                     <div class="max-w-md mx-auto">
                         <svg class="w-16 h-16 mx-auto text-sivara-blue/50 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -348,19 +349,19 @@
                     </div>
                 </div>
 
-                <!-- Guides Section -->
-                <div id="guides-section" class="mb-12 hidden">
-                    <h2 class="text-2xl font-bold text-sivara-gunmetal mb-4">Guides</h2>
-                    <div id="guides-row" class="flex space-x-6 overflow-x-auto pb-2">
-                        <!-- Guide article cards will be inserted here -->
+                <!-- Latest Articles Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-sivara-gunmetal mb-4">Latest</h2>
+                    <div id="latest-articles-grid" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 h-[900px] overflow-y-auto pr-2">
+                        <!-- Latest articles will be inserted here -->
                     </div>
                 </div>
 
-                <!-- Latest Section -->
-                <div id="latest-section" class="hidden">
-                    <h2 class="text-2xl font-bold text-sivara-gunmetal mb-4">Latest</h2>
-                    <div id="latest-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 h-[900px] overflow-y-auto">
-                        <!-- Latest article cards will be inserted here -->
+                <!-- Guides Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-sivara-gunmetal mb-4">Guides</h2>
+                    <div id="guides-row" class="hidden flex flex-row space-x-6 overflow-x-auto pb-2 -mx-2">
+                        <!-- Guide articles will be inserted here -->
                     </div>
                 </div>
             </div>
@@ -443,10 +444,8 @@
         async function loadArticles() {
         const loadingEl = document.getElementById('loading');
         const noArticlesEl = document.getElementById('no-articles');
-        const guidesSectionEl = document.getElementById('guides-section');
+        const latestGridEl = document.getElementById('latest-articles-grid');
         const guidesRowEl = document.getElementById('guides-row');
-        const latestSectionEl = document.getElementById('latest-section');
-        const latestGridEl = document.getElementById('latest-grid');
         const repoOwner = 'dratx';
         const repoName = 'sivara.health';
         const articlesPath = 'content/articles';
@@ -483,38 +482,36 @@
                 });
             
             const articles = (await Promise.all(articlePromises))
-                .filter(Boolean)
-                .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-            // Split into guides and latest
-            const guideArticles = articles.filter(a => (a.category || '').toLowerCase() === 'guide');
-            const latestArticles = articles.filter(a => (a.category || '').toLowerCase() !== 'guide');
+                .filter(Boolean) // Remove any nulls from failed fetches
+                .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by most recent date
 
             loadingEl.classList.add('hidden');
-
+            
             if (articles.length === 0) {
                 noArticlesEl.classList.remove('hidden');
             } else {
-                // Render Guides
-                if (guideArticles.length > 0) {
-                    guidesSectionEl.classList.remove('hidden');
-                    guidesRowEl.innerHTML = '';
-                    guideArticles.forEach(article => {
-                        const card = createGuideCard(article);
-                        guidesRowEl.appendChild(card);
-                    });
-                }
-                // Render Latest
+                // Split into guides and latest
+                const guideArticles = articles.filter(article => article.category === 'Guide');
+                const latestArticles = articles.filter(article => article.category !== 'Guide');
+
+                // Render Latest Articles
                 if (latestArticles.length > 0) {
-                    latestSectionEl.classList.remove('hidden');
+                    latestGridEl.classList.remove('hidden');
                     latestGridEl.innerHTML = '';
                     latestArticles.forEach(article => {
-                        const card = createLatestCard(article);
+                        const card = createArticleCard(article, 'latest');
                         latestGridEl.appendChild(card);
                     });
                 }
-                if (guideArticles.length === 0 && latestArticles.length === 0) {
-                    noArticlesEl.classList.remove('hidden');
+
+                // Render Guides
+                if (guideArticles.length > 0) {
+                    guidesRowEl.classList.remove('hidden');
+                    guidesRowEl.innerHTML = '';
+                    guideArticles.forEach(article => {
+                        const card = createArticleCard(article, 'guide');
+                        guidesRowEl.appendChild(card);
+                    });
                 }
             }
         } catch (error) {
@@ -525,38 +522,22 @@
         }
     }
 
-    // Guide card: fixed width, horizontal scroll
-    function createGuideCard(article) {
+    function createArticleCard(article, section) {
+        // This function creates a link <a> element as the card
         const cardLink = document.createElement('a');
         cardLink.href = `article.html?slug=${article.slug}`;
-        cardLink.className = 'article-card card-hover block group flex-shrink-0 w-11/12 md:w-5/12 lg:w-1/3';
-        const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
-            year: 'numeric', month: 'long', day: 'numeric'
-        });
-        cardLink.innerHTML = `
-            <img src="${article.hero}" alt="${article.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/7C9ED9/FFFFFF?text=Sivara+Health';">
-            <div class="p-6">
-                <div class="article-meta mb-2">${formattedDate}</div>
-                <h3 class="text-xl font-semibold text-sivara-gunmetal mb-3 group-hover:text-sivara-blue transition-colors">${article.title}</h3>
-                <div class="inline-flex items-center text-sivara-blue font-semibold mt-4">
-                    Read More
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </div>
-            </div>
-        `;
-        return cardLink;
-    }
+        let cardClass = 'article-card card-hover block group';
+        if (section === 'guide') {
+            cardClass += ' w-11/12 md:w-5/12 lg:w-1/3 flex-shrink-0';
+        }
+        cardLink.className = cardClass;
 
-    // Latest card: same as before
-    function createLatestCard(article) {
-        const cardLink = document.createElement('a');
-        cardLink.href = `article.html?slug=${article.slug}`;
-        cardLink.className = 'article-card card-hover block group';
         const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
-            year: 'numeric', month: 'long', day: 'numeric'
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
         });
+
         cardLink.innerHTML = `
             <img src="${article.hero}" alt="${article.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/7C9ED9/FFFFFF?text=Sivara+Health';">
             <div class="p-6">

@@ -16,5 +16,5 @@ collections:
       - { name: date, label: "Publish Date", widget: datetime }
       - { name: summary, label: Summary, widget: text }
       - { name: hero, label: "Hero Image", widget: image }
-      - { name: body, label: Body, widget: markdown, hint: "To add an image carousel anywhere in your article, use the following shortcode:\n\n{{< carousel >}}\n/uploads/image1.jpg\n/uploads/image2.jpg\n/uploads/image3.jpg\n{{< /carousel >}}\n\nEach image should be on its own line. You can use the 'Media' button to upload images and copy their URLs." }
+      - { name: body, label: Body, widget: markdown }
       - { name: category, label: "Category", widget: "select", options: ["General", "Guide"], default: "General", required: false }

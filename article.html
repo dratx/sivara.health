@@ -475,69 +475,14 @@
                 this.src = 'https://via.placeholder.com/800x400/7C9ED9/FFFFFF?text=Sivara+Health';
             };
             
-            // Convert markdown to HTML and display, with carousel shortcode support
-            const htmlContent = marked.parse(replaceCarousels(article.body));
+            // Convert markdown to HTML and display
+            const htmlContent = marked.parse(article.body);
             document.getElementById('article-body').innerHTML = htmlContent;
-            // Initialize carousels after rendering
-            initCarousels();
+            
             // Show content and hide loading/error states
             loadingEl.classList.add('hidden');
             errorEl.classList.add('hidden');
             contentEl.classList.remove('hidden');
-        }
-
-        // Replace {{< carousel >}} blocks with carousel HTML
-        function replaceCarousels(markdown) {
-            return markdown.replace(/\{\{< carousel >\}}([\s\S]*?)\{\{< \/carousel >\}}/g, function(match, imagesBlock) {
-                const images = imagesBlock.split('\n').map(line => line.trim()).filter(Boolean);
-                if (images.length === 0) return '';
-                // Carousel unique id
-                const carouselId = 'carousel-' + Math.random().toString(36).substr(2, 9);
-                // Main image (first)
-                let mainImg = images[0];
-                // Carousel HTML
-                return `
-                <div class="sivara-carousel mb-8" id="${carouselId}">
-                  <div class="relative w-full flex justify-center items-center">
-                    <button class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-2 shadow hover:bg-sivara-blue hover:text-white transition hidden md:block" aria-label="Previous"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
-                    <img src="${mainImg}" class="carousel-main-img w-full max-h-[400px] object-cover rounded-xl" alt="carousel image" />
-                    <button class="carousel-next absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-2 shadow hover:bg-sivara-blue hover:text-white transition hidden md:block" aria-label="Next"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
-                  </div>
-                  <div class="flex space-x-2 mt-4 overflow-x-auto pb-2 justify-center">
-                    ${images.map((img, idx) => `<img src="${img}" class="carousel-thumb w-24 h-16 object-cover rounded cursor-pointer border-2 border-transparent ${idx===0?'border-sivara-blue':''}" data-idx="${idx}" alt="carousel thumbnail" />`).join('')}
-                  </div>
-                </div>
-                <script>window._carouselIds = (window._carouselIds||[]).concat('${carouselId}');</script>
-                `;
-            });
-        }
-
-        // Initialize all carousels on the page
-        function initCarousels() {
-            (window._carouselIds||[]).forEach(function(carouselId) {
-                const root = document.getElementById(carouselId);
-                if (!root) return;
-                const mainImg = root.querySelector('.carousel-main-img');
-                const thumbs = root.querySelectorAll('.carousel-thumb');
-                let current = 0;
-                function show(idx) {
-                    if (idx < 0) idx = thumbs.length-1;
-                    if (idx >= thumbs.length) idx = 0;
-                    current = idx;
-                    mainImg.src = thumbs[idx].src;
-                    thumbs.forEach((thumb, i) => thumb.classList.toggle('border-sivara-blue', i===idx));
-                }
-                thumbs.forEach((thumb, idx) => {
-                    thumb.addEventListener('click', () => show(idx));
-                });
-                const prev = root.querySelector('.carousel-prev');
-                const next = root.querySelector('.carousel-next');
-                if (prev && next) {
-                    prev.addEventListener('click', () => show(current-1));
-                    next.addEventListener('click', () => show(current+1));
-                }
-            });
-            window._carouselIds = [];
         }
     </script>
 </body>
