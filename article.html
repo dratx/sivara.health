@@ -474,15 +474,154 @@
             heroImg.onerror = function() {
                 this.src = 'https://via.placeholder.com/800x400/7C9ED9/FFFFFF?text=Sivara+Health';
             };
-            
-            // Convert markdown to HTML and display
-            const htmlContent = marked.parse(article.body);
-            document.getElementById('article-body').innerHTML = htmlContent;
-            
+
+            // New: Render block-based body
+            const bodyContainer = document.getElementById('article-body');
+            bodyContainer.innerHTML = '';
+            let blocks = [];
+            try {
+                blocks = JSON.parse(article.body);
+            } catch (e) {
+                // fallback: treat as markdown if not JSON
+                bodyContainer.innerHTML = marked.parse(article.body);
+                loadingEl.classList.add('hidden');
+                errorEl.classList.add('hidden');
+                contentEl.classList.remove('hidden');
+                return;
+            }
+            blocks.forEach((block, idx) => {
+                let el;
+                switch (block.type) {
+                    case 'text':
+                        el = document.createElement('div');
+                        el.className = 'mb-8';
+                        el.innerHTML = marked.parse(block.content || '');
+                        break;
+                    case 'image':
+                        el = document.createElement('figure');
+                        el.className = 'my-8';
+                        const img = document.createElement('img');
+                        img.src = block.src;
+                        img.alt = block.alt || '';
+                        img.className = 'w-full rounded-lg';
+                        img.onerror = function() {
+                            this.src = 'https://via.placeholder.com/800x400/7C9ED9/FFFFFF?text=Sivara+Health';
+                        };
+                        el.appendChild(img);
+                        if (block.caption) {
+                            const cap = document.createElement('figcaption');
+                            cap.className = 'text-center text-sivara-blue mt-2';
+                            cap.textContent = block.caption;
+                            el.appendChild(cap);
+                        }
+                        break;
+                    case 'carousel':
+                        el = createCarousel(block.images || [], idx);
+                        break;
+                    default:
+                        el = document.createElement('div');
+                        el.textContent = '[Unsupported block type]';
+                }
+                bodyContainer.appendChild(el);
+            });
+
             // Show content and hide loading/error states
             loadingEl.classList.add('hidden');
             errorEl.classList.add('hidden');
             contentEl.classList.remove('hidden');
+        }
+
+        // Carousel component implementation
+        function createCarousel(images, carouselIdx) {
+            if (!images || !images.length) {
+                const empty = document.createElement('div');
+                empty.className = 'bg-gray-100 text-center text-gray-400 py-8 rounded-lg';
+                empty.textContent = '[No images in carousel]';
+                return empty;
+            }
+            // Unique ID for this carousel instance
+            const carouselId = `carousel-${carouselIdx}`;
+            let currentIndex = 0;
+
+            // Create container
+            const container = document.createElement('div');
+            container.className = 'carousel-container my-6';
+            container.setAttribute('data-carousel-id', carouselId);
+
+            // Main image container
+            const mainImageContainer = document.createElement('div');
+            mainImageContainer.className = 'main-image-container relative';
+
+            const mainImg = document.createElement('img');
+            mainImg.src = images[0].src;
+            mainImg.alt = images[0].alt || '';
+            mainImg.className = 'main-image w-full object-cover rounded-lg';
+            mainImageContainer.appendChild(mainImg);
+
+            // Prev button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 rounded-full p-2 transition';
+            prevBtn.innerHTML = '<svg class="w-6 h-6 text-sivara-gunmetal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>';
+            mainImageContainer.appendChild(prevBtn);
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 rounded-full p-2 transition';
+            nextBtn.innerHTML = '<svg class="w-6 h-6 text-sivara-gunmetal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
+            mainImageContainer.appendChild(nextBtn);
+
+            // Thumbnail scroller
+            const thumbScroller = document.createElement('div');
+            thumbScroller.className = 'thumbnail-scroller flex overflow-x-auto space-x-2 p-2 mt-2';
+
+            // Thumbnails
+            images.forEach((img, idx) => {
+                const thumb = document.createElement('img');
+                thumb.src = img.src;
+                thumb.alt = img.alt || '';
+                thumb.setAttribute('data-index', idx);
+                thumb.className = `thumbnail h-20 w-auto object-cover rounded cursor-pointer border-2 ${idx === 0 ? 'border-sivara-blue' : 'border-transparent'}`;
+                thumb.addEventListener('click', function() {
+                    setCurrentIndex(idx);
+                });
+                thumbScroller.appendChild(thumb);
+            });
+
+            // State update function
+            function setCurrentIndex(idx) {
+                currentIndex = idx;
+                // Update main image
+                mainImg.src = images[currentIndex].src;
+                mainImg.alt = images[currentIndex].alt || '';
+                // Update thumbnails
+                Array.from(thumbScroller.children).forEach((thumb, i) => {
+                    thumb.classList.toggle('border-sivara-blue', i === currentIndex);
+                    thumb.classList.toggle('border-transparent', i !== currentIndex);
+                });
+                // Scroll active thumbnail into view
+                const activeThumb = thumbScroller.querySelector(`[data-index="${currentIndex}"]`);
+                if (activeThumb) {
+                    activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
+
+            // Prev/Next button handlers
+            prevBtn.addEventListener('click', function() {
+                let idx = currentIndex - 1;
+                if (idx < 0) idx = images.length - 1;
+                setCurrentIndex(idx);
+            });
+            nextBtn.addEventListener('click', function() {
+                let idx = currentIndex + 1;
+                if (idx >= images.length) idx = 0;
+                setCurrentIndex(idx);
+            });
+
+            // Assemble carousel
+            container.appendChild(mainImageContainer);
+            container.appendChild(thumbScroller);
+
+            return container;
         }
     </script>
 </body>
