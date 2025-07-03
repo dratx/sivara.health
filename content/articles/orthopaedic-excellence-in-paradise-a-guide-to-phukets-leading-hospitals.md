@@ -4,6 +4,7 @@ date: 2025-05-30T14:00:00.000Z
 summary: "Phuket is world-famous as a tropical paradise, but it is also home to
   a sophisticated and thriving medical tourism industry. "
 hero: /uploads/phu-bangkok-hospital-phuket.jpg
+category: Guide
 ---
 ### **Orthopaedic Excellence in Paradise: A Guide to Phuket's Leading Hospitals**
 
