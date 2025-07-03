@@ -349,7 +349,7 @@
                 </div>
 
                 <!-- Guides Section -->
-                <div id="guides-section" class="hidden mb-12">
+                <div id="guides-section" class="mb-12 hidden">
                     <h2 class="text-2xl font-bold text-sivara-gunmetal mb-4">Guides</h2>
                     <div id="guides-row" class="flex space-x-6 overflow-x-auto pb-2">
                         <!-- Guide article cards will be inserted here -->
@@ -483,44 +483,39 @@
                 });
             
             const articles = (await Promise.all(articlePromises))
-                .filter(Boolean) // Remove any nulls from failed fetches
-                .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by most recent date
+                .filter(Boolean)
+                .sort((a, b) => new Date(b.date) - new Date(a.date));
 
             // Split into guides and latest
-            const guideArticles = articles.filter(article => article.category === 'Guide');
-            const latestArticles = articles.filter(article => article.category !== 'Guide');
+            const guideArticles = articles.filter(a => (a.category || '').toLowerCase() === 'guide');
+            const latestArticles = articles.filter(a => (a.category || '').toLowerCase() !== 'guide');
 
             loadingEl.classList.add('hidden');
-            let hasArticles = false;
 
-            // Render Guides
-            if (guideArticles.length > 0) {
-                guidesSectionEl.classList.remove('hidden');
-                guidesRowEl.innerHTML = '';
-                guideArticles.forEach(article => {
-                    const card = createGuideArticleCard(article);
-                    guidesRowEl.appendChild(card);
-                });
-                hasArticles = true;
-            } else {
-                guidesSectionEl.classList.add('hidden');
-            }
-
-            // Render Latest
-            if (latestArticles.length > 0) {
-                latestSectionEl.classList.remove('hidden');
-                latestGridEl.innerHTML = '';
-                latestArticles.forEach(article => {
-                    const card = createLatestArticleCard(article);
-                    latestGridEl.appendChild(card);
-                });
-                hasArticles = true;
-            } else {
-                latestSectionEl.classList.add('hidden');
-            }
-
-            if (!hasArticles) {
+            if (articles.length === 0) {
                 noArticlesEl.classList.remove('hidden');
+            } else {
+                // Render Guides
+                if (guideArticles.length > 0) {
+                    guidesSectionEl.classList.remove('hidden');
+                    guidesRowEl.innerHTML = '';
+                    guideArticles.forEach(article => {
+                        const card = createGuideCard(article);
+                        guidesRowEl.appendChild(card);
+                    });
+                }
+                // Render Latest
+                if (latestArticles.length > 0) {
+                    latestSectionEl.classList.remove('hidden');
+                    latestGridEl.innerHTML = '';
+                    latestArticles.forEach(article => {
+                        const card = createLatestCard(article);
+                        latestGridEl.appendChild(card);
+                    });
+                }
+                if (guideArticles.length === 0 && latestArticles.length === 0) {
+                    noArticlesEl.classList.remove('hidden');
+                }
             }
         } catch (error) {
             console.error('Error loading articles:', error);
@@ -530,15 +525,13 @@
         }
     }
 
-    // Card for Guides (horizontal row)
-    function createGuideArticleCard(article) {
+    // Guide card: fixed width, horizontal scroll
+    function createGuideCard(article) {
         const cardLink = document.createElement('a');
         cardLink.href = `article.html?slug=${article.slug}`;
-        cardLink.className = 'article-card card-hover block group flex-shrink-0 w-11/12 md:w-5/12 lg:w-1/3 mr-4';
+        cardLink.className = 'article-card card-hover block group flex-shrink-0 w-11/12 md:w-5/12 lg:w-1/3';
         const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+            year: 'numeric', month: 'long', day: 'numeric'
         });
         cardLink.innerHTML = `
             <img src="${article.hero}" alt="${article.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/7C9ED9/FFFFFF?text=Sivara+Health';">
@@ -556,15 +549,13 @@
         return cardLink;
     }
 
-    // Card for Latest (vertical grid)
-    function createLatestArticleCard(article) {
+    // Latest card: same as before
+    function createLatestCard(article) {
         const cardLink = document.createElement('a');
         cardLink.href = `article.html?slug=${article.slug}`;
         cardLink.className = 'article-card card-hover block group';
         const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+            year: 'numeric', month: 'long', day: 'numeric'
         });
         cardLink.innerHTML = `
             <img src="${article.hero}" alt="${article.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/7C9ED9/FFFFFF?text=Sivara+Health';">
