@@ -10,8 +10,6 @@ summary: For patients considering knee replacement surgery, the prospect of a
 hero: /uploads/robotic-knee-replacement-thailand.jpg
 category: General
 ---
-### **Robotic Knee Replacement in Thailand (Mako & VELYS): The Costs, Benefits, and Real Patient Reviews**
-
 For patients considering knee replacement surgery, the prospect of a long waiting list and high costs at home can be daunting. Increasingly, quality-focused individuals are looking abroad, and Thailand has emerged as a world-class destination for advanced medical procedures. At the forefront of this is robotic-assisted knee replacement, a state-of-the-art approach that offers enhanced precision and can lead to a faster, smoother recovery.
 
 This guide delves into the specifics of robotic knee replacement in Thailand, focusing on leading systems like the **[Stryker Mako SmartRobotics™](https://www.stryker.com/us/en/joint-replacement/systems/mako-smartrobotics.html)** and the **[VELYS™ Robotic-Assisted Solution](https://www.jnjmedtech.com/en-US/solution/velys-robotic-assisted-solution)**. We’ll explore the significant benefits, break down the costs, and explain what a physician-led concierge service adds to your journey.
