@@ -1,6 +1,5 @@
 ---
-title: Tired of NHS Waits? A 2025 Guide to Skipping the UK Knee Replacement
-  Waiting List with Surgery in Thailand
+title: Tired of NHS Waits? A 2025 Guide to Skipping the Waiting List
 date: 2025-05-09T14:00:00.000Z
 summary: Living with chronic knee pain is a daily battle. Simple acts like
   walking or climbing stairs can become monumental challenges, impacting your
