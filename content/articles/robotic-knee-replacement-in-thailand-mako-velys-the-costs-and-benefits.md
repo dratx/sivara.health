@@ -14,7 +14,7 @@ category: General
 
 For patients considering knee replacement surgery, the prospect of a long waiting list and high costs at home can be daunting. Increasingly, quality-focused individuals are looking abroad, and Thailand has emerged as a world-class destination for advanced medical procedures. At the forefront of this is robotic-assisted knee replacement, a state-of-the-art approach that offers enhanced precision and can lead to a faster, smoother recovery.
 
-This guide delves into the specifics of robotic knee replacement in Thailand, focusing on leading systems like the **[Stryker Mako SmartRobotics™](https://www.stryker.com/us/en/joint-replacement/systems/mako-smartrobotics.html)** and the**[](https://www.jnjmedtech.com/en-US/solution/velys-robotic-assisted-solution) [VELYS™ Robotic-Assisted Solution](https://www.jnjmedtech.com/en-US/solution/velys-robotic-assisted-solution)**. We’ll explore the significant benefits, break down the costs, and explain what a physician-led concierge service adds to your journey.
+This guide delves into the specifics of robotic knee replacement in Thailand, focusing on leading systems like the **[Stryker Mako SmartRobotics™](https://www.stryker.com/us/en/joint-replacement/systems/mako-smartrobotics.html)** and the[](https://www.jnjmedtech.com/en-US/solution/velys-robotic-assisted-solution)** [VELYS™ Robotic-Assisted Solution](https://www.jnjmedtech.com/en-US/solution/velys-robotic-assisted-solution)**. We’ll explore the significant benefits, break down the costs, and explain what a physician-led concierge service adds to your journey.
 
 ### **The Patient Benefit: How Robotic-Assisted Surgery Works for You**
 
@@ -32,12 +32,12 @@ For a detailed look at the typical recovery journey, see our **week-by-week guid
 
 One of the most compelling reasons to consider Thailand for a robotic knee replacement is the significant value, with savings often between 50-70% compared to private UK or US prices.
 
-An all-inclusive package for a VELYS robotic knee replacement at a premier hospital like Bumrungrad International could be priced around $15,500 USD. A comprehensive package facilitated by Sivara Health would transparently itemise all costs, so there are no surprises.
+An all-inclusive package for a VELYS robotic knee replacement at a premier hospital like Bumrungrad International could be priced around $15,500. A comprehensive package facilitated by Sivara Health would transparently itemise all costs, so there are no surprises.
 
 **A Sample All-Inclusive Robotic Knee Package Typically Includes:**
 
 * The robotic-assisted surgical procedure itself.
-* A high-quality implant from a leading manufacturer like**[](https://www.zimmerbiomet.com/en) [Zimmer Biomet](https://www.zimmerbiomet.com/en)**.
+* A high-quality implant from a leading manufacturer like[](https://www.zimmerbiomet.com/en) Zimmer Biomet.
 * All surgeon, anaesthetist, and hospital operating theatre fees.
 * A private room for your post-operative hospital stay.
 * All pre- and post-operative consultations with your Thai surgeon.
@@ -51,7 +51,7 @@ For a complete overview of what our packages cover, please see our guide to **wh
 
 Navigating advanced surgery abroad requires a partner you can trust implicitly. Sivara Health was founded on this principle by a UK-trained physician and a Thai co-founder with a PhD in behavioural and medical sciences.
 
-This unique blend of expertise ensures your journey is framed by medical understanding, not sales targets. Our "Trusted Expert Companion" model means we can facilitate a **Robotic-Assisted Knee Replacement** using the **VELYS™ system** at a world-class facility like **Bumrungrad International Hospital**, a**[](https://www.jointcommissioninternational.org/) [JCI-accredited](https://www.jointcommissioninternational.org/)** institution in **Bangkok**, while providing you with unparalleled support. You can learn more about our commitment to quality in our article on **whether surgery in Thailand is safe**.
+This unique blend of expertise ensures your journey is framed by medical understanding, not sales targets. Our "Trusted Expert Companion" model means we can facilitate a **Robotic-Assisted Knee Replacement** using the **VELYS™ system** at a world-class facility like **Bumrungrad International Hospital**, a **[JCI-accredited](https://www.jointcommissioninternational.org/)** institution in **Bangkok**, while providing you with unparalleled support. You can learn more about our commitment to quality in our article on **whether surgery in Thailand is safe**.
 
 ### **Real Patient Experiences & Reviews**
 
@@ -68,9 +68,5 @@ To understand the complete journey from start to finish, view our **step-by-step
 If you are a discerning patient, motivated by quality, value, and the benefits of advanced technology, exploring robotic knee replacement in Thailand is a logical next step.
 
 **Contact us to schedule a free, no-obligation consultation with our UK-licensed doctor**. Discuss your needs, understand the technology, and get a clear, personalised quote for your journey to a better quality of life.
-
-
-
-
 
 *Disclaimer: All surgical procedures carry inherent risks. The information provided is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional, such as your Sivara Health UK doctor and your surgeon in Thailand*.
