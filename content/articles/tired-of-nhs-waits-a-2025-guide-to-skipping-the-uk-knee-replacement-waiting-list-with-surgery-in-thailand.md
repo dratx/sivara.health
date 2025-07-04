@@ -48,6 +48,6 @@ A specialised medical concierge service removes the complexity of planning. Here
 
 You do not have to let pain dictate your life or let waiting lists define your future. A world-class knee replacement is more accessible than you think.
 
-Book your **free, no-obligation virtual triage with our UK-licensed doctor today**. Discuss your situation, get expert answers, and receive a clear, personalised plan to get you back on your feet, and back to your life, in weeks, not years.
+Book your **[free, no-obligation virtual triage with our UK-licensed doctor today](https://sivara.health/#consultation)**. Discuss your situation, get expert answers, and receive a clear, personalised plan to get you back on your feet, and back to your life, in weeks, not years.
 
 Disclaimer: All surgical procedures carry inherent risks. The information provided here is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional, such as your Sivara Health UK doctor and your surgeon in Thailand.
