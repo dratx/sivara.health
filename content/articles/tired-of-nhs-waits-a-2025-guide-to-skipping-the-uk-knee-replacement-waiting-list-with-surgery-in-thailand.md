@@ -32,7 +32,7 @@ category: General
 
 *Choosing to travel for surgery requires immense trust. We built Sivara Health to earn that trust from the very first step. Our service was founded by a unique partnership: a UK-trained physician and a Thai co-founder with a PhD in behavioural and medical sciences. This blend of expertise is our foundation.*
 
-*It allows us to offer a "Trusted Expert Companion" model that is deeply reassuring and genuinely empathetic. We don’t just book your surgery; we provide medical oversight from a UK perspective while ensuring your entire experience on the ground in Thailand is seamless and caring. You can learn more about this in our guide to **safe surgery in Thailand**.*
+*It allows us to offer a "Trusted Expert Companion" model that is deeply reassuring and genuinely empathetic. We don't just book your surgery; we provide medical oversight from a UK perspective while ensuring your entire experience on the ground in Thailand is seamless and caring. You can learn more about this in our guide to **safe surgery in Thailand**.*
 
 ### ***Your Timeline: From UK Consultation to Thai Surgery in Under 8 Weeks***
 
@@ -42,13 +42,13 @@ category: General
 
 * **Weeks 1-2: Free UK-Licensed Doctor Triage** Your journey begins at home with a complimentary virtual consultation with a UK-licensed doctor. You can discuss your case, ask vital questions, and get expert medical advice with no obligation. This provides immediate peace of mind and expert validation, which you can **learn more about here**.
 * **Weeks 3-4: Personalised Planning & Secure Booking** Our team creates a personalised, all-inclusive package with transparent costs. We handle all logistics, from coordinating with the hospital to securing your preferred dates.
-* **Weeks 5-6: Travel & Pre-Operative Care in Thailand** Our in-country team supports you from the moment you land, managing travel, accommodation, and appointments. You’ll meet your Thai surgeon for a thorough pre-operative assessment at a world-class facility.
-* **Weeks 7-8: Surgery, Recovery, and Journey Home** Following your successful knee replacement—often using **advanced robotic-assisted technology** for greater precision—you will recover in a modern hospital environment. Our team provides full support and ensures you are prepared for your flight home, with clear guidance on post-operative care. For a detailed look at this phase, see our **week-by-week guide to knee replacement recovery in Thailand**.
+* **Weeks 5-6: Travel & Pre-Operative Care in Thailand** Our in-country team supports you from the moment you land, managing travel, accommodation, and appointments. You'll meet your Thai surgeon for a thorough pre-operative assessment at a world-class facility.
+* **Weeks 7-8: Surgery, Recovery, and Journey Home** Following your successful knee replacement—often using **advanced robotic-assisted technology** for greater precision, you will recover in a modern hospital environment. Our team provides full support and ensures you are prepared for your flight home, with clear guidance on post-operative care. For a detailed look at this phase, see our **week-by-week guide to knee replacement recovery in Thailand**.
 
 ### ***Take Control of Your Health Today***
 
 *You do not have to let pain dictate your life or let waiting lists define your future. A world-class knee replacement is more accessible than you think.*
 
-*Book your **free, no-obligation virtual triage with our UK-licensed doctor today**. Discuss your situation, get expert answers, and receive a clear, personalised plan to get you back on your feet—and back to your life—in weeks, not years.*
+*Book your **free, no-obligation virtual triage with our UK-licensed doctor today**. Discuss your situation, get expert answers, and receive a clear, personalised plan to get you back on your feet, and back to your life, in weeks, not years.*
 
 *Disclaimer: All surgical procedures carry inherent risks. The information provided here is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional, such as your Sivara Health UK doctor and your surgeon in Thailand.*
