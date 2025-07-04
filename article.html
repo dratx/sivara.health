@@ -417,7 +417,8 @@
                 const fileData = await response.json();
                 
                 // Decode content and parse frontmatter/body
-                const content = atob(fileData.content);
+                const base64Decoded = atob(fileData.content);
+                const content = decodeURIComponent(escape(base64Decoded));
                 const frontmatterMatch = content.match(/---([\s\S]*?)---/);
                 const bodyMatch = content.match(/---[\s\S]*?---([\s\S]*)/);
 
