@@ -19,8 +19,8 @@ category: General
 
 *For those needing knee surgery, the situation in the UK presents a difficult choice.*
 
-* ***The NHS Pathway:** While the NHS provides excellent care, patients can face extensive waiting periods for orthopaedic procedures, prolonging physical discomfort and impacting mental health. (For up-to-date statistics, you can view the latest NHS performance data here.)*
-* ***The Private Pathway:** Opting for private knee surgery in the UK can bypass the wait, but the significant financial outlay is a barrier for a vast number of people. See our detailed **cost breakdown of UK private surgery vs. our all-inclusive Thailand packages.***
+* **The NHS Pathway:** While the NHS provides excellent care, patients can face extensive waiting periods for orthopaedic procedures, prolonging physical discomfort and impacting mental health. (For up-to-date statistics, you can view the latest NHS performance data here.)
+* **The Private Pathway:** Opting for private knee surgery in the UK can bypass the wait, but the significant financial outlay is a barrier for a vast number of people. See our detailed **cost breakdown of UK private surgery vs. our all-inclusive Thailand packages.**
 
 ### ***Thailand: A Global Leader in Quality, Safety, and Value***
 
@@ -40,25 +40,15 @@ category: General
 
 *A specialised medical concierge service removes the complexity of planning. Here is a realistic timeline for your journey to a new knee with Sivara Health:*
 
-* ***Weeks 1-2: Free UK-Licensed Doctor Triage** Your journey begins at home with a complimentary virtual consultation with a UK-licensed doctor. You can discuss your case, ask vital questions, and get expert medical advice with no obligation. This provides immediate peace of mind and expert validation, which you can **learn more about here**.*
-
-
-* ***Weeks 3-4: Personalised Planning & Secure Booking** Our team creates a personalised, all-inclusive package with transparent costs. We handle all logistics, from coordinating with the hospital to securing your preferred dates.*
-
-
-* ***Weeks 5-6: Travel & Pre-Operative Care in Thailand** Our in-country team supports you from the moment you land, managing travel, accommodation, and appointments. You’ll meet your Thai surgeon for a thorough pre-operative assessment at a world-class facility.*
-
-
-* ***Weeks 7-8: Surgery, Recovery, and Journey Home** Following your successful knee replacement—often using **advanced robotic-assisted technology** for greater precision—you will recover in a modern hospital environment. Our team provides full support and ensures you are prepared for your flight home, with clear guidance on post-operative care. For a detailed look at this phase, see our **week-by-week guide to knee replacement recovery in Thailand**.*
-
-
+* **Weeks 1-2: Free UK-Licensed Doctor Triage** Your journey begins at home with a complimentary virtual consultation with a UK-licensed doctor. You can discuss your case, ask vital questions, and get expert medical advice with no obligation. This provides immediate peace of mind and expert validation, which you can **learn more about here**.
+* **Weeks 3-4: Personalised Planning & Secure Booking** Our team creates a personalised, all-inclusive package with transparent costs. We handle all logistics, from coordinating with the hospital to securing your preferred dates.
+* **Weeks 5-6: Travel & Pre-Operative Care in Thailand** Our in-country team supports you from the moment you land, managing travel, accommodation, and appointments. You’ll meet your Thai surgeon for a thorough pre-operative assessment at a world-class facility.
+* **Weeks 7-8: Surgery, Recovery, and Journey Home** Following your successful knee replacement—often using **advanced robotic-assisted technology** for greater precision—you will recover in a modern hospital environment. Our team provides full support and ensures you are prepared for your flight home, with clear guidance on post-operative care. For a detailed look at this phase, see our **week-by-week guide to knee replacement recovery in Thailand**.
 
 ### ***Take Control of Your Health Today***
 
 *You do not have to let pain dictate your life or let waiting lists define your future. A world-class knee replacement is more accessible than you think.*
 
 *Book your **free, no-obligation virtual triage with our UK-licensed doctor today**. Discuss your situation, get expert answers, and receive a clear, personalised plan to get you back on your feet—and back to your life—in weeks, not years.*
-
-
 
 *Disclaimer: All surgical procedures carry inherent risks. The information provided here is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional, such as your Sivara Health UK doctor and your surgeon in Thailand.*
