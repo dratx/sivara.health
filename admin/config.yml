@@ -17,4 +17,4 @@ collections:
       - { name: summary, label: Summary, widget: text }
       - { name: hero, label: "Hero Image", widget: image }
       - { name: body, label: Body, widget: markdown }
-      - { name: category, label: "Category", widget: "select", options: ["General", "Guide"], default: "General", required: false }
+      - { name: category, label: "Category", widget: "select", options: ["General", "Guide", "Hospitals"], default: "General", required: false }
