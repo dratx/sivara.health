@@ -16,5 +16,28 @@ collections:
       - { name: date, label: "Publish Date", widget: datetime }
       - { name: summary, label: Summary, widget: text }
       - { name: hero, label: "Hero Image", widget: image }
-      - { name: body, label: Body, widget: markdown }
+      - { name: body, label: "Body Content", widget: "list", types:
+          - name: "text"
+            label: "Text"
+            widget: "object"
+            fields:
+              - { name: content, label: "Text Content", widget: "markdown" }
+          - name: "image"
+            label: "Single Image"
+            widget: "object"
+            fields:
+              - { name: src, label: "Image", widget: "image" }
+              - { name: alt, label: "Alt Text", widget: "string" }
+              - { name: caption, label: "Caption", widget: "string", required: false }
+          - name: "carousel"
+            label: "Image Carousel"
+            widget: "object"
+            fields:
+              - name: "images"
+                label: "Carousel Images"
+                widget: "list"
+                summary: "{{fields.image}}"
+                fields:
+                  - { name: src, label: "Image", widget: "image" }
+                  - { name: alt, label: "Alt Text", widget: "string" }
       - { name: category, label: "Category", widget: "select", options: ["General", "Guide"], default: "General", required: false }
