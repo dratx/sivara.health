@@ -1,6 +1,5 @@
 ---
-title: "Hip Replacement Cost UK vs. Thailand: A Detailed 2025 Price Breakdown to
-  Save Over 60%"
+title: "Hip Replacement Cost UK vs. Thailand: Price Breakdown to Save Over 60%"
 date: 2025-06-06T14:00:00.000Z
 summary: "If you are exploring options for hip replacement surgery, you’re
   likely facing a difficult choice: endure a long and painful wait for NHS
@@ -26,73 +25,39 @@ When comparing your options, it's crucial to look at the complete picture. The "
 
 While UK private costs can be opaque, a comprehensive package in Thailand bundles these elements into one clear price.
 
-**Service / Component**
+### Comparing UK Private Care with a Sivara Health Package
 
-**Typical UK Private Sector (Estimated)**
+When considering private healthcare, it's important to understand what is included in the quoted price. Below is a detailed breakdown of the components covered by a typical UK private sector estimate versus Sivara Health’s all-inclusive package in Thailand.
 
-**Sivara Health All-Inclusive Package (Thailand)**
+#### Sivara Health All-Inclusive Package (Thailand)
 
-**Initial Consultation**
+Our packages are designed to be comprehensive, ensuring clarity and peace of mind with no hidden costs. The package includes:
 
-Often an additional fee
+* Initial Consultation: A free virtual triage with a UK-licensed doctor is included.
+* Pre-Operative Tests & Scans: All necessary pre-operative diagnostics are included.
+* Surgeon & Anaesthetist Fees: All specialist fees are fully included.
+* Hospital Stay: Your stay in a JCI-accredited hospital private room is included.
+* Implant/Prosthesis Cost: We use high-quality brands like Zimmer Biomet, and the cost is included in the package.
+* Post-Operative Medication: All required post-operative medication is included.
+* In-Patient Physiotherapy: All necessary in-patient physiotherapy sessions are included.
+* Follow-up Consultation: We include both pre-departure and remote follow-up support.
+* Dedicated Concierge Service: This unique service, which includes airport transfers, 24/7 support, and translation services, is fully included.
 
-Included (Free virtual triage with a **UK-licensed doctor**
+#### Typical UK Private Sector
 
-**Pre-Operative Tests & Scans**
+In the UK private sector, the initial quote typically includes the surgeon and anaesthetist fees, a standard-length hospital stay, post-operative medication, and initial physiotherapy sessions.
 
-Can be billed separately
+However, several components may be billed separately or as additional fees, including:
 
-Included
+* The initial consultation.
+* Pre-operative tests and scans.
+* Any follow-up consultations after the procedure.
+* A dedicated concierge service is generally not applicable.
 
-**Surgeon & Anaesthetist Fees**
+### Estimated Total Cost Comparison
 
-Included in quote
-
-Included
-
-**Hospital Stay (Private Room)**
-
-Included (standard length)
-
-Included **JCI-accredited**
-
-**Implant/Prosthesis Cost**
-
-Included (brand may vary)
-
-Included (High-quality brands like **<https://www.zimmerbiomet.com/en/products-and-solutions/specialties/hip.html> Zimmer Biomet**
-
-**Post-Operative Medication**
-
-Typically included
-
-Included
-
-**In-Patient Physiotherapy**
-
-Initial sessions often included
-
-Included
-
-**Dedicated Concierge Service**
-
-Not Applicable
-
-**Included** (Airport transfers, 24/7 support, translation)
-
-**Follow-up Consultation**
-
-May be extra
-
-Included (Both pre-departure and remote support)
-
-**Estimated Total Cost**
-
-**£12,000 - £18,000+**
-
-**£6,000 - £8,500 (Often saving over 60%)**
-
-Export to Sheets
+* Typical UK Private Sector: £12,000 - £18,000+
+* Sivara Health All-Inclusive Package: £6,000 - £8,500, which often results in a saving of over 60%.
 
 Disclaimer: Prices are estimates for 2025 and can vary. The UK private cost is an approximation. The Thai package cost is an illustrative example of the significant savings available.
 
@@ -115,9 +80,5 @@ You can feel confident knowing our packages are built on a foundation of quality
 Stop letting cost and wait times dictate your health. An expertly managed journey to Thailand can provide the timely, high-quality hip replacement you need at a price you can afford.
 
 **Contact Sivara Health today for your free, detailed, and transparent quote** for an all-inclusive hip replacement package. Discover how world-class care is more accessible than you ever imagined.
-
-
-
-
 
 *Disclaimer: All surgical procedures carry inherent risks. The information provided is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional.*
