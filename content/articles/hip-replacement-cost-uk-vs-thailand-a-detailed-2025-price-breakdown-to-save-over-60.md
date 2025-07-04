@@ -25,7 +25,7 @@ When comparing your options, it's crucial to look at the complete picture. The "
 
 While UK private costs can be opaque, a comprehensive package in Thailand bundles these elements into one clear price. When considering private healthcare, it's important to understand what is included in the quoted price. Below is a detailed breakdown of the components covered by a typical UK private sector estimate versus Sivara Health’s all-inclusive package in Thailand.
 
-#### Sivara Health All-Inclusive Package (Thailand)
+#### Sivara Health All-Inclusive Package
 
 Our packages are designed to be comprehensive, ensuring clarity and peace of mind with no hidden costs. The package includes:
 
@@ -50,8 +50,8 @@ In the UK private sector, the initial quote typically includes the surgeon and a
 
 ### Estimated Total Cost Comparison
 
-* Typical UK Private Sector: £12,000 - £18,000+
-* Sivara Health All-Inclusive Package: £6,000 - £8,500, which often results in a saving of over 60%.
+* Typical UK Private Sector: £12,000 - £18,000
+* Sivara Health All-Inclusive Package: £6,000 - £8,500, often saving over 60%!
 
 Disclaimer: Prices are estimates for 2025 and can vary. The UK private cost is an approximation. The Thai package cost is an illustrative example of the significant savings available.
 
