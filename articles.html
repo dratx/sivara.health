@@ -547,7 +547,7 @@
         const cardLink = document.createElement('a');
         cardLink.href = `article.html?slug=${article.slug}`;
         let cardClass = 'article-card card-hover block group';
-        if (section === 'guide') {
+        if (section === 'guide' || section === 'hospitals' || section === 'latest') {
             cardClass += ' w-11/12 md:w-5/12 lg:w-1/3 flex-shrink-0';
         }
         cardLink.className = cardClass;
