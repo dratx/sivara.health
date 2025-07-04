@@ -65,6 +65,6 @@ To understand the complete journey from start to finish, view our **step-by-step
 
 If you are a discerning patient, motivated by quality, value, and the benefits of advanced technology, exploring robotic knee replacement in Thailand is a logical next step.
 
-**Contact us to schedule a free, no-obligation consultation with our UK-licensed doctor**. Discuss your needs, understand the technology, and get a clear, personalised quote for your journey to a better quality of life.
+**[Contact us to schedule a free, no-obligation consultation with our UK-licensed doctor](https://sivara.health/#consultation)**. Discuss your needs, understand the technology, and get a clear, personalised quote for your journey to a better quality of life.
 
 *Disclaimer: All surgical procedures carry inherent risks. The information provided is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional, such as your Sivara Health UK doctor and your surgeon in Thailand*.
