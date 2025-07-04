@@ -509,7 +509,7 @@
                     latestRowEl.classList.remove('hidden');
                     latestRowEl.innerHTML = '';
                     latestArticles.forEach(article => {
-                        const card = createArticleCard(article, 'guide');
+                        const card = createArticleCard(article, 'latest');
                         latestRowEl.appendChild(card);
                     });
                 }
@@ -529,7 +529,7 @@
                     hospitalsRowEl.classList.remove('hidden');
                     hospitalsRowEl.innerHTML = '';
                     hospitalArticles.forEach(article => {
-                        const card = createArticleCard(article, 'guide');
+                        const card = createArticleCard(article, 'hospitals');
                         hospitalsRowEl.appendChild(card);
                     });
                 }
