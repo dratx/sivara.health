@@ -1,12 +1,11 @@
 ---
-title: The Complete Guide to Planning Your Medical Trip to Thailand for
-  Orthopaedic Surgery
+title: The Complete Step-by-Step Guide to Planning Your Medical Trip to Thailand
+  for Orthopaedic Surgery
 date: 2025-06-20T14:00:00.000Z
 summary: Considering orthopaedic surgery in Thailand is an exciting prospect,
   offering access to world-class care without the long waiting lists and high
   costs often found at home.
 hero: /uploads/planning-surgery-in-thailand.jpg
-category: General
 ---
 Considering orthopaedic surgery in Thailand is an exciting prospect, offering access to world-class care without the long waiting lists and high costs often found at home. But turning that prospect into a reality can feel overwhelming. Vetting hospitals, understanding costs, and arranging travel can seem like a full-time job, especially when you’re dealing with chronic joint pain.
 
