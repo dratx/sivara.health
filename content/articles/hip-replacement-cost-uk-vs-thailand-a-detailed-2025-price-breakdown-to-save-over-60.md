@@ -9,7 +9,7 @@ summary: "If you are exploring options for hip replacement surgery, you’re
 hero: /uploads/hip-replacement-thailand.jpg
 category: General
 ---
-If you are exploring options for hip replacement surgery, you’re likely facing a difficult choice: endure a long and painful wait for NHS treatment or face the substantial expense of private healthcare in the UK. The cost of a private hip replacement can be a significant financial barrier, leaving many feeling trapped.
+If you are exploring options for hip replacement surgery, you are likely facing a difficult choice: endure a long and painful wait for NHS treatment or face the substantial expense of private healthcare in the UK. The cost of a private hip replacement can be a significant financial barrier, leaving many feeling trapped.
 
 But what if there was a third option that offered timely, world-class treatment at a fraction of the price? This guide provides a transparent, detailed cost breakdown, comparing UK options with a premium, all-inclusive surgical package in Thailand. We will look beyond the headline numbers to explore the true value, factoring in quality of care, hospital standards, and the level of expert support you receive.
 
@@ -23,11 +23,7 @@ When comparing your options, it's crucial to look at the complete picture. The "
 
 ### **Cost Comparison: UK Private vs. All-Inclusive Thai Package**
 
-While UK private costs can be opaque, a comprehensive package in Thailand bundles these elements into one clear price.
-
-### Comparing UK Private Care with a Sivara Health Package
-
-When considering private healthcare, it's important to understand what is included in the quoted price. Below is a detailed breakdown of the components covered by a typical UK private sector estimate versus Sivara Health’s all-inclusive package in Thailand.
+While UK private costs can be opaque, a comprehensive package in Thailand bundles these elements into one clear price. When considering private healthcare, it's important to understand what is included in the quoted price. Below is a detailed breakdown of the components covered by a typical UK private sector estimate versus Sivara Health’s all-inclusive package in Thailand.
 
 #### Sivara Health All-Inclusive Package (Thailand)
 
@@ -45,9 +41,7 @@ Our packages are designed to be comprehensive, ensuring clarity and peace of min
 
 #### Typical UK Private Sector
 
-In the UK private sector, the initial quote typically includes the surgeon and anaesthetist fees, a standard-length hospital stay, post-operative medication, and initial physiotherapy sessions.
-
-However, several components may be billed separately or as additional fees, including:
+In the UK private sector, the initial quote typically includes the surgeon and anaesthetist fees, a standard-length hospital stay, post-operative medication, and initial physiotherapy sessions. However, several components may be billed separately or as additional fees, including:
 
 * The initial consultation.
 * Pre-operative tests and scans.
