@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "orthopaedic-excellence-in-paradise-a-guide-to-phukets-leading-hospitals",
+    "title": "Orthopaedic Excellence in Paradise: A Guide to Phuket's Leading Hospitals",
+    "date": "2025-05-30T14:00:00.000Z",
+    "summary": "\"Phuket is world-famous as a tropical paradise, but it is also home to",
+    "hero": "/uploads/phu-bangkok-hospital-phuket.jpg",
+    "category": "Guide"
+  },
+  {
+    "slug": "a-patients-guide-to-top-orthopaedic-hospitals-in-chiang-mai",
+    "title": "A Patient's Guide to Top Orthopaedic Hospitals in Chiang Mai",
+    "date": "2025-05-23T14:00:00.000Z",
+    "summary": "Chiang Mai, the serene cultural capital of Northern Thailand, is",
+    "hero": "/uploads/cnx-bangkok-hospital-chiang-mai-1536x1024-1.jpg",
+    "category": "Guide"
+  },
+  {
+    "slug": "a-guide-to-bangkoks-top-jci-accredited-orthopaedic-hospitals",
+    "title": "A Guide to Bangkok's Top JCI-Accredited Orthopaedic Hospitals",
+    "date": "2025-05-16T14:00:00.000Z",
+    "summary": "Bangkok is a global leader in medical tourism, offering world-class",
+    "hero": "/uploads/bkk-medpark-hospital.jpeg",
+    "category": "Guide"
+  },
+  {
+    "slug": "tired-of-nhs-waits-a-2025-guide-to-skipping-the-uk-knee-replacement-waiting-list-with-surgery-in-thailand",
+    "title": "Tired of NHS Waits? A 2025 Guide to Skipping the UK Knee Replacement",
+    "date": "2025-05-09T14:00:00.000Z",
+    "summary": "Living with chronic knee pain is a daily battle. Simple acts like",
+    "hero": "/uploads/uk-knee-replacement-waiting-times.jpg",
+    "category": "General"
+  }
+]

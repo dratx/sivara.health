@@ -455,44 +455,11 @@
         const latestRowEl = document.getElementById('latest-row');
         const guidesRowEl = document.getElementById('guides-row');
         const hospitalsRowEl = document.getElementById('hospitals-row');
-        const repoOwner = 'dratx';
-        const repoName = 'sivara.health';
-        const articlesPath = 'content/articles';
 
         try {
-            const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${articlesPath}`);
-            if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
-            const files = await response.json();
-
-            // Filter for markdown files and fetch full content for each
-            const articlePromises = files
-                .filter(file => file.name.endsWith('.md'))
-                .map(async (file) => {
-                    const contentResponse = await fetch(file.url);
-                    if (!contentResponse.ok) return null;
-                    const fileData = await contentResponse.json();
-                    
-                    // Decode content from base64 and parse frontmatter
-                    const content = atob(fileData.content);
-                    const frontmatterMatch = content.match(/---([\s\S]*?)---/);
-                    if (!frontmatterMatch) return null;
-
-                    const frontmatterText = frontmatterMatch[1];
-                    const article = {};
-                    frontmatterText.trim().split('\n').forEach(line => {
-                        const [key, ...valueParts] = line.split(':');
-                        const value = valueParts.join(':').trim().replace(/^"(.*)"$/, '$1');
-                        article[key.trim()] = value;
-                    });
-                    
-                    // Create a slug from the filename
-                    article.slug = file.name.replace('.md', '');
-                    return article;
-                });
-            
-            const articles = (await Promise.all(articlePromises))
-                .filter(Boolean) // Remove any nulls from failed fetches
-                .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by most recent date
+            const response = await fetch('content/articles/articles.json');
+            if (!response.ok) throw new Error(`Could not fetch articles.json: ${response.status}`);
+            const articles = await response.json();
 
             loadingEl.classList.add('hidden');
             
