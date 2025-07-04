@@ -73,6 +73,6 @@ You can feel confident knowing our packages are built on a foundation of quality
 
 Stop letting cost and wait times dictate your health. An expertly managed journey to Thailand can provide the timely, high-quality hip replacement you need at a price you can afford.
 
-**Contact Sivara Health today for your free, detailed, and transparent quote** for an all-inclusive hip replacement package. Discover how world-class care is more accessible than you ever imagined.
+**[Contact Sivara Health today for your free, detailed, and transparent quote](https://sivara.health/#consultation)** for an all-inclusive hip replacement package. Discover how world-class care is more accessible than you ever imagined.
 
 *Disclaimer: All surgical procedures carry inherent risks. The information provided is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional.*
