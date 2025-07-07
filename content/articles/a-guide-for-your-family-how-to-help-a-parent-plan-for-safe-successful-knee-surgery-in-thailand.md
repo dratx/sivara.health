@@ -1,6 +1,6 @@
 ---
-title: "A Guide for Your Family: How to Help a Parent Plan for Safe & Successful
-  Knee Surgery in Thailand"
+title: "A Guide for Your Family: How to Plan for Safe & Successful Knee Surgery
+  in Thailand"
 date: 2025-04-25T14:00:00.000Z
 summary: When a parent or loved one is dealing with chronic knee pain, your
   first instinct is to help. Seeing them explore options like knee surgery in
