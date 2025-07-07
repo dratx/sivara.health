@@ -1,6 +1,5 @@
 ---
-title: "Beyond the Scalpel: Exploring Advanced Osteoarthritis Treatments in
-  Thailand (PRP, Injections & More)"
+title: "Beyond the Scalpel: Exploring Osteoarthritis Treatments in Thailand"
 date: 2025-05-23T14:00:00.000Z
 summary: "Living with the chronic pain of osteoarthritis (OA) can feel like a
   journey with only one destination: major surgery. For many suffering from
