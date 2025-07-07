@@ -6,9 +6,7 @@ summary: |
 hero: /uploads/untitled-design.jpg
 category: Guide
 ---
-*For expert guidance and personalized support throughout your journey, contact Sivara Health's medical team.*
-
-
+*For expert guidance and personalized support throughout your journey, [contact Sivara Health's medical team.](https://sivara.health/contact)*
 
 ## ✈️ **TRAVEL DOCUMENTATION & VISAS**
 
@@ -30,10 +28,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Return flight itinerary
 * Passport photos (recent, within 6 months)
 
-
-
-
-
 ## 🏥 **MEDICAL DOCUMENTATION**
 
 ### ☐ **4. Complete Medical Records**
@@ -51,10 +45,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * List of drug allergies and medical conditions
 * Blood thinner management plan (if applicable)
 
-
-
-
-
 ## 🛡️ **INSURANCE & FINANCIAL PLANNING**
 
 ### ☐ **6. Comprehensive Travel Insurance**
@@ -70,10 +60,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Multiple payment methods (cash, credit cards, debit cards)
 * Understanding of foreign transaction fees
 * Emergency fund access beyond planned expenses
-
-
-
-
 
 ## 🧳 **PACKING FOR SURGICAL RECOVERY**
 
@@ -98,10 +84,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Phone chargers and international adapters
 * Basic toiletries and personal hygiene items
 
-
-
-
-
 ## 📱 **COMMUNICATION & TECHNOLOGY**
 
 ### ☐ **11. International Communication Setup**
@@ -119,10 +101,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Insurance company emergency numbers
 * Family emergency contacts
 
-
-
-
-
 ## 🩺 **PRE-DEPARTURE HEALTH PREPARATIONS**
 
 ### ☐ **13. Medical Clearances**
@@ -138,10 +116,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Practice using mobility aids if recommended
 * Optimize nutrition and hydration
 * Quit smoking at least 4 weeks before surgery
-
-
-
-
 
 ## ✈️ **FLIGHT & TRAVEL SAFETY**
 
@@ -159,10 +133,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Avoid alcohol and excessive caffeine
 * Ankle exercises and calf raises during flight
 
-
-
-
-
 ## 🏨 **ACCOMMODATION & LOGISTICS**
 
 ### ☐ **17. Accommodation Confirmation**
@@ -178,10 +148,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Pharmacy locations near accommodation
 * Emergency medical services information
 * Cultural orientation and local customs awareness
-
-
-
-
 
 ## 📋 **FINAL PRE-DEPARTURE CHECKLIST**
 
@@ -199,10 +165,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Check weather forecast and pack accordingly
 * Final medication review with your physician
 
-
-
-
-
 ## 🚨 **IMPORTANT REMINDERS**
 
 ### **DVT Prevention is Critical**
@@ -219,10 +181,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 * Medical clearance needed before flying home
 * Arrange premium seating for comfort during recovery travel
 
-
-
-
-
 ## 📞 **SIVARA HEALTH SUPPORT**
 
 **24/7 Medical Support**: Available throughout your journey
@@ -231,9 +189,5 @@ Check that your passport is valid for at least **6 months** beyond your departur
 **Local Coordination**: On-ground support in Thailand
 
 *Your safety and successful outcomes are our priority. Contact our medical team with any questions or concerns during your preparation.*
-
-
-
-
 
 *This checklist ensures comprehensive preparation for your medical tourism journey. Individual requirements may vary - consult with your primary care physician and orthopedic surgeon for personalized guidance.*
