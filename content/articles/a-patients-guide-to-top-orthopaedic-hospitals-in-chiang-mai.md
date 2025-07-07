@@ -23,6 +23,10 @@ As a key member of the prestigious BDMS network, **Bangkok Hospital Chiang Mai**
 * **Orthopaedic Specialisms:** At this **Chiang Mai** hospital, the Bone and Joint Center is renowned for its excellent outcomes in procedures like **Total Knee and Hip Replacements**. It also features a dedicated spine clinic, offering advanced solutions for patients suffering from chronic back pain.
 * **Technology & Surgeons:** The facility is equipped with the latest diagnostic and surgical technology, ensuring precise outcomes. For patients, this means a more accurate diagnosis, meticulous surgical planning, and access to a team of highly experienced orthopaedic surgeons.
 
+**[Learn more about Bangkok Hospital Chiang Mai here.](https://sivara.health/article.html?slug=a-closer-look-bangkok-hospital-chiang-mai-world-class-care-in-the-north)**
+
+
+
 #### **2. Chiangmai Ram Hospital**
 
 ![chiang mai ram hospital](/uploads/cnx-ram-hospital.jpg "chiang mai ram hospital")
@@ -32,6 +36,8 @@ A long-standing and trusted provider of private healthcare in Northern Thailand,
 * **Why it's a top choice:** Chiang Mai Ram is also JCI-accredited, ensuring its clinical practices and **patient safety protocols** are on par with global leaders. It has an outstanding reputation within the local and expatriate communities for its efficient, patient-focused care.
 * **Orthopaedic Specialisms:** At **Chiang Mai Ram**, patients can undergo a procedure like a **Total Hip Replacement** with confidence in their **JCI-accredited** standards. Their orthopaedic department is highly experienced, managing everything from sports injuries to complex joint replacements, with a focus on excellent **post-operative recovery.**
 * **Technology & Surgeons:** Surgeons at Chiangmai Ram are skilled in a variety of modern surgical techniques. The hospital’s commitment to continuous improvement means they invest in the technology and training needed to provide excellent orthopaedic outcomes.
+
+**[Learn more about Chiang Mai Ram Hospital here.](https://sivara.health/article.html?slug=a-closer-look-chiang-mai-ram-hospital-a-pillar-of-northern-thailands-healthcare)**
 
 #### **How Sivara Health Provides a Gateway to Care in Chiang Mai**
 
