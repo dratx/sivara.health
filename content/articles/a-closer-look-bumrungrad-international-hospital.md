@@ -33,16 +33,12 @@ Bumrungrad is renowned for its investment in state-of-the-art medical technology
 
 #### **Location & Accessibility**
 
-Conveniently located in the heart of Bangkok in the vibrant Watthana district, Bumrungrad is easily accessible from major hotels and airports. Situated on Sukhumvit Soi 3, it is a short distance from the Nana BTS Skytrain station, making travel around the city straightforward for patients and their companions. Its central location allows for a comfortable stay with easy access to the city's rich culture and amenities. You can view the location on[ Google Maps here](https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3DBumrungrad%2BInternational%2BHospital,Bangkok%3Fq%3DBumrungrad%2BInternational%2BHospital%252C%2B33%2BSukhumvit%2B3%2B%2528Soi%2BNana%2BNua%2529%252C%2BWattana%252C%2BBangkok%2B10110%252C%2BThailand%26ftid%3D0x30e29ed899c71b33:0x40137452601736a,1).
+Conveniently located in the heart of Bangkok in the vibrant Watthana district, Bumrungrad is easily accessible from major hotels and airports. Situated on Sukhumvit Soi 3, it is a short distance from the Nana BTS Skytrain station, making travel around the city straightforward for patients and their companions. Its central location allows for a comfortable stay with easy access to the city's rich culture and amenities. You can view the location on[ Google Maps here](https://maps.app.goo.gl/FH9hLvAsds4knrDA8).
 
 #### **Your Journey with Sivara Health to Bumrungrad**
 
 Choosing a world-class hospital is the first step. Sivara Health acts as your trusted partner to make the journey seamless. Following a **free consultation with our UK-licensed doctor**, we help coordinate your care with the right specialists at Bumrungrad, handling all the logistical details. We ensure that your experience of this exceptional hospital is as stress-free and comfortable as possible.
 
 **Ready to discuss your treatment at Bumrungrad International Hospital? Contact us today to begin your free, no-obligation consultation.**
-
-
-
-
 
 Disclaimer: All surgical procedures carry inherent risks. The information provided here is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional.
