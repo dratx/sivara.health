@@ -350,6 +350,56 @@
         }
 
         /* Dropdown submenu hover background */
+        .dropdown-menu { opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.2s ease; }
+        .group:hover .dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; }
+
+        /* --- Swiper Carousel & Uniform Card Height --- */
+        #stories .swiper-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        #stories .swiper-wrapper {
+            display: flex;
+            align-items: stretch; /* This ensures all slides stretch to the same height */
+        }
+        #stories .swiper-slide {
+            height: auto; /* Allow slides to grow naturally */
+        }
+        #stories .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Make the card fill the entire slide height */
+        }
+        #stories .card .review-text {
+            flex-grow: 1; /* This makes the text container expand, pushing the name down */
+        }
+
+        /* --- Swiper Navigation Arrows --- */
+        .swiper-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: 3rem;
+            background-color: rgba(42, 52, 57, 0.5); /* Semi-transparent Gunmetal */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .swiper-nav-button:hover {
+            background-color: #7C9ED9; /* Sivara Blue on hover */
+            transform: translateY(-50%) scale(1.1);
+        }
+        .swiper-button-prev-unique { left: 16px; }
+        .swiper-button-next-unique { right: 16px; }
+
+        main { padding-top: 84px; }
     </style>
     <!-- High-specificity nav-on-dark override -->
     <style>
@@ -740,71 +790,179 @@
         <section id="stories" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal reveal-text">Hospital Reviews</h2>
-                    <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4 reveal-text">Hearing from those who have made the journey is the best way to understand the Sivara Health difference.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-sivara-gunmetal">Real Patient Stories</h2>
+                    <p class="text-lg text-sivara-gunmetal/80 max-w-2xl mx-auto mt-4">Hearing from those who have made the journey is the best way to understand the Sivara Health difference.</p>
                 </div>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="0">
-                            <div class="bg-white p-8 rounded-lg shadow-lg">
-                                <div class="relative flex items-center justify-center mb-4">
-                                    <button class="review-nav-button review-nav-prev swiper-button-prev">
-                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                        </svg>
-                                    </button>
-                                    <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=J.S." alt="Patient John S." class="w-24 h-24 rounded-full border-4 border-sivara-blue/20">
-                                    <button class="review-nav-button review-nav-next swiper-button-next">
-                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </button>
+                <div class="relative">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="0">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"After being told I'd have to wait 18 months on the NHS, I was desperate. The Sivara team were incredible. From the first call with their doctor to the care in Bangkok, I felt supported. I'm now pain-free and have my life back."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- John S., United Kingdom</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Knee Replacement</p>
                                 </div>
-                                <p class="text-sivara-gunmetal/80 italic mb-4">"After being told I'd have to wait 18 months on the NHS, I was desperate. The Sivara team were incredible. From the first call with their doctor to the care in Bangkok, I felt supported. I'm now pain-free and have my life back."</p>
-                                <p class="font-bold text-sivara-gunmetal text-right">- John S., United Kingdom</p>
-                                <p class="text-sm text-sivara-gunmetal/60 text-right">Knee Replacement</p>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="100">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"The professionalism and kindness were second to none. The hospital was more like a five-star hotel, and the savings were substantial, even with the premium concierge service. I couldn't be happier with the result of my hip surgery."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- Mary P., Australia</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Hip Replacement</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="200">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"As someone from the US, navigating healthcare is always a concern. Sivara's transparency on costs and their physician-led approach gave me the confidence I needed. My spine feels better than it has in years. Highly recommend."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- David L., USA</p>
+                                     <p class="text-sm text-sivara-gunmetal/60 text-right">Spine Surgery</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="300">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"Coming from the US, I was amazed by the kind service; it was nothing like what I'd experience at home. The doctor explained everything wonderfully, and therapy had me walking the next day. The accommodation was like a hotel. This was the most pleasant medical experience of my life."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- John H., USA</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Hip Replacement</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="400">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"When my wife, a nurse in the UK, broke her foot in 4 places, she received excellent care here. Upon our return, UK medical staff were complimentary on the detail of the notes and the treatment she received. Everyone was so caring and helpful."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- Daniel P., UK</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Foot & Leg Surgery</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="500">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"The doctor really listened to my particular needs. After the surgery, I was completely surprised that there was almost no pain, and I wasn't on any opiates. It felt like science fiction that all that could happen and I would feel fine. Don't suffer in silence."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- Fay P., TH</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Hip Replacement</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="600">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"Bumrungrad has incredibly talented and qualified doctors, many with overseas training. I knew I had a chance to be cured here. It's the hospital of choice for our entire family. The design also makes you feel relaxed, like you're staying in a five-star hotel."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- Pom, TH</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Spinal Canal Stenosis</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="700">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"I was impressed to find a hospital in Phuket with standards as high as what I know in Switzerland. The surgeon explained the muscle-sparing procedure extremely well. I never believed I could be up and walking the next day. The recovery has been incredibly fast."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- Oliver, CHE</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Hip Replacement</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="800">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"After a scooter accident, I needed ACL surgery. From the first minute I got here, the level of service was incredible. The nursing staff were always around me, helping out and checking on me all the time. I trusted the doctor and the hospital completely and would definitely recommend them."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- Evgenii S.</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">ACL Reconstruction Surgery</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="900">
+                                <div class="bg-white p-8 rounded-lg shadow-lg min-h-[400px] md:min-h-[420px] flex flex-col justify-between">
+                                    <div class="relative flex items-center justify-center mb-4">
+                                        <div class="flex justify-center text-yellow-400 mb-2">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-sivara-gunmetal/80 italic mb-4">"My surgery was very successful with renowned specialists. From the nurses to the doctors, everyone was kind and welcoming. People think it's very expensive, but it's not, especially considering the success rate. I will tell everyone in my country to come here for medical care."</p>
+                                    <p class="font-bold text-sivara-gunmetal text-right">- Etse A., ETH</p>
+                                    <p class="text-sm text-sivara-gunmetal/60 text-right">Endoscopic Decompression Surgery</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="100">
-                            <div class="bg-white p-8 rounded-lg shadow-lg">
-                                <div class="relative flex items-center justify-center mb-4">
-                                    <button class="review-nav-button review-nav-prev swiper-button-prev">
-                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                        </svg>
-                                    </button>
-                                    <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=M.P." alt="Patient Mary P." class="w-24 h-24 rounded-full border-4 border-sivara-blue/20">
-                                    <button class="review-nav-button review-nav-next swiper-button-next">
-                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <p class="text-sivara-gunmetal/80 italic mb-4">"The professionalism and kindness were second to none. The hospital was more like a five-star hotel, and the savings were substantial, even with the premium concierge service. I couldn't be happier with the result of my hip surgery."</p>
-                                <p class="font-bold text-sivara-gunmetal text-right">- Mary P., Australia</p>
-                                <p class="text-sm text-sivara-gunmetal/60 text-right">Hip Replacement</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card-hover" data-aos="fade-up" data-aos-delay="200">
-                            <div class="bg-white p-8 rounded-lg shadow-lg">
-                                <div class="relative flex items-center justify-center mb-4">
-                                    <button class="review-nav-button review-nav-prev swiper-button-prev">
-                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                        </svg>
-                                    </button>
-                                    <img src="https://placehold.co/100x100/F2F0E6/2A3439?text=D.L." alt="Patient David L." class="w-24 h-24 rounded-full border-4 border-sivara-blue/20">
-                                    <button class="review-nav-button review-nav-next swiper-button-next">
-                                        <svg class="w-6 h-6" fill="none" stroke="#F2F0E6" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <p class="text-sivara-gunmetal/80 italic mb-4">"As someone from the US, navigating healthcare is always a concern. Sivara's transparency on costs and their physician-led approach gave me the confidence I needed. My spine feels better than it has in years. Highly recommend."</p>
-                                <p class="font-bold text-sivara-gunmetal text-right">- David L., USA</p>
-                                 <p class="text-sm text-sivara-gunmetal/60 text-right">Spine Surgery</p>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="swiper-button-prev-unique swiper-nav-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </div>
+                    <div class="swiper-button-next-unique swiper-nav-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </div>
                 </div>
             </div>
@@ -1121,22 +1279,25 @@
             }
             window.addEventListener('scroll', revealOnScroll);
             revealOnScroll();
-            // Swiper carousel for stories
+            // Swiper carousel for stories - NEW CONFIGURATION
             new Swiper('.swiper-container', {
                 loop: true,
+                autoplay: {
+                    delay: 4000, // Time in ms between slides
+                    disableOnInteraction: false, // Continue autoplay after user interaction
+                },
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
+                    nextEl: '.swiper-button-next-unique',
+                    prevEl: '.swiper-button-prev-unique',
                 },
                 slidesPerView: 1,
                 spaceBetween: 24,
                 breakpoints: {
-                    768: { slidesPerView: 2 },
-                    1024: { 
-                        slidesPerView: 3,
-                        navigation: {
-                            enabled: false
-                        }
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
                     }
                 }
             });
