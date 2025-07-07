@@ -3,7 +3,7 @@ title: Sivara Health Pre-Travel Checklist
 date: 2025-07-03T14:00:00.000Z
 summary: |
   Orthopaedic Surgery in Thailand - Your Complete Preparation Checklist.
-hero: /uploads/sivara-health-checklist-16-9.jpg
+hero: /uploads/untitled-design.jpg
 category: Guide
 ---
 *For expert guidance and personalized support throughout your journey, contact Sivara Health's medical team.*
