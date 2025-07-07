@@ -39,6 +39,6 @@ Conveniently located in the heart of Bangkok in the vibrant Watthana district, B
 
 Choosing a world-class hospital is the first step. Sivara Health acts as your trusted partner to make the journey seamless. Following a **free consultation with our UK-licensed doctor**, we help coordinate your care with the right specialists at Bumrungrad, handling all the logistical details. We ensure that your experience of this exceptional hospital is as stress-free and comfortable as possible.
 
-**Ready to discuss your treatment at Bumrungrad International Hospital? Contact us today to begin your free, no-obligation consultation.**
+**Ready to discuss your treatment at Bumrungrad International Hospital? [Contact us today to begin your free, no-obligation consultation.](https://sivara.health/#consultation)**
 
 Disclaimer: All surgical procedures carry inherent risks. The information provided here is for educational purposes and should not be considered medical advice. It is essential to discuss your individual circumstances, potential risks, and benefits thoroughly with a qualified medical professional.
