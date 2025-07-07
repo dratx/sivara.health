@@ -84,7 +84,7 @@ All inclusive cost estimates:
 
 ### Critical Medical Documentation
 
-* Complete medical records and imaging (MRI, X-rays on CD-ROM)
+* Complete medical records and imaging
 * Current medication list with dosages
 * Medical clearances from your physician
 * Comprehensive travel insurance with medical evacuation coverage
