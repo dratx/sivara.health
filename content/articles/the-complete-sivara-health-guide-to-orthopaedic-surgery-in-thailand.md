@@ -248,9 +248,12 @@ The investment in your health extends far beyond the immediate procedure to enco
 
 ## References
 
-\[1] Medical Tourism Association. (2024). Global Medical Tourism Market Analysis.
-\[2] Joint Commission International. (2024). JCI-Accredited Organizations.
-\[3] International Medical Travel Journal. (2024). Cost Comparison Analysis.
+\[1] Medical Tourism Association. (2024). Global Medical Tourism Market Analysis.\
+
+\[2] Joint Commission International. (2024). JCI-Accredited Organizations.\
+
+\[3] International Medical Travel Journal. (2024). Cost Comparison Analysis.\
+
 \[4] Hospital for Special Surgery. (2022). Avoiding Blood Clots When Flying Before and After Surgery.
 
 *This guide provides essential information for medical tourism planning. Individual medical recommendations may vary, and patients should always consult with qualified medical professionals for personalized advice.*
