@@ -22,6 +22,10 @@ A flagship hospital in Southern Thailand, **Bangkok Hospital Phuket** has been d
 * **Orthopaedic Specialisms:** The hospital offers a full range of orthopaedic services. Given its location, it has developed significant expertise in treating sports-related injuries, alongside performing a high volume of successful joint replacements for conditions like **Osteoarthritis**.
 * **Technology & Surgeons:** The facility boasts advanced technology, including minimally invasive surgical options like **robotic-assisted surgery** that can lead to a quicker recovery. Its team of orthopaedic surgeons is accustomed to treating a diverse international clientele with complex needs.
 
+**[Learn more about Bangkok Hospital Phuket here.](https://sivara.health/article.html?slug=a-closer-look-bangkok-hospital-phuket-premier-care-in-a-paradise-setting)**
+
+
+
 #### **2. Bangkok Hospital Siriroj**
 
 ![bangkok hospital siriroj](/uploads/phu-bangkok-hospital-siriroj.jpg "bangkok hospital siriroj")
@@ -31,6 +35,10 @@ Also a key part of the BDMS network, **Bangkok Hospital Siriroj** is another lea
 * **Why it's a top choice:** Its integration into the Bangkok Hospital network has enhanced its capabilities while maintaining its strong community reputation for personalised care.
 * **Orthopaedic Specialisms:** The hospital's orthopaedic centre provides comprehensive care for the most common patient needs. For those with degenerative joint conditions like **Osteoarthritis**, a procedure like a **Knee Replacement** is managed with a personalised and efficient service, which is ideal for patients travelling for care.
 * **Technology & Surgeons:** The hospital leverages the BDMS network's investment in technology and best practices. Its orthopaedic surgeons are highly qualified and work within a system designed for clinical excellence and delivering positive **patient recovery outcomes.**
+
+**[Learn more about Bangkok Hospital Siriroj here.](https://sivara.health/article.html?slug=a-closer-look-bangkok-hospital-siriroj-a-legacy-of-care-in-phuket)**
+
+
 
 #### **Sivara Health: Your Expert Partner for Surgery in Phuket**
 
