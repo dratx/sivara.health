@@ -483,6 +483,11 @@
             } catch (e) {
                 // fallback: treat as markdown string
                 document.getElementById('article-body').innerHTML = marked.parse(article.body);
+                // Ensure all links open in a new tab (fallback branch)
+                Array.from(document.getElementById('article-body').querySelectorAll('a')).forEach(link => {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                });
                 loadingEl.classList.add('hidden');
                 errorEl.classList.add('hidden');
                 contentEl.classList.remove('hidden');
@@ -516,15 +521,14 @@
                     bodyContainer.appendChild(carousel);
                 }
             });
-            loadingEl.classList.add('hidden');
-            errorEl.classList.add('hidden');
-            contentEl.classList.remove('hidden');
-
-            // After rendering article content, ensure all links open in a new tab
+            // After rendering article content, ensure all links open in a new tab (block-based branch)
             Array.from(document.getElementById('article-body').querySelectorAll('a')).forEach(link => {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             });
+            loadingEl.classList.add('hidden');
+            errorEl.classList.add('hidden');
+            contentEl.classList.remove('hidden');
         }
 
         function createCarousel(images, carouselId) {
