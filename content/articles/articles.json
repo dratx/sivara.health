@@ -1,10 +1,10 @@
 [
   {
-    "slug": "a-closer-look-vejthani-hospital-bangkoks-king-of-bones",
-    "title": "A Closer Look: Vejthani Hospital, Bangkok's 'King of Bones'",
-    "date": "2025-06-28T14:00:00.000Z",
-    "summary": ">",
-    "hero": "/uploads/bkk-vejthani-hospital.jpg",
+    "slug": "a-closer-look-medpark-hospital-a-new-era-of-physician-led-care",
+    "title": "A Closer Look: MedPark Hospital, A New Era of Physician-Led Care",
+    "date": "2025-07-04T14:00:00.000Z",
+    "summary": "\"As one of Bangkok's newest major international hospitals, MedPark has",
+    "hero": "/uploads/bkk-medpark-hospital.jpeg",
     "category": "Hospitals"
   },
   {
@@ -16,12 +16,28 @@
     "category": "Hospitals"
   },
   {
+    "slug": "a-closer-look-vejthani-hospital-bangkoks-king-of-bones",
+    "title": "A Closer Look: Vejthani Hospital, Bangkok's 'King of Bones'",
+    "date": "2025-06-20T15:00:00.000Z",
+    "summary": ">",
+    "hero": "/uploads/bkk-vejthani-hospital.jpg",
+    "category": "Hospitals"
+  },
+  {
     "slug": "the-complete-guide-to-planning-your-medical-trip-to-thailand-for-orthopaedic-surgery",
     "title": "The Complete Step-by-Step Guide to Planning Your Medical Trip to Thailand",
     "date": "2025-06-20T14:00:00.000Z",
     "summary": "Considering orthopaedic surgery in Thailand is an exciting prospect,",
     "hero": "/uploads/planning-surgery-in-thailand.jpg",
     "category": "General"
+  },
+  {
+    "slug": "a-closer-look-bangkok-hospital-a-leader-in-comprehensive-care",
+    "title": "A Closer Look: Bangkok Hospital, A Leader in Comprehensive Care",
+    "date": "2025-06-13T14:00:00.000Z",
+    "summary": "As the flagship facility of the Bangkok Dusit Medical Services (BDMS),",
+    "hero": "/uploads/bkk-bangkok-hospital.jpg",
+    "category": "Hospitals"
   },
   {
     "slug": "is-surgery-in-thailand-safe-5-questions-to-ask-the-jci-accredited-standard",
