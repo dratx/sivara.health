@@ -22,6 +22,10 @@ Often regarded as a global benchmark for medical tourism, Bumrungrad Internation
 * **Orthopaedic Specialisms:** The hospital's Orthopedic Center is a comprehensive unit, meaning a procedure like a **Total Knee Replacement** is managed by a highly specialised team from diagnosis through to **post-operative rehabilitation**. For patients suffering from complex back pain, its dedicated Spine Institute is a regional leader.
 * **Technology & Surgeons:** Bumrungrad's team includes numerous US and European-trained surgeons. They were pioneers in bringing advanced technology to their **Bangkok** facility, including **robotic-assisted surgery for enhanced precision**. This commitment ensures patients receive some of the most advanced orthopaedic care available globally.
 
+**[Learn more about Bumrungrad Hospital here.](https://sivara.health/article.html?slug=a-closer-look-bumrungrad-international-hospital)**
+
+
+
 #### **2. Vejthani Hospital**
 
 ![Vejthani Hospital Bangkok](/uploads/bkk-vejthani-hospital.jpg "Vejthani Hospital Bangkok")
@@ -31,6 +35,10 @@ Vejthani Hospital is widely known in the medical community as the "King of Bones
 * **Why it's a top choice:** Vejthani holds JCI accreditation and has received numerous awards specifically for its orthopaedic services. This focus means that for a complex procedure like a hip revision, Vejthani Hospital in **Bangkok** is a leading **JCI-accredited** (**Accreditation**) choice.
 * **Orthopaedic Specialisms:** The hospital excels in complex procedures, including joint revisions, limb lengthening, and advanced sports medicine treatments. Its high degree of specialisation makes it a top destination for challenging cases.
 * **Technology & Surgeons:** The hospital is equipped with modern diagnostic tools and surgical technology. Its team of orthopaedic surgeons is one of the largest in the city, many with decades of experience in their respective sub-specialties.
+
+**[Learn more about Vejthani Hospital here.](https://sivara.health/article.html?slug=a-closer-look-vejthani-hospital-bangkoks-king-of-bones)**
+
+
 
 #### **3. Bangkok Hospital (Headquarters)**
 
@@ -42,6 +50,10 @@ The flagship of the Bangkok Dusit Medical Services (BDMS) group, Bangkok Hospita
 * **Orthopaedic Specialisms:** The hospital's orthopaedic services are robust, with a notable Centre for Joint Replacement and a dedicated sports medicine department. They are well-equipped to handle everything from routine arthroscopy to complex trauma cases.
 * **Technology & Surgeons:** Bangkok Hospital's investment in technology ensures that a procedure like a knee arthroscopy is performed with the utmost precision at their **JCI-accredited** (**Accreditation**) facility in **Bangkok**. The hospital is committed to providing **safe, high-quality surgical outcomes**.
 
+**[Learn more about Bangkok Hospital here.](https://sivara.health/article.html?slug=a-closer-look-bangkok-hospital-a-leader-in-comprehensive-care)**
+
+
+
 #### **4. MedPark Hospital**
 
 ![Bangkok Hospital (Headquarters)](/uploads/bkk-medpark-hospital.jpeg "Bangkok Hospital (Headquarters)")
@@ -51,6 +63,8 @@ One of Bangkok's newer hospitals, MedPark opened in 2020 and has quickly establi
 * **Why it's a top choice:** MedPark achieved **JCI-accreditation** with impressive speed, demonstrating a deep commitment to the highest international standards from day one. It is known for its physician-led model and high ratio of experienced specialists.
 * **Orthopaedic Specialisms:** The Orthopedic Center at **MedPark Hospital** (**Hospital**) provides comprehensive services with particular strengths in sports medicine and arthroplasty (joint replacement). A patient seeking treatment for a condition like a rotator cuff tear will find a highly specialised team at this **Bangkok** facility.
 * **Technology & Surgeons:** MedPark features state-of-the-art equipment, including advanced imaging and hybrid operating rooms. A significant percentage of their surgeons have international training, bringing global best practices to their patient care.
+
+**[Learn more about MedPark Hospital Bangkok here.](https://sivara.health/article.html?slug=a-closer-look-medpark-hospital-a-new-era-of-physician-led-care)**
 
 #### **How Sivara Health Helps You Access These Hospitals**
 
