@@ -12,70 +12,6 @@ category: Guide
 
 **Your Trusted Pathway to World-Class Care**
 
-### **Contents**
-
-1. **Why Choose Thailand for Your Orthopaedic Surgery?**
-2. * **Clinical Excellence You Can Trust**
-
-   * **Substantial Cost Savings**
-
-   * **No Waiting Lists**
-3. **The Sivara Health Physician-Led Advantage**
-4. * **Why Physician-Led Matters**
-
-   * **Our Comprehensive Support**
-5. **Essential Documentation & Visa Requirements**
-6. * **Passport Requirements (All Countries)**
-
-   * **Country-Specific Visa Requirements**
-
-   * **Required Documents for All**
-
-   * **Critical Medical Documentation**
-7. **Your Safety: DVT Prevention & Post-Operative Travel**
-8. * **Understanding the Risks**
-
-   * **Pre-Surgery Flight Safety**
-
-   * **Post-Surgery Travel Guidelines**
-
-   * **Warning Signs Requiring Immediate Medical Attention**
-9. **Essential Packing for Surgical Recovery**
-10. * **Medications & Health Items**
-
-    * **Clothing for Recovery**
-
-    * **Comfort & Communication**
-11. **Financial Planning Essentials**
-12. * **Total Cost Considerations**
-
-    * **Payment & Banking**
-
-    * **Insurance Requirements**
-13. **Your Journey Timeline**
-14. * **2 Months Before**
-
-    * **1 Month Before**
-
-    * **Arrival in Thailand**
-
-    * **Post-Surgery**
-15. **Continuity of Care: Returning Home**
-16. * **Before You Leave Thailand**
-
-    * **Essential Home Country Follow-Up**
-
-    * **Long-Term Success Factors**
-17. **Emergency Contacts & Support**
-18. * **24/7 Sivara Health Support**
-
-    * **Key Emergency Information to Carry**
-19. **Making Your Decision**
-
-
-
-
-
 ## 1. Why Choose Thailand for Your Orthopaedic Surgery?
 
 Thailand stands as the world's leading medical tourism destination, welcoming over 2.5 million international patients annually \[1]. For orthopaedic surgery, Thailand offers an unmatched combination of clinical excellence, significant cost savings, and immediate access to care.
@@ -97,10 +33,6 @@ All inclusive cost estimates:
 
 **No Waiting Lists:** Unlike public healthcare systems with months-long delays, procedures can typically be scheduled within weeks of consultation.
 
-
-
-
-
 ## 2. The Sivara Health Physician-Led Advantage
 
 **Why Physician-Led Matters:** Traditional medical tourism facilitators focus on logistics. Sivara Health's physician-led model ensures medical considerations always take precedence, with qualified medical professionals overseeing every aspect of your care journey.
@@ -112,10 +44,6 @@ All inclusive cost estimates:
 * Seamless care coordination from consultation through home country follow-up
 * Transparent, all-inclusive pricing with no hidden fees
 * Cultural bridge and communication support with professional medical interpreters
-
-
-
-
 
 ## 3. Essential Documentation & Visa Requirements
 
@@ -161,10 +89,6 @@ All inclusive cost estimates:
 * Medical clearances from your physician
 * Comprehensive travel insurance with medical evacuation coverage
 
-
-
-
-
 ## 4. Your Safety: DVT Prevention & Post-Operative Travel
 
 **Understanding the Risks:** Deep vein thrombosis (DVT) risk is elevated for 4-6 weeks after orthopaedic surgery, and long-haul flights increase this risk further \[4].
@@ -197,10 +121,6 @@ All inclusive cost estimates:
 * Fever above 101°F / 38°C
 * Unusual discharge from surgical site
 
-
-
-
-
 ## 5. Essential Packing for Surgical Recovery
 
 ### Medications & Health Items
@@ -225,10 +145,6 @@ All inclusive cost estimates:
 * Favorite pillow or comfort item
 * International communication apps (WhatsApp, Skype)
 
-
-
-
-
 ## 6. Financial Planning Essentials
 
 ### Total Cost Considerations (for non-inclusive packages)
@@ -252,10 +168,6 @@ All inclusive cost estimates:
 * Minimum $50,000 emergency medical coverage
 * $100,000 medical evacuation coverage
 * Specialized medical tourism insurance recommended
-
-
-
-
 
 ## 7. Your Journey Timeline
 
@@ -287,10 +199,6 @@ All inclusive cost estimates:
 * Medical clearance for travel
 * Return flight with enhanced DVT prevention
 
-
-
-
-
 ## 8. Continuity of Care: Returning Home
 
 ### Before You Leave Thailand
@@ -314,10 +222,6 @@ All inclusive cost estimates:
 * Lifestyle modifications to support surgical outcomes
 * Ongoing communication with surgical team as needed
 
-
-
-
-
 ## 9. Emergency Contacts & Support
 
 **24/7 Sivara Health Support:**
@@ -334,10 +238,6 @@ All inclusive cost estimates:
 * Emergency contact numbers (Thai team and home physicians)
 * Insurance information and policy numbers
 
-
-
-
-
 ## 10. Making Your Decision
 
 Choosing Thailand for orthopaedic surgery through Sivara Health's physician-led model offers access to world-class care with significant cost savings and personalized support throughout your journey. Our comprehensive approach ensures that you receive not just excellent surgical outcomes, but also the guidance and advocacy necessary to navigate international healthcare successfully.
@@ -346,19 +246,11 @@ The investment in your health extends far beyond the immediate procedure to enco
 
 **Ready to take the next step?** Contact Sivara Health to begin your personalized consultation and discover how our physician-led approach can transform your orthopaedic care experience.
 
-
-
-
-
 ## References
 
 \[1] Medical Tourism Association. (2024). Global Medical Tourism Market Analysis.
 \[2] Joint Commission International. (2024). JCI-Accredited Organizations.
 \[3] International Medical Travel Journal. (2024). Cost Comparison Analysis.
 \[4] Hospital for Special Surgery. (2022). Avoiding Blood Clots When Flying Before and After Surgery.
-
-
-
-
 
 *This guide provides essential information for medical tourism planning. Individual medical recommendations may vary, and patients should always consult with qualified medical professionals for personalized advice.*
