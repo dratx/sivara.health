@@ -1,6 +1,5 @@
 ---
-title: "A Closer Look: Chiang Mai Ram Hospital, A Pillar of Northern Thailand's
-  Healthcare"
+title: "A Closer Look: Chiang Mai Ram Hospital, A Pillar of Northern Thailand"
 date: 2025-06-06T14:00:00.000Z
 summary: As one of the first private hospitals in Northern Thailand, Chiang Mai
   Ram has built a formidable reputation for providing trusted, high-quality
