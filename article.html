@@ -519,6 +519,12 @@
             loadingEl.classList.add('hidden');
             errorEl.classList.add('hidden');
             contentEl.classList.remove('hidden');
+
+            // After rendering article content, ensure all links open in a new tab
+            Array.from(document.getElementById('article-body').querySelectorAll('a')).forEach(link => {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
         }
 
         function createCarousel(images, carouselId) {
