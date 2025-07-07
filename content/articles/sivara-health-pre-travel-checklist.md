@@ -188,6 +188,6 @@ Check that your passport is valid for at least **6 months** beyond your departur
 **Airport Assistance**: Meet and greet services
 **Local Coordination**: On-ground support in Thailand
 
-*Your safety and successful outcomes are our priority. Contact our medical team with any questions or concerns during your preparation.*
+*Your safety and successful outcomes are our priority. [Contact our medical team with any questions or concerns during your preparation.](https://sivara.health/contact)*
 
 *This checklist ensures comprehensive preparation for your medical tourism journey. Individual requirements may vary - consult with your primary care physician and orthopedic surgeon for personalized guidance.*
