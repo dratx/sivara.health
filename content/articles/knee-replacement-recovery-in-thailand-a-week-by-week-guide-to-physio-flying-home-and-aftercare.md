@@ -1,6 +1,5 @@
 ---
-title: "Knee Replacement Recovery in Thailand: A Week-by-Week Guide to Physio,
-  Flying Home, and Aftercare"
+title: "Knee Replacement Recovery in Thailand: A Week-by-Week Guide"
 date: 2025-05-30T14:00:00.000Z
 summary: Deciding on a knee replacement surgery is a major step towards
   reclaiming your mobility and quality of life. Once you’ve chosen a world-class
