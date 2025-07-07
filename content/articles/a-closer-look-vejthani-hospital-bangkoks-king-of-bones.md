@@ -9,7 +9,7 @@ summary: >
   seeking highly specialised solutions for bone and joint conditions, Vejthani
   stands out as a premier destination.
 hero: /uploads/bkk-vejthani-hospital.jpg
-category: General
+category: Hospitals
 ---
 In the world of international medical care, a reputation for excellence in a specific field is hard-earned. Vejthani Hospital has not only earned such a reputation but has become globally synonymous with elite-level orthopaedic care, earning it the widely-used nickname, the "King of Bones." For patients seeking highly specialised solutions for bone and joint conditions, Vejthani stands out as a premier destination.
 
