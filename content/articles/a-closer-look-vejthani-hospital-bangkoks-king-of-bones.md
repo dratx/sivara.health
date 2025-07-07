@@ -1,6 +1,6 @@
 ---
 title: "A Closer Look: Vejthani Hospital, Bangkok's 'King of Bones'"
-date: 2025-06-28T14:00:00.000Z
+date: 2025-06-20T15:00:00.000Z
 summary: >
   In the world of international medical care, a reputation for excellence in a
   specific field is hard-earned. Vejthani Hospital has not only earned such a
