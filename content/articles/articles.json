@@ -16,6 +16,14 @@
     "category": "Hospitals"
   },
   {
+    "slug": "a-closer-look-bangkok-hospital-phuket-premier-care-in-a-paradise-setting",
+    "title": "A Closer Look: Bangkok Hospital Phuket, Premier Care in a Paradise Setting",
+    "date": "2025-06-25T14:00:00.000Z",
+    "summary": "Bangkok Hospital Phuket stands as the largest private hospital in the",
+    "hero": "/uploads/phu-bangkok-hospital-phuket.jpg",
+    "category": "Hospitals"
+  },
+  {
     "slug": "a-closer-look-vejthani-hospital-bangkoks-king-of-bones",
     "title": "A Closer Look: Vejthani Hospital, Bangkok's 'King of Bones'",
     "date": "2025-06-20T15:00:00.000Z",
@@ -70,6 +78,14 @@
     "summary": "\"If you are exploring options for hip replacement surgery, you’re",
     "hero": "/uploads/hip-replacement-thailand.jpg",
     "category": "General"
+  },
+  {
+    "slug": "a-closer-look-bangkok-hospital-siriroj-a-legacy-of-care-in-phuket",
+    "title": "A Closer Look: Bangkok Hospital Siriroj, A Legacy of Care in Phuket",
+    "date": "2025-05-30T14:00:00.000Z",
+    "summary": "With a history stretching back over 40 years, Bangkok Hospital Siriroj",
+    "hero": "/uploads/phu-bangkok-hospital-siriroj.jpg",
+    "category": "Hospitals"
   },
   {
     "slug": "knee-replacement-recovery-in-thailand-a-week-by-week-guide-to-physio-flying-home-and-aftercare",
